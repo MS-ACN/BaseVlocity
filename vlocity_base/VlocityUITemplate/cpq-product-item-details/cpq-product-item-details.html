@@ -21,7 +21,7 @@
                         </span>
                     </div>
                     <div class="slds-media__body">
-                        <div class="slds-tile__title slds-text-heading_medium">
+                        <div class="slds-tile__title slds-text-heading_medium" cpq-translate="Product2.Name">
                             {{::obj.Name.value}}
                         </div>
                     </div>
@@ -34,15 +34,16 @@
                    </div>
                </div>
             </div> -->
-            <div class="cpq-product-item-table-row-item cpq-product-item-table-flex-recur cpq-cart-item-attr-value">
+            <div class="cpq-product-item-table-row-item cpq-product-item-table-flex-recur cpq-cart-item-attr-value"
+                 cpq-translate="PriceListEntry.DisplayText">
                 {{::importedScope.getPriceValue(obj, importedScope.nsPrefix+'RecurringPrice__c')}} 
             </div>
             <div class="cpq-product-item-table-row-item cpq-product-item-table-flex-onetime cpq-cart-item-attr-value">
-                {{::importedScope.getPriceValue(obj, 'UnitPrice')}}
+                {{::importedScope.getPriceValue(obj, 'UnitPrice') | CPQTranslateFilter:'PriceListEntry.DisplayText'}}
                 <span ng-if="::obj[$root.nsPrefix + 'OneTimeLoyaltyPrice__c']">
-                    &nbsp;{{::importedScope.customLabels.CPQOr}}
-                    <span class="cpq-loyalty-points">
-                     &nbsp;{{::obj[$root.nsPrefix + 'OneTimeLoyaltyPrice__c'].value}} 
+                    &nbsp;{{::importedScope.customLabels.CPQOr}}&nbsp;
+                    <span class="cpq-loyalty-points" cpq-translate="PriceListEntry.DisplayText">
+                     {{::obj[$root.nsPrefix + 'OneTimeLoyaltyPrice__c'].value}} 
                     </span>
                     <span class="cpq-loyalty-points">
                         {{::obj.LoyaltyCode}}
@@ -52,7 +53,7 @@
           </div>
         </div>
         <!-- Description -->
-        <div class="slds-tile__detail slds-text-body_small">
+        <div class="slds-tile__detail slds-text-body_small" cpq-translate="Product2.Description">
             {{::obj.Product2.Description}}
         </div>
         
@@ -61,7 +62,7 @@
             <!-- scroll class for ionic smooth scroll -->
             <ul class="scroll">
                 <!--Supporting only images as of now-->
-                <li ng-repeat="media in obj.Attachments">
+                <li ng-repeat="media in ::importedScope.getProductAttachments(obj)">
                     <img src="{{::media.url}}" alt="{{::media.title}}" ng-if="::media.contentType === 'Image'"/>
     
                     <figure ng-if="::media.contentType === 'File'">

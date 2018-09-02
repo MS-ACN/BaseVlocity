@@ -12,6 +12,7 @@
     .comp-#{$namespace}-product-item-child, .comp-#{$namespace}-product-item {
 
         position:relative; /* needed for selected border */
+        padding-top: 20px;
 
         input.ng-invalid {
             color: $error;
@@ -19,7 +20,6 @@
 
         .extend-slds-close-switch {
             .slds-button__icon {
-                float: left;
                 margin: 0.3rem 0.5rem 0 0;
 
                 &.#{$namespace}-fix-slds-close-switch {
@@ -190,6 +190,15 @@
                     margin-top: 6px;
                     padding-left: 0;
                 }
+                .#{$namespace}-product-name-block {
+                    display: inline-flex;
+                    .#{$namespace}-product-icon-block {
+                        display: inherit;
+                        div {
+                            margin: auto
+                        }
+                    }
+                }  
             }
 
             .#{$namespace}-item-base-product-promo-field {

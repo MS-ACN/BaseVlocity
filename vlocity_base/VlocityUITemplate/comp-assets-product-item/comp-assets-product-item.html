@@ -28,13 +28,14 @@
                         </div>
 
                         <button ng-click="childProdState.show = !childProdState.show" class="slds-button assets-item-has-children" aria-controls="tree0-node1" ng-hide="!(obj.childAssets.records || obj.lineItems.records || obj.productGroups.records)">
-                            <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'switch'" extra-classes="'slds-button__icon_left'" ng-class="{'assets-fix-slds-close-switch' : !childProdState.show}"></slds-button-svg-icon>
+                            <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'switch'" extra-classes="'slds-button__icon_left slds-float_left'" ng-class="{'assets-fix-slds-close-switch' : !childProdState.show}"></slds-button-svg-icon>
                             <span class="slds-assistive-text">Toggle</span>
-                            <span class="assets-product-name">{{obj[customField.fieldName]}}</span>
+                            <span class="assets-product-name" cpq-translate="Product2.Name">{{obj[customField.fieldName]}}</span>
                         </button>
     
-                        <span class="assets-item-no-children" ng-show="!(obj.childAssets.records || obj.lineItems.records || obj.productGroups.records)">
-                            {{ obj[customField.fieldName]}}
+                        <span class="assets-item-no-children" ng-show="!(obj.childAssets.records || obj.lineItems.records || obj.productGroups.records)"
+                        cpq-translate="Product2.Name">
+                           {{ obj[customField.fieldName]}}
                         </span>
                     </div>
 
@@ -73,7 +74,8 @@
                     <!-- Promotions -->
                     <div ng-if="customField.type === 'promo'">
                         <div ng-repeat="promoItem in obj[customField.fieldName].records" ng-attr-title="{{promoItem.Name}}" class="assets-promo-text-wrap">
-                            {{promoItem.Name}}{{$last ? '' : ', '}}
+                            <span cpq-translate="Promotion.Name">{{promoItem.Name}}</span>
+                            {{$last ? '' : ', '}}
                         </div>
                     </div> 
                 </div>

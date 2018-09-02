@@ -1,7 +1,7 @@
 {
     "%vlocity_namespace%__Author__c": "Vlocity",
     "%vlocity_namespace%__CSS__c": "",
-    "%vlocity_namespace%__CustomJavascript__c": "",
+    "%vlocity_namespace%__CustomJavascript__c": "list-card-canvas-slds.js",
     "%vlocity_namespace%__Definition__c": "",
     "%vlocity_namespace%__Description__c": "list-card-canvas-slds\n\nA lightning table based design. Each inner card is a row in the table. This container is designed to work with the list-card-canvas.",
     "%vlocity_namespace%__DisplayOn__c": "",

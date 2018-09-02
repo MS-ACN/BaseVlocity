@@ -1,6 +1,8 @@
 .asset-summary {
-  &.slds-card.slds-card--narrow {
-    float: left;
+    margin: 15px 0px 0px 15px;
+    
+  &.slds-card {
+    float: left !important;
     margin: 1em;
     background-color: #FFF;
     border: 1px solid #dedede;
@@ -13,6 +15,7 @@
     }
   }
   .card-info {
+    padding-top: 10px;
     .asset-image {
       width: 100px;
 

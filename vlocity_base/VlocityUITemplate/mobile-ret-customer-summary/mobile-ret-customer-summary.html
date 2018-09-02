@@ -6,9 +6,6 @@
         </div>
     </div>
     <vloc-layout layout-name="mobile-ret-account-header" ctrl="MobileController"></vloc-layout>
-  
-     <div>
-        <vloc-card ng-repeat="card in cards |orderBy:order|filter: searchFunc(card)" ctrl="{{ctrl}}" ng-model="card" data="card" records="records" index="{{$index}}" session-id="{{sessionId}}"></vloc-card>
-    </div>
+
     <vloc-layout layout-name="mobile-ret-asset-grid" ctrl="MobileController"></vloc-layout>
 </div>

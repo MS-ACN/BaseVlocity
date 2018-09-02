@@ -6,8 +6,8 @@
     },
     "states": [
         {
-            "blankCardState": false,
-            "blankStateCheck": false,
+            "blankCardState": true,
+            "blankStateCheck": true,
             "collapse": false,
             "conditions": {
                 "group": [

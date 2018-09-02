@@ -30,6 +30,9 @@ vlocity.cardframework.registerModule
             if (!self.search) {
                 return true;
             }
+            if (!value.obj && !value.status) {
+                return JSON.stringify(value.filter) === JSON.stringify(self.search.filter);
+            }
             return !!(value.obj && checkFilter(value.obj, self.search.filter));
         };
 
@@ -77,10 +80,10 @@ vlocity.cardframework.registerModule
         });
 
         $scope.$watch(function() {
-            return $scope.cards ? $scope.cards.length : 0;
+            return $scope.cards;
         }, function(newLength) {
             $scope.filteredCards = $filter('orderBy')($filter('filter')($scope.cards, self.filterStories), '-obj.LastActivityDate');
-        });
+        }, true);
 
         $scope.$on('reloadLayout', function(event, layoutName) {
             if (layoutName && layoutName === $scope.layoutName) {

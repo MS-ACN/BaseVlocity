@@ -44,7 +44,7 @@
                 }
             ],
             "name": "Campaign",
-            "sObjectType": "Case",
+            "sObjectType": "Campaign",
             "templateUrl": "story-card"
         }
     ],

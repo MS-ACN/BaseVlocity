@@ -18,7 +18,7 @@ vlocity.cardframework.registerModule.controller('customActionsTpl2Controller', [
         var modalScope = $scope.$new();
         modalScope.title = 'Lookup Phone Number';
         /* This is where you specify the third party page to load when the user clicks on a custom action link/button */
-        modalScope.customActionIframeSrc = '/apex/CustomActionThirdPartyTest?targetOrigin=' + targetOrigin + '&messageType=' + messageType + '&attributeId=' + attributeId;
+        modalScope.customActionIframeSrc = '/apex/c__CustomActionThirdPartyTest?targetOrigin=' + targetOrigin + '&messageType=' + messageType + '&attributeId=' + attributeId;
 
         customActionModal = $sldsModal({
             backdrop: 'static',

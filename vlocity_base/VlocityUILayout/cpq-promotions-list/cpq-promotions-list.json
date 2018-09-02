@@ -21,6 +21,7 @@
             "inputMap": {
                 "cartId": "{{params.id}}",
                 "includeIneligible": "{{attrs.includeIneligible}}",
+                "localeCode": "{{attrs.cpqUserLocale}}",
                 "pagesize": "10"
             },
             "methodType": "GET",

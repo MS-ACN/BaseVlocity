@@ -15,14 +15,6 @@
             ],
             "definedActions": {
                 "actions": [
-                    {
-                        "id": "Policy-PolicyDetails",
-                        "type": "Vlocity Action"
-                    },
-                    {
-                        "id": "Policy-Log Dispute",
-                        "type": "Vlocity Action"
-                    }
                 ]
             },
             "fields": [

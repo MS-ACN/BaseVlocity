@@ -411,9 +411,9 @@
             "%vlocity_namespace%__EffectiveFromDate__c": "",
             "%vlocity_namespace%__EffectiveUntilDate__c": "",
             "%vlocity_namespace%__FacetId__c": {
-                "%vlocity_namespace%__GlobalKey__c": "d6192f89b456f4786aa111ae545c4d9e",
+                "%vlocity_namespace%__GlobalKey__c": "27f8fe05-934a-42b8-6122-4b574652f9fd",
                 "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-                "VlocityLookupRecordSourceKey": "%vlocity_namespace%__UIFacet__c/d6192f89b456f4786aa111ae545c4d9e",
+                "VlocityLookupRecordSourceKey": "%vlocity_namespace%__UIFacet__c/27f8fe05-934a-42b8-6122-4b574652f9fd",
                 "VlocityRecordSObjectType": "%vlocity_namespace%__UIFacet__c"
             },
             "%vlocity_namespace%__GlobalKey__c": "56dcdf0d-1a77-0743-c6b9-15a284c9d6d3",

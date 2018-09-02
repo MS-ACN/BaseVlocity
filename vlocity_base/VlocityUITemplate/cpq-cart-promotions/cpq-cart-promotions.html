@@ -54,7 +54,7 @@
         
             <div class="cpq-base-promotion cpq-promotion-header">
                 <div ng-repeat="field in $root.customViews.cpqCustomViews[$root.customViews.currentCustomView].fields" class="cpq-promotion-name">
-                    {{records[0] | getter: field: 'label' }}
+                    {{records[0] | getter: field: 'label'}}
                 </div>
                 <div class="cpq-promotion-name">&nbsp;</div>
             </div>
@@ -65,7 +65,7 @@
                         {{record[field.fieldName].value | date}}
                     </div>
                     <div ng-show="record[field.fieldName].dataType != 'DATETIME'">
-                        {{record[field.fieldName].value}}
+                        {{record[field.fieldName].value | CPQTranslateFilter:'Promotion.Name'}}
                         <span title="{{::record[$root.nsPrefix+'Action__c'].value}}" ng-show="record[field.fieldName].fieldName === 'Name'">
                             <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'bookmark'" extra-classes="'slds-button__icon_left'" class="cpq-promotion-item-bookmark-{{::record[$root.nsPrefix+'Action__c'].value.toLowerCase() || 'default'}}"></slds-button-svg-icon>
                         </span>

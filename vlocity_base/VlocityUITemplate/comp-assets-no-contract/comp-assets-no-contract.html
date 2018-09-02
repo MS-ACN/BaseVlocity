@@ -10,7 +10,7 @@
 	    	index="{{$index}}" session-id="{{sessionId}}">
 	    </vloc-card>
 
-        <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-center" ng-if="!records || records.length === 0 ">
+        <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-center" ng-if="datasourceStatus.status === 'loaded' && (!records || records.length === 0 )">
           {{::customLabels.ASSETNoAssets}}
         </div>
 

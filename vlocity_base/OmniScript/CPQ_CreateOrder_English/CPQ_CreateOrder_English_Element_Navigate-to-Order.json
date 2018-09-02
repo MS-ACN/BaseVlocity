@@ -16,7 +16,7 @@
         "redirectPageName": "mobileDone",
         "redirectTemplateUrl": "vlcMobileConfirmation.html",
         "show": null,
-        "source": "/apex/HybridCPQ?id=%records|1:id%",
+        "source": "/apex/%vlocity_namespace%__HybridCPQ?id=%records|1:id%",
         "ssm": false,
         "type": "URL",
         "validationRequired": "Submit",

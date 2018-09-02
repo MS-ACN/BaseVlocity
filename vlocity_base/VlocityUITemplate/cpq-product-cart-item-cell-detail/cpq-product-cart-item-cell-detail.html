@@ -8,7 +8,7 @@
     <tbody>
       <tr ng-repeat="record in importedScope.records" class="cpq-detail-row">
         <th scope="row" class="cpq-detail-row">
-          <div class="cpq-cell-header">{{record.Description}}</div>
+          <div class="cpq-cell-header" cpq-translate="PriceListEntry.DisplayText">{{record.Description}}</div>
         </th>
         <td data-label="discount" class="slds-text-align_right cpq-detail-row">
           <div class="slds-truncate">

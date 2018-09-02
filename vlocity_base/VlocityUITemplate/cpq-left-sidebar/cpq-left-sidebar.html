@@ -49,12 +49,12 @@
     </div>
     <!-- PRODUCTS -->
     <div class="slds-col cpq-items-container scroll" ng-show="importedScope.showList.products">
-     	<vloc-layout layout-name="cpq-product-list" ctrl="CPQItemsController" tabView="{{importedScope.productsTab}}" include-ineligible="{{importedScope.featureSettings.enableRuleBasedQualifications}}"></vloc-layout> 
+     	<vloc-layout layout-name="cpq-product-list" cpq-user-locale="{{$root.vlocity.userSfLocale}}" ctrl="CPQItemsController" tabView="{{importedScope.productsTab}}" include-ineligible="{{importedScope.featureSettings.enableRuleBasedQualifications}}"></vloc-layout> 
     </div>
     
     <!-- PROMOTIONS -->
     <div class="slds-col cpq-items-container scroll" ng-show="importedScope.showList.promotions" ng-if="importedScope.featureSettings.enablePromotions">
-        <vloc-layout layout-name="cpq-promotions-list" ctrl="CPQItemsController" tabView="{{importedScope.promotionsTab}}" include-ineligible="{{importedScope.featureSettings.enableRuleBasedQualifications}}"></vloc-layout>
+        <vloc-layout layout-name="cpq-promotions-list" cpq-user-locale="{{$root.vlocity.userSfLocale}}" ctrl="CPQItemsController" tabView="{{importedScope.promotionsTab}}" include-ineligible="{{importedScope.featureSettings.enableRuleBasedQualifications}}"></vloc-layout>
     </div>
 
 </div>

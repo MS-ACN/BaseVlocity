@@ -6,8 +6,8 @@
     },
     "states": [
         {
-            "blankCardState": false,
-            "blankStateCheck": false,
+            "blankCardState": true,
+            "blankStateCheck": true,
             "collapse": false,
             "conditions": {
                 "group": [
@@ -18,7 +18,7 @@
                         "value": "'active'"
                     },
                     {
-                        "field": "['%vlocity_namespace%__Store_Associate_Status__c']",
+                        "field": "['Store_Associate_Status__c']",
                         "logicalOperator": "&&",
                         "operator": "==",
                         "type": "custom",
@@ -193,14 +193,14 @@
             },
             "fields": [
             ],
-            "filter": "$scope.data.status === 'active' && $scope.obj['%vlocity_namespace%__Store_Associate_Status__c'] == 'Clocked In'",
+            "filter": "$scope.data.status === 'active' && $scope.obj['Store_Associate_Status__c'] == 'Clocked In'",
             "name": "Clocked In State",
             "sObjectType": "Account",
             "templateUrl": "mobile-action-grid-card-slds"
         },
         {
-            "blankCardState": false,
-            "blankStateCheck": false,
+            "blankCardState": true,
+            "blankStateCheck": true,
             "collapse": false,
             "conditions": {
                 "group": [
@@ -211,7 +211,7 @@
                         "value": "'active'"
                     },
                     {
-                        "field": "['%vlocity_namespace%__Store_Associate_Status__c']",
+                        "field": "['Store_Associate_Status__c']",
                         "logicalOperator": "&&",
                         "operator": "==",
                         "type": "custom",
@@ -232,7 +232,7 @@
             },
             "fields": [
             ],
-            "filter": "$scope.data.status === 'active' && $scope.obj['%vlocity_namespace%__Store_Associate_Status__c'] == 'Clocked Out'",
+            "filter": "$scope.data.status === 'active' && $scope.obj['Store_Associate_Status__c'] == 'Clocked Out'",
             "name": "Clocked Out State",
             "sObjectType": "Account",
             "templateUrl": "mobile-action-grid-card-slds"

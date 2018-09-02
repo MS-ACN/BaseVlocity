@@ -259,6 +259,10 @@ body {
             }
         }
     }
+    
+    [layout-type="flyout"] {
+        position: absolute;
+    }
     /*End of Flyout specific CSS*/
 
     @media only screen and (min-width : 1575px) {

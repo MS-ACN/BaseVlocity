@@ -22,14 +22,7 @@ table {
 .via-slds .slds-table--bordered{
     border:none;
 }
-.editAttribute{
-    width:580px;
-    float:right;
-    a>span{
-        cursor:pointer;
-        font-size:12px !important;
-    }
-}
+
 .via-slds .slds-table tr:last-child td:not(a){
     border-bottom:1px solid #d8dde6;
 }

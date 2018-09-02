@@ -67,7 +67,7 @@
                         <div ng-show="record[field.fieldName].dataType === 'DATETIME'">
                             {{record[field.fieldName].value | date}}
                         </div>
-                        <div ng-show="record[field.fieldName].dataType != 'DATETIME'">
+                        <div ng-show="record[field.fieldName].dataType != 'DATETIME'" cpq-translate="Promotion.Name">
                             {{record[field.fieldName].value}}
                         </div>
                     </div>

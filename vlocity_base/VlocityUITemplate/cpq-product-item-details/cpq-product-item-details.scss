@@ -104,7 +104,7 @@ $namespace: $cpq-namespace;
             .#{$namespace}-product-item-table-row-item {
               display: flex;
               flex-flow: row nowrap;
-              flex: 1 0 auto;
+              flex: 1 0 33%;
               word-wrap: break-word;
               overflow-wrap: break-word;
                 .#{$namespace}-price-label {

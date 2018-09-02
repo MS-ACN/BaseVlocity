@@ -7,7 +7,7 @@
     "%vlocity_namespace%__JunctionLookupField__c": "",
     "%vlocity_namespace%__JunctionObjectFilter__c": "",
     "%vlocity_namespace%__JunctionObject__c": "",
-    "%vlocity_namespace%__NavigationFieldName__c": "ResumeLink__c",
+    "%vlocity_namespace%__NavigationFieldName__c": "%vlocity_namespace%__RelativeResumeLink__c",
     "%vlocity_namespace%__ParentObjectField__c": "",
     "%vlocity_namespace%__ParentObjectNameFieldPath__c": "%vlocity_namespace%__ObjectName__c",
     "%vlocity_namespace%__ParentObjectName__c": "Account",

@@ -1,6 +1,6 @@
 {
     "Cards": [
-        "comp-assets-product-item"
+        "comp-cart-review-product-item"
     ],
     "dataSource": {
         "contextVariables": [
@@ -49,6 +49,7 @@
         }
     },
     "workspace": [
-        "comp-assets-product-item/Vlocity/1500408956648"
+        "comp-assets-product-item/Vlocity/1500408956648",
+        "comp-cart-review-product-item/Vlocity/1/1520283067471"
     ]
 }

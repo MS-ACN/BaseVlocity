@@ -22,6 +22,7 @@
                 "cartId": "{{params.id}}",
                 "fields": "IsActive,Id,Name,UnitPrice,ProductCode,%vlocity_namespace%__RecurringPrice__c",
                 "includeIneligible": "{{attrs.includeIneligible}}",
+                "localeCode": "{{attrs.cpqUserLocale}}",
                 "offsetSize": "0",
                 "pagesize": "10"
             },

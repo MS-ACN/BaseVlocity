@@ -33,7 +33,7 @@ $namespace: $cpq-namespace;
                     padding: 15px 15px 18px;
                     background: $white;
                 }
-                #{$namespace}-error-msg {
+                .#{$namespace}-error-msg {
                     color: $error;
                     font-size: $cpq-product-cart-config-error-font-size;
                     margin-top: $cpq-product-cart-config-error-margin-top;

@@ -42,7 +42,7 @@
             "timeout": null,
             "withCredentials": true
         },
-        "restPath": "%uiServicesUrl%/ordermanagement/v1/orderitems/%showtaskdetails:data:orderItemId%/view",
+        "restPath": "%uiServicesUrl%/orderManagement/orderItems/%showtaskdetails:data:orderItemId%/view",
         "sendJSONNode": "",
         "sendJSONPath": "",
         "show": null,

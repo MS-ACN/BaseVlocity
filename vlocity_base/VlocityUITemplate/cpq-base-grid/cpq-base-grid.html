@@ -8,7 +8,10 @@
     </div>
 
     <div class="slds-grid slds-grid_frame slds-grid_vertical">
-        <vloc-layout layout-name="cpq-header" enable-pricing="{{importedScope.featureSettings.enablePricing}}"  enable-loyalty-points="{{importedScope.customSettings.EnableLoyaltyPoints}}"></vloc-layout>
+        <vloc-layout layout-name="cpq-header" ctrl="CPQHeaderController" 
+            enable-pricing="{{importedScope.featureSettings.enablePricing}}"  
+            enable-loyalty-points="{{importedScope.customSettings.EnableLoyaltyPoints}}">
+        </vloc-layout>
 
         <div class="slds-col slds-grid slds-wrap slds-small-nowrap cpq-container" ng-class="{'cpq-outer-col-visible': !importedScope.showProductList || importedScope.isConfigAttrsPanelEnabled}">
             <div class="slds-backdrop cpq-tablet-overlay" ng-if="importedScope.isMobileTablet" ng-click="importedScope.toggleOutsideCols()" ng-class="{'slds-backdrop_open': !importedScope.showProductList || importedScope.isConfigAttrsPanelEnabled}"></div>

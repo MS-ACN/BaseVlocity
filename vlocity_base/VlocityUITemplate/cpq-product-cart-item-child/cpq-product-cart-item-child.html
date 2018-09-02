@@ -25,20 +25,21 @@
                 <div ng-repeat="customField in $root.customViews.cpqCustomViews[$root.customViews.currentCustomView].fields" class="cpq-item-base-product-{{customField.data.classSuffix}}" ng-class="{'cpq-item-currency-value': customField.type === 'currency', 'cpq-item-text-value': customField.type === 'string',
                 'cpq-item-loyalty-value': customField.type === 'loyalty', 'cpq-item-product-title': customField.name === 'Name'}">
                     <!-- Name -->
-                    <div ng-if="customField.name === 'Name'" class="cpq-item-child-product-name-wrapper">
+                    <div ng-if="customField.name === 'Name'" class="cpq-product-name-block cpq-item-child-product-name-wrapper">
                         <button ng-click="childProdState.show = importedScope.determineChildProdOpenOrCloseAfterClick(childProd, childProdState.show); importedScope.fullScreen(attrs.ariaLevel, childProdState.show)" class="slds-button cpq-item-has-children" aria-controls="tree0-node1" ng-hide="importedScope.determineIfChildProdOpenOrCloseIconShouldBeHidden(childProd)" ng-init="childProdState.show = importedScope.determineChildProdOpenOrCloseInitially(childProd)">
-                            <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'switch'" extra-classes="'slds-button__icon_left'" ng-class="{'cpq-fix-slds-close-switch' : !childProdState.show}"></slds-button-svg-icon>
+                            <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'switch'" extra-classes="'slds-button__icon_left slds-float_left'" ng-class="{'cpq-fix-slds-close-switch' : !childProdState.show}"></slds-button-svg-icon>
                             <span class="slds-assistive-text">Toggle</span>
-                            <span class="cpq-product-name js-cpq-cart-product-hierarchy-path-{{childProd.productHierarchyPath}}">{{(childProd.PricebookEntry.Product2.Name || childProd.Product2.Name)}}</span>
-                            <span title="{{childProd[$root.nsPrefix+'Action__c'].value}}">
-                                <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'bookmark'" extra-classes="'slds-button__icon_left'" class="cpq-product-item-bookmark-{{childProd[$root.nsPrefix+'Action__c'].value.toLowerCase() || 'null'}}"></slds-button-svg-icon>
-                            </span>  
+                            <span class="cpq-product-name js-cpq-cart-product-hierarchy-path-{{childProd.productHierarchyPath}}" cpq-translate="Product2.Name">{{(childProd.PricebookEntry.Product2.Name || childProd.Product2.Name)}}</span>  
                         </button>
-                        <div class="cpq-item-no-children" ng-show="!importedScope.checkIfChildProdHasChildren(childProd)">
+                        <div class="cpq-item-no-children" ng-show="!importedScope.checkIfChildProdHasChildren(childProd)" cpq-translate="Product2.Name">
                             {{(childProd.PricebookEntry.Product2.Name || childProd.Product2.Name)}}
-                            <span title="{{childProd[$root.nsPrefix+'Action__c'].value}}">
-                                <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'bookmark'" extra-classes="'slds-button__icon_left'" class="cpq-product-item-bookmark-{{childProd[$root.nsPrefix+'Action__c'].value.toLowerCase() || 'null'}}"></slds-button-svg-icon>
-                            </span> 
+                        </div>
+
+                        <!-- Icons -->
+                        <div class="cpq-product-icon-block">
+                            <div title="{{childProd[$root.nsPrefix+'Action__c'].value}}">
+                                <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'bookmark'" class="cpq-product-item-bookmark-{{childProd[$root.nsPrefix+'Action__c'].value.toLowerCase() || 'null'}}"></slds-button-svg-icon>
+                            </div>
                         </div>
                     </div>
 
@@ -60,6 +61,7 @@
                                         <button class="slds-button slds-button_icon-border" aria-haspopup="true"
                                             title="{{::importedScope.customLabels.CPQPaymentChoice}}"
                                             ng-if="childProd[customField.fieldName]['actions']['switchpaymentmode']" 
+                                            ng-disabled="obj.orderActive"
                                             ng-click="importedScope.openAdjustmentModal(childProd[customField.fieldName], 'switchpayment', childProd, obj)">
                                             <slds-button-svg-icon sprite="'utility'" icon="'moneybag'"></slds-button-svg-icon>
                                             <span class="slds-assistive-text">{{::importedScope.customLabels.CPQPaymentChoice}}</span>
@@ -96,9 +98,10 @@
      
                                 <div class="slds-popover__body cpq-price-actions-popover__body">
                                     <div class="slds-button-group" role="group">
-                                        <button class="slds-button slds-button_icon-border" ng-disabled="obj.orderActive"
+                                        <button class="slds-button slds-button_icon-border"
                                             title="{{::importedScope.customLabels.CPQChangePrice}}"  
                                             ng-if="childProd[customField.fieldName]['actions']['applyadjustment']"
+                                            ng-disabled="obj.orderActive"
                                             ng-click="importedScope.openAdjustmentModal(childProd[customField.fieldName], 'applyadjustment', childProd)">
                                             <slds-button-svg-icon sprite="'utility'" icon="'edit'"></slds-button-svg-icon>
                                             <span class="slds-assistive-text">{{::importedScope.customLabels.CPQChangePrice}}</span>
@@ -113,6 +116,7 @@
                                         <button class="slds-button slds-button_icon-border" aria-haspopup="true"
                                             title="{{::importedScope.customLabels.CPQPaymentChoice}}"  
                                             ng-if="childProd[customField.fieldName]['actions']['switchpaymentmode']"
+                                            ng-disabled="obj.orderActive"
                                             ng-click="importedScope.openAdjustmentModal(childProd[customField.fieldName], 'switchpayment', childProd, obj)">
                                             <slds-button-svg-icon sprite="'utility'" icon="'moneybag'"></slds-button-svg-icon>
                                             <span class="slds-assistive-text">{{::importedScope.customLabels.CPQPaymentChoice}}</span>
@@ -127,7 +131,8 @@
                     <div ng-if="customField.type === 'promo'">
                         <div ng-repeat="promoItem in childProd[customField.fieldName].records" ng-attr-title="{{promoItem.Name}}" class="cpq-promo-text-wrap"
                             ng-class="{'cpq-promo-name-strike': importedScope.isPromoActionDisconnect(promoItem)}">
-                            {{promoItem.Name}}{{$last ? '' : ', '}}
+                            <span cpq-translate="Promotion.Name">{{promoItem.Name}}</span>
+                            {{$last ? '' : ', '}}
                         </div>  
                     </div> 
                 </div>
@@ -182,7 +187,7 @@
                         <button cpq-dropdown-handler="lineActions.show = false" aria-haspopup="true" 
                             class="slds-button slds-button_icon-border-filled cpq-item-actions-dropdown-button" 
                             title="{{::importedScope.customLabels.CPQShowActions}}" 
-                            ng-if="(childProd.actions.updateitems && !attrs.lineItemModal) || (childProd.actions.addtocart && importedScope.checkCardinalityForAdd(obj, childProd)) || (childProd.actions.cloneitem && importedScope.checkCardinalityForClone(obj, childProd)) || importedScope.checkCardinalityForDelete(obj, childProd)"
+                            ng-if="importedScope.checkActionsAndCardinality(obj, childProd, attrs.lineItemModal)" 
                             ng-show="childProd.actions"
                             >
                             <slds-button-svg-icon sprite="'utility'" icon="'down'" extra-classes="'slds-icon-text-default'"></slds-button-svg-icon>
@@ -301,9 +306,13 @@
                         <button ng-click="childProdState.show = !childProdState.show; importedScope.fullScreen(attrs.ariaLevel, childProdState.show)" class="slds-button cpq-item-has-children" aria-controls="tree0-node1" ng-hide="!(childProd.lineItems.records || childProd.childProducts.records || childProd.productGroups.records)">
                             <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'switch'" extra-classes="'slds-button__icon_left'" ng-class="{'cpq-fix-slds-close-switch' : !childProdState.show}"></slds-button-svg-icon>
                             <span class="slds-assistive-text">Toggle</span>
-                            <span class="cpq-product-name">{{(childProd.PricebookEntry.Product2.Name || childProd.Product2.Name)}}</span>
+                            <span class="cpq-product-name" cpq-translate="Product2.Name">{{(childProd.PricebookEntry.Product2.Name || childProd.Product2.Name)}}</span>
                         </button>
-                        <div class="cpq-item-no-children" ng-show="!(childProd.lineItems.records || childProd.childProducts.records || childProd.productGroups.records)">{{(childProd.PricebookEntry.Product2.Name || childProd.Product2.Name)}}</div>
+                        <div class="cpq-item-no-children"
+                             ng-show="!(childProd.lineItems.records || childProd.childProducts.records || childProd.productGroups.records)"
+                             cpq-translate="Product2.Name">
+                            {{(childProd.PricebookEntry.Product2.Name || childProd.Product2.Name)}}
+                        </div>
                     </div>
                     <!-- Text -->
                     <div ng-if="customField.type === 'string' && customField.name !== 'Name'">
@@ -379,7 +388,8 @@
                         <slds-button-svg-icon sprite="'utility'" icon="'switch'" ng-class="{'cpq-fix-slds-close-switch' : !childProdState.show}"></slds-button-svg-icon>
                         <span class="slds-assistive-text">Toggle</span>
                     </button>
-                    <span ng-class="{'cpq-item-no-children' : !importedScope.checkIfChildProdHasChildren(childProd)}">{{::(childProd.PricebookEntry.Product2.Name || childProd.Product2.Name)}}</span>
+                    <span ng-class="{'cpq-item-no-children' : !importedScope.checkIfChildProdHasChildren(childProd)}"
+                          cpq-translate="Product2.Name">{{::(childProd.PricebookEntry.Product2.Name || childProd.Product2.Name)}}</span>
                  </span>
                 </div>
                 <div class="cpq-item-base-product-input"></div>

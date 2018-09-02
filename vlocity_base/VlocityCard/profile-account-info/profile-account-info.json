@@ -13,17 +13,6 @@
             "query": ""
         }
     },
-    "definedActions": [
-        {
-            "actionIds": [
-                {
-                    "id": "Add",
-                    "type": "Vlocity Action"
-                }
-            ],
-            "filter": "$scope.data.status == 'active'"
-        }
-    ],
     "filter": {
         "attributes": {
             "type": "Account"

@@ -38,25 +38,25 @@
                 'cpq-item-product-title': customField.name === 'Name'}">
 
                     <!-- Name -->
-                    <div ng-if="customField.name === 'Name'">
+                    <div ng-if="customField.name === 'Name'" class="cpq-product-name-block">
                         <button class="slds-button cpq-item-has-children" aria-controls="tree0-node1"
                             ng-click="childProdState.show = !childProdState.show"
                             ng-hide="!(obj.lineItems.records || obj.childProducts.records || obj.productGroups.records || (attrs.lineItemModal && obj.attributeCategories.records.length > 0))">
-                            <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'switch'" extra-classes="'slds-button__icon_left'" 
-                                ng-class="{'cpq-fix-slds-close-switch' : !childProdState.show}"></slds-button-svg-icon>
+                            <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'switch'" extra-classes="'slds-button__icon_left slds-float_left'" ng-class="{'cpq-fix-slds-close-switch' : !childProdState.show}"></slds-button-svg-icon>
                             <span class="slds-assistive-text">Toggle</span>
-                            <span class="cpq-product-name">{{obj.PricebookEntry.Product2.Name}}</span>
-
-                            <span title="{{obj[$root.nsPrefix+'Action__c'].value}}">
-                                <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'bookmark'" extra-classes="'slds-button__icon_left'" class="cpq-product-item-bookmark-{{obj[$root.nsPrefix+'Action__c'].value.toLowerCase() || 'null'}}"></slds-button-svg-icon>
-                            </span>    
+                            <span class="cpq-product-name" cpq-translate="Product2.Name">{{obj.PricebookEntry.Product2.Name}}</span> 
                         </button>
-                        <div class="cpq-item-no-children" ng-show="!(obj.lineItems.records || obj.childProducts.records || obj.productGroups.records || (attrs.lineItemModal && obj.attributeCategories.records.length > 0))">
-                            <span>{{obj.PricebookEntry.Product2.Name}}</span>
-                            
-                            <span title="{{obj[$root.nsPrefix+'Action__c'].value}}">
-                                <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'bookmark'" extra-classes="'slds-button__icon_left'" class="cpq-product-item-bookmark-{{obj[$root.nsPrefix+'Action__c'].value.toLowerCase() || 'null'}}" title="Hooray"></slds-button-svg-icon>
-                            </span>
+                        <div class="cpq-item-no-children"
+                             ng-show="!(obj.lineItems.records || obj.childProducts.records || obj.productGroups.records || (attrs.lineItemModal && obj.attributeCategories.records.length > 0))"
+                             cpq-translate="Product2.Name">
+                            {{obj.PricebookEntry.Product2.Name}}
+                        </div>
+
+                        <!-- Icons -->
+                        <div class="cpq-product-icon-block">
+                            <div title="{{obj[$root.nsPrefix+'Action__c'].value}}">
+                                <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'bookmark'" class="cpq-product-item-bookmark-{{obj[$root.nsPrefix+'Action__c'].value.toLowerCase() || 'null'}}"></slds-button-svg-icon>
+                            </div>
                         </div>
                     </div>
 
@@ -78,6 +78,7 @@
                                         <button class="slds-button slds-button_icon-border" aria-haspopup="true"
                                             title="{{::importedScope.customLabels.CPQPaymentChoice}}"
                                             ng-if="obj[customField.fieldName]['actions']['switchpaymentmode']" 
+                                            ng-disabled="obj.orderActive"
                                             ng-click="importedScope.openAdjustmentModal(obj[customField.fieldName], 'switchpayment', obj)">
                                             <slds-button-svg-icon sprite="'utility'" icon="'moneybag'"></slds-button-svg-icon>
                                             <span class="slds-assistive-text">{{::importedScope.customLabels.CPQPaymentChoice}}</span>
@@ -113,9 +114,10 @@
                             <div class="slds-popover slds-nubbin_bottom-left cpq-price-actions-popover" role="dialog" ng-show="showPopover && (obj[customField.fieldName]['actions']['applyadjustment'] || obj[customField.fieldName]['actions']['pricedetail'] || obj[customField.fieldName]['actions']['switchpaymentmode'])">
                                 <div class="slds-popover__body cpq-price-actions-popover__body">
                                     <div class="slds-button-group" role="group">
-                                        <button class="slds-button slds-button_icon-border" ng-disabled="obj.orderActive"
+                                        <button class="slds-button slds-button_icon-border" 
                                             title="{{::importedScope.customLabels.CPQChangePrice}}"  
                                             ng-if="obj[customField.fieldName]['actions']['applyadjustment']"
+                                            ng-disabled="obj.orderActive"
                                             ng-click="importedScope.openAdjustmentModal(obj[customField.fieldName], 'applyadjustment', obj)">
                                             <slds-button-svg-icon sprite="'utility'" icon="'edit'"></slds-button-svg-icon>
                                             <span class="slds-assistive-text">{{::importedScope.customLabels.CPQChangePrice}}</span>
@@ -130,6 +132,7 @@
                                         <button class="slds-button slds-button_icon-border" aria-haspopup="true"
                                             title="{{::importedScope.customLabels.CPQPaymentChoice}}"
                                             ng-if="obj[customField.fieldName]['actions']['switchpaymentmode']" 
+                                            ng-disabled="obj.orderActive"
                                             ng-click="importedScope.openAdjustmentModal(obj[customField.fieldName], 'switchpayment', obj)">
                                             <slds-button-svg-icon sprite="'utility'" icon="'moneybag'"></slds-button-svg-icon>
                                             <span class="slds-assistive-text">{{::importedScope.customLabels.CPQPaymentChoice}}</span>
@@ -143,7 +146,8 @@
                     <!-- Promotions -->
                     <div ng-if="customField.type === 'promo'">
                         <div ng-repeat="promoItem in obj[customField.fieldName].records" ng-attr-title="{{promoItem.Name}}" class="cpq-promo-text-wrap" ng-class="{'cpq-promo-name-strike': importedScope.isPromoActionDisconnect(promoItem)}">
-                            {{promoItem.Name}}{{$last ? '' : ', '}}
+                            <span cpq-translate="Promotion.Name">{{promoItem.Name}}</span>
+                            {{$last ? '' : ', '}}
                         </div>
                     </div> 
 

@@ -15,17 +15,6 @@
                     "query": "SELECT Id, Name, BillingAddress, Phone, PhotoURL, Website FROM Account WHERE Id = '{{params.id}}'"
                 }
             },
-            "definedActions": [
-                {
-                    "actionIds": [
-                        {
-                            "id": "Add",
-                            "type": "Vlocity Action"
-                        }
-                    ],
-                    "filter": "$scope.data.status == 'active'"
-                }
-            ],
             "filter": {
                 "attributes": {
                     "type": "Account"
@@ -85,17 +74,6 @@
                     "query": ""
                 }
             },
-            "definedActions": [
-                {
-                    "actionIds": [
-                        {
-                            "id": "Add",
-                            "type": "Vlocity Action"
-                        }
-                    ],
-                    "filter": "$scope.data.status == 'active'"
-                }
-            ],
             "filter": {
                 "attributes": {
                     "type": "Account"

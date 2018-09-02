@@ -129,7 +129,7 @@
                             "%vlocity_namespace%__FieldApiName__c": "%vlocity_namespace%__MinQuantity__c",
                             "%vlocity_namespace%__GlobalKey__c": "be85ac27-a64c-49e3-793f-a1edc1968f7f",
                             "%vlocity_namespace%__IsActive__c": true,
-                            "%vlocity_namespace%__IsRequired__c": false,
+                            "%vlocity_namespace%__IsRequired__c": true,
                             "%vlocity_namespace%__ObjectSectionId__c": {
                                 "VlocityDataPackType": "VlocityMatchingKeyObject",
                                 "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__ObjectSection__c/b70c5b20-528c-4c8d-e4b0-54618ff4c644",
@@ -149,7 +149,7 @@
                             "%vlocity_namespace%__FieldApiName__c": "%vlocity_namespace%__Quantity__c",
                             "%vlocity_namespace%__GlobalKey__c": "da16864a-99aa-749c-c770-6f9bf0dbfe22",
                             "%vlocity_namespace%__IsActive__c": true,
-                            "%vlocity_namespace%__IsRequired__c": false,
+                            "%vlocity_namespace%__IsRequired__c": true,
                             "%vlocity_namespace%__ObjectSectionId__c": {
                                 "VlocityDataPackType": "VlocityMatchingKeyObject",
                                 "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__ObjectSection__c/b70c5b20-528c-4c8d-e4b0-54618ff4c644",
@@ -169,7 +169,7 @@
                             "%vlocity_namespace%__FieldApiName__c": "%vlocity_namespace%__MaxQuantity__c",
                             "%vlocity_namespace%__GlobalKey__c": "39ea7f66-0241-a914-1fef-6e3ffc82d5d9",
                             "%vlocity_namespace%__IsActive__c": true,
-                            "%vlocity_namespace%__IsRequired__c": false,
+                            "%vlocity_namespace%__IsRequired__c": true,
                             "%vlocity_namespace%__ObjectSectionId__c": {
                                 "VlocityDataPackType": "VlocityMatchingKeyObject",
                                 "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__ObjectSection__c/b70c5b20-528c-4c8d-e4b0-54618ff4c644",

@@ -1,9 +1,10 @@
-<div class="via-slds">
+<div class="via-slds" ng-controller="listCardCanvasSldsController">
     <div class="slds-card slds-m-bottom--small">
         <div class="slds-card__header slds-grid slds-grid--vertical-align-center">
             <div class="slds-media slds-media--center slds-has-flexi-truncate">
               <div class="slds-media__figure">
-                  <vloc-card-icon data="data" obj="obj" size="'medium'"></vloc-card-icon>
+                  <vloc-card-icon data="cards[0]" obj="cards[0].obj" ng-if="!cardIcon" size="'medium'"></vloc-card-icon>
+                  <slds-svg-icon ng-if="cardIcon" sprite="cardIcon.sprite" icon="cardIcon.icon" size="'small'" extra-classes="'slds-icon-' + cardIcon.sprite + '-' + cardIcon.icon" no-hint="true" \></slds-svg-icon>
               </div>
               <div class="slds-media__body slds-truncate">
                 <a href="javascript:void(0);" class="slds-text-link--reset" tooltip-placement="bottom" tooltip="{{layoutName}}">

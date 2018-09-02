@@ -3,8 +3,8 @@
         <div class="slds-media__body">
             <div class="slds-grid slds-wrap">
                 <div class="slds-col slds-small-size_10-of-12 slds-medium-size_10-of-12 slds-large-size_10-of-12">
-                    <p class="slds-tile__title slds-truncate cpq-product-name">
-                        {{::obj.Name.value}}
+                    <p class="slds-tile__title slds-truncate cpq-product-name" cpq-translate="Product2.Name">
+                      {{::obj.Name.value}}
                     </p>
                 </div>
                 <div class="slds-colslds-small-size_2-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
@@ -20,32 +20,29 @@
                             <span class="cpq-price-label">
                             {{::obj | resolveCustomField:'RecurringPrice__c':'label' | uppercase}}
                             </span>
-                            <span class="slds-text-body_small">
+                            <span class="slds-text-body_small" cpq-translate="PriceListEntry.DisplayText">
                                 {{::importedScope.getPriceValue(obj, importedScope.nsPrefix+'RecurringPrice__c')}}
                             </span>
                         </div>
                         <span class="cpq-price-label">{{::obj['UnitPrice']['label'] | uppercase}} </span>
-                        <span class="slds-text-body_small"> 
+                        <span class="slds-text-body_small" cpq-translate="PriceListEntry.DisplayText"> 
                             {{::importedScope.getPriceValue(obj, 'UnitPrice')}}
                         </span>
-                        <span ng-if="::obj[$root.nsPrefix + 'OneTimeLoyaltyPrice__c']">
+                        <span ng-if="::(obj[$root.nsPrefix + 'OneTimeLoyaltyPrice__c'].value || obj.LoyaltyCode)">
                             <span class="slds-text-body_small">
-                                &nbsp;{{::importedScope.customLabels.CPQOr}}
+                                &nbsp;{{::importedScope.customLabels.CPQOr}}&nbsp;
                             </span>
-                            <span class="slds-text-body_small cpq-loyalty-points">
-                                &nbsp;{{::obj[$root.nsPrefix + 'OneTimeLoyaltyPrice__c'].value}} 
-                            </span>
-                            <span class="slds-text-body_small cpq-loyalty-points">
-                                {{::obj.LoyaltyCode}}
+                            <span class="slds-text-body_small cpq-loyalty-points" cpq-translate="PriceListEntry.DisplayText">
+                                {{::(obj[$root.nsPrefix + 'OneTimeLoyaltyPrice__c'].value || obj.LoyaltyCode) }} 
                             </span>
                         </span>
                         <div class="cpq-item-product-messages">
                             <ul ng-if="obj.messages.length > 0">
                                 <li ng-repeat="msg in obj.messages" class="slds-p-vertical_xx-small">
-                                    <span class="cpq-error-msg" ng-if="msg.severity === 'ERROR'">
+                                    <span class="cpq-error-msg" ng-if="msg.severity === 'ERROR'" cpq-translate="Product2.Name">
                                         {{msg.message}}
                                     </span>
-                                    <span class="cpq-warning-msg" ng-if="msg.severity !== 'ERROR'">
+                                    <span class="cpq-warning-msg" ng-if="msg.severity !== 'ERROR'" cpq-translate="Product2.Name">
                                         {{msg.message}}
                                     </span>
                                 </li>

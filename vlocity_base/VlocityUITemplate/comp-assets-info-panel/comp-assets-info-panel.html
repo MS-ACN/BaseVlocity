@@ -14,14 +14,15 @@
              <div ng-repeat="attributeObj in importedScope.attributesObj">
                 <div class="slds-section">
                     <div class="slds-section__title">
-                        <h3>{{attributeObj.Name}}</h3>
+                        <h3 cpq-translate="AttributeCategory.Name">{{attributeObj.Name}}</h3>
                     </div>
                 </div>
                 <div ng-repeat="attribute in attributeObj.productAttributes.records">
-                    <span class="slds-form-element__label slds-text-body_regular">{{attribute.label}}:</span>
+                    <span class="slds-form-element__label slds-text-body_regular" cpq-translate="Attribute.Name">{{attribute.label}}</span>
 
                     <span class="assets-info-attr-value">
-                        <span ng-if="attribute.inputType !== 'dropdown' && attribute.inputType !=='radio' && attribute.inputType !=='checkbox' && attribute.inputType !=='date'">
+                        <span ng-if="attribute.inputType !== 'dropdown' && attribute.inputType !=='radio' && attribute.inputType !=='checkbox' && attribute.inputType !=='date'"
+                        cpq-translate="Attribute.Value">
                             {{attribute.userValues}}
                         </span>
 
@@ -32,24 +33,24 @@
                         <span ng-if="attribute.inputType==='dropdown' || attribute.inputType==='radio' || attribute.inputType==='checkbox'">
                             <span ng-if="!attribute.multiselect">
                                 <span ng-repeat="valueObj in attribute.values" ng-if="valueObj.value === attribute.userValues">
-                                    {{valueObj.label}}
+                                    {{valueObj.label | CPQTranslateFilter:'Attribute.Name' }}
                                 </span>
                             </span>
                             <span ng-if="attribute.multiselect && attribute.inputType !=='checkbox'">
                                 <span ng-repeat="valueObj in attribute.values">
                                     <span ng-repeat="userValue in attribute.userValues" ng-if="valueObj.value === userValue">
-                                        <span ng-if="!$first">, </span>{{valueObj.label}}
+                                        <span ng-if="!$first">, </span><span cpq-translate="Attribute.Name">{{valueObj.label}}</span> 
                                     </span>
                                 </span>
                             </span>
                             <!-- Handle checkboxes of type multi select -->
                             <span ng-if="attribute.multiselect && attribute.inputType ==='checkbox'">
                                 <span ng-repeat="valueObj in attribute.values|filter:{'selected':true}">
-                                    <span  ng-if="!$first">, </span>{{valueObj.label}}
+                                    <span  ng-if="!$first">, </span><span cpq-translate="Attribute.Name">{{valueObj.label}}</span>
                                 </span>
                             </span>
                             <!-- Handle checkboxes of type only checkbox -->
-                            <span ng-if="!attribute.multiselect && attribute.inputType ==='checkbox'">
+                            <span ng-if="!attribute.multiselect && attribute.inputType ==='checkbox'" cpq-translate="Attribute.Value">
                                {{attribute.userValues}}
                             </span>
                         </span>
