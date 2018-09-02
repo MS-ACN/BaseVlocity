@@ -1,0 +1,10 @@
+{
+    "Cards": [
+        "xom-opv-card-items-container"
+    ],
+    "templates": {
+        "0": {
+            "templateUrl": "xom-opv-container"
+        }
+    }
+}

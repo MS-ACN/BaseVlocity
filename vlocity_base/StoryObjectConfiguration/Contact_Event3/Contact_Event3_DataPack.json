@@ -20,7 +20,7 @@
     "%vlocity_namespace%__StoryObjectLookupField__c": "WhoId",
     "%vlocity_namespace%__StoryObjectName__c": "Event",
     "%vlocity_namespace%__StoryObjectReferenceId__c": "",
-    "%vlocity_namespace%__StoryObjectSortField__c": "ActivityDate",
+    "%vlocity_namespace%__StoryObjectSortField__c": "StartDateTime",
     "%vlocity_namespace%__SummaryFields__c": "Title:Subject,Title_Highlight:Type,Subtitle:Location",
     "Name": "Contact_Event3",
     "VlocityDataPackType": "SObject",

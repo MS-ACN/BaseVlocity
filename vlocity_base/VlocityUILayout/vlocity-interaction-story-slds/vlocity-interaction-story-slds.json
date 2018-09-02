@@ -1,30 +1,31 @@
 {
     "Cards": [
-        "Campaign Story",
-        "Case Story",
-        "Claim Story",
-        "Event Story",
-        "Non Held Policy Story",
-        "Note Story",
-        "Opportunity Story",
-        "Policy Story",
-        "Saved OmniScript Story",
-        "Task Story"
+        "Interaction Campaign Story",
+        "Interaction Case Story",
+        "Interaction Claim Story",
+        "Interaction Event Story",
+        "Interaction Non Held Policy Story",
+        "Interaction Note Story",
+        "Interaction Opportunity Story",
+        "Interaction Policy Story",
+        "Interaction Task Story",
+        "Interaction Saved OmniScript Story",
+        "Interaction Customer Interaction Story"
     ],
     "dataSource": {
         "contextVariables": [
             {
                 "name": "attrs.contextId",
-                "val": "00141000005MbhP"
+                "val": "001o0000006wbnk"
             }
         ],
         "type": "Dual",
         "value": {
             "apexRemoteResultVar": "Stories",
             "apexRestResultVar": "Stories",
-            "endpoint": "/%vlocity_namespace%/v1/story/{{attrs.contextId}}?pageSize={{pageSize}}",
+            "endpoint": "/%vlocity_namespace%/v1/story/{{attrs.contextId}}?pageSize=10",
             "inputMap": {
-                "pageSize": "3",
+                "pageSize": "10",
                 "storyId": "{{attrs.contextId}}"
             },
             "methodType": "GET",

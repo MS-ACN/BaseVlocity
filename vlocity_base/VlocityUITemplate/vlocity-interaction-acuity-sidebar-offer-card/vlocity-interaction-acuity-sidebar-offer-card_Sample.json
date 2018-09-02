@@ -5,7 +5,7 @@
         "fields": [
             {
                 "label": "Launch URL",
-                "name": "offer.%vlocity_namespace%__ResourceTargetURL__c"
+                "name": "offer.ResourceTargetURL__c"
             }
         ],
         "title": "Card Title"

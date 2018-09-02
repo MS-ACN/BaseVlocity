@@ -10,6 +10,7 @@ vlocity.cardframework.registerModule.controller('searchItemsTplController', ['$r
 
         $scope.getSearchItems = function(obj, viewValue) {
             var searchActionObj = obj.actions.getproducts;
+            var inCartQuantityMap = obj[$rootScope.nsPrefix + 'InCartQuantityMap__c'];
 
             if (!viewValue) {
                 return;
@@ -17,6 +18,11 @@ vlocity.cardframework.registerModule.controller('searchItemsTplController', ['$r
 
             searchActionObj.remote.params.query = viewValue;
             searchActionObj.rest.params.query = viewValue;
+
+            if (typeof inCartQuantityMap != 'undefined') {
+                searchActionObj.remote.params.inCartQuantityMap = inCartQuantityMap;
+                searchActionObj.rest.params.inCartQuantityMap = inCartQuantityMap;
+            }
 
             return CPQService.invokeAction(searchActionObj).then(
                 function(data) {

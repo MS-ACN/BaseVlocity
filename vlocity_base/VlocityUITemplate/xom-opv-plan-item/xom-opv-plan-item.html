@@ -1,0 +1,13 @@
+<div ng-init="cardItem=$parent.$parent.$parent.item;">
+<div style="height:{{importedScope.service.attributMaxSize*20}}px;" class="opv_cardItem">
+     {{importedScope.getItemText(cardItem)}}<br>
+     {{cardItem.additionalName}}
+<!--div ng-repeat="attr in obj['OrcAttributes']['OrcAttributeItems']"> 
+    <div ng-if="attr.type==cardItem.type" ng-repeat="attrVal in attr.attributes|limitTo:importedScope.service.attributMaxSize">
+       {{attrVal}}
+   </div>
+    
+</div -->
+</div>
+<div class="viewMore" ng-click="importedScope.viewMore(cardItem);">View More </div> 
+</div>

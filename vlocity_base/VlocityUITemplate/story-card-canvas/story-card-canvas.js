@@ -85,13 +85,13 @@ vlocity.cardframework.registerModule
             }
         });
 
-        var loadingSpinner = $('.loading-row[data-name="' + $scope.layoutName +'"]');
+        var loadingSpinner = $('.loading-row[data-name="' + $scope.uniqueLayoutId +'"]');
         var intervalHolder = $interval(function() {
             if (!$scope.records) {
                 return;
             }
             if (loadingSpinner.length == 0) {
-                loadingSpinner = $('.loading-row[data-name="' + $scope.layoutName +'"]');
+                loadingSpinner = $('.loading-row[data-name="' + $scope.uniqueLayoutId +'"]');
             }
             if (loadingSpinner.length > 0 && loadingSpinner.get(0).style.display != 'none') {
                 var boundingClientRect = loadingSpinner[0].getBoundingClientRect();
@@ -134,7 +134,7 @@ vlocity.cardframework.registerModule
                     false,
                     true
                 ).then(function(records) {
-                    if (!records[records.length -1] || records[records.length -1].Id === currentRequestLastObj) {
+                    if (!records || !records[records.length -1] || records[records.length -1].Id === currentRequestLastObj) {
                         // hide spinner since we didn't load anything new
                         loadingSpinner.hide();
                         self.searchComplete = true;

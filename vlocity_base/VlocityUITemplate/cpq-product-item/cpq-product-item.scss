@@ -28,6 +28,7 @@
                 line-height: 30px;
                 color: #0070d2;
             }
+
             .product-price div {
                 padding-right: $cpq-padding-large-horizontal;
                 padding-top:$cpq-padding-large-vertical;
@@ -41,6 +42,17 @@
                 }
             }
             
+            .product-price .cpq-item-product-messages {
+                font-size: 95%;
+
+                .cpq-error-msg {
+                    color: $error;
+                }
+                .cpq-warning-msg {
+                    color: $warning;
+                }
+            }
+
             .offers-count {
                 background-color: #FDB734;
                 color: white;

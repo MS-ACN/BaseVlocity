@@ -1,16 +1,34 @@
-.via-slds .slds-table:not(.slds-no-row-hover) tbody tr.detail-row:hover {
-        >th {
-        background-color: white;
-        }
-       &>td{
-            background-color: white;
-        }
-}
-
-.cell-header{
-    color: #0070d2;
-}
-
-.total-border{
-    border-top: 2px solid #d8dde6;
+.vlocity { 
+	.cpq-product-cart-item-cell-detail {
+		.cpq-details-table {
+			border-bottom: none;
+		}
+		.via-slds .cpq-details-table:not(.slds-no-row-hover) tbody tr.cpq-detail-row:hover {
+	        >th {
+	        	background-color: white;
+	        }
+	        &>td {
+	            background-color: white;
+	        }
+		}
+		.cpq-cell-header {
+		    color: #0070d2;
+		    white-space: normal; //HYB-1624
+		}
+		.cpq-total-border {
+		    border-top: 2px solid #d8dde6;
+		}
+		.cpq-delete-spinner-position {
+			position: absolute;
+			bottom: 18px; 
+			right: 12px;
+		}
+		.cpq-delete-button-position {
+			position: absolute;
+			bottom: 3px
+		}
+		.cpq-detail-show-more {
+			border-top: 2px solid #d8dde6;
+		}
+	}	
 }

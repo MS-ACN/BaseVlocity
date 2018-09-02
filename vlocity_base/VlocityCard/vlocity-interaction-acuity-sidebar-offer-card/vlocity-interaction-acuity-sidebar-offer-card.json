@@ -8,18 +8,18 @@
         ],
         "type": "ApexRemote",
         "value": {
-            "endpoint": "/services/apexrest/v1/acuity/offers?contextId={{params.id}}&pageSize=2",
+            "endpoint": "/services/apexrest/%vlocity_namespace%/v1/acuity/offers?contextId={{params.id}}&pageSize=2",
             "inputMap": {
                 "interactionId": "{{params.id}}",
-                "offerEndPoint": "/services/apexrest/v1/acuity/offers"
+                "offerEndPoint": "/services/apexrest/%vlocity_namespace%/v1/acuity/offers"
             },
             "methodType": "GET",
             "optionsMap": {
-                "vlcClass": "GetInteractionAcuityOffer"
+                "vlcClass": "%vlocity_namespace%.GetInteractionAcuityOffer"
             },
             "remoteClass": "GetInteractionAcuityOffer",
             "remoteMethod": "getInteractionOffers",
-            "remoteNSPrefix": "",
+            "remoteNSPrefix": "%vlocity_namespace%",
             "resultVar": "records"
         }
     },

@@ -1,6 +1,11 @@
 vlocity.cardframework.registerModule
     .controller('viaAcuitySidebarOfferCard',
-                ['$scope', '$timeout', function($scope, $timeout) {
+                ['$scope', '$rootScope', 'interactionTracking',
+                    function($scope, $rootScope, interactionTracking) {
+
+        var lightningNsPrefix = $scope.nsPrefix.replace('__', ':'),
+            collectedChanges = [];
+
         this.getImageUrl = function(obj) {
             if (!obj) {
                 return null;
@@ -15,7 +20,7 @@ vlocity.cardframework.registerModule
                     return false;
                 }
             });
-            return '/servlet/servlet.FileDownload?file=' +imageId;
+            return ($rootScope.instanceUrl  || '') + '/servlet/servlet.FileDownload?file=' +imageId;
         };
 
         this.getTags = function(obj) {
@@ -30,40 +35,111 @@ vlocity.cardframework.registerModule
             }, []);
         };
 
+        this.dismissOffer = function(obj, card, $event) {
+            var interactionData = interactionTracking.getDefaultTrackingData($scope);
+            var eventData = {
+                'TrackingService': 'Acuity',
+                'TrackingEvent' : 'Reject',
+                'ContextId' : obj.contextId,
+                'ResourceId' : obj.resourceId,
+                'ScaledRawScore' : obj.scaledRawScore,
+                'CurrentMachine' : obj.currentMachine,
+                'TargetObjectType' : obj.targetObjectType,
+                'TargetObjectKey' : obj.targetObjectKey
+            };
+            interactionData = angular.extend(interactionData, eventData);
+            interactionTracking.addInteraction(interactionData);
+            $event.stopPropagation();
+            $scope.$emit($scope.data.layoutName+'.events', {
+                event: 'removeCard',
+                message: $scope
+            });
+        };
+
+        $scope.$on('$destroy', removeHandlers);
+
+        function removeHandlers(justRemoveLightning) {
+            if (typeof $A !== 'undefined') {
+                try {
+                $A.eventService.removeHandler({
+                    "event": lightningNsPrefix + "profileAttributeValueUpdatedEvent",
+                    "handler": profileAttributeValueUpdatedEventHandler,
+                    "globalId": $scope.layoutName + "-profileAttributeValueUpdatedEvent"
+                });
+                $A.eventService.removeHandler({
+                    "event": lightningNsPrefix + "profileAttributeCategoryUpdatedEvent",
+                    "handler": profileAttributeCategoryUpdatedEventHandler,
+                    "globalId": $scope.layoutName + "-profileAttributeCategoryUpdatedEvent"
+                });
+                $A.eventService.removeHandler({
+                    "event": lightningNsPrefix + "profileNavigationEvent",
+                    "handler": profileNavigationEventHandler,
+                    "globalId": $scope.layoutName + "-profileNavigationEvent"
+                });
+                } catch (e) {}
+            }
+            if (window.sforce && sforce.console && sforce.console.isInConsole() && justRemoveLightning !== true) {
+                try {
+                    sforce.console.removeEventListener('refreshActivityLog',  profileAttributeValueUpdatedEventHandler);
+                } catch (e) {}
+            }
+        }
+
+        function profileNavigationEventHandler(event) {
+            var navigateFrom = event.getParam('navigateFrom'),
+                navigateTo = event.getParam('navigateTo');
+            if (navigateFrom === 'slide-to-profiler-edit' && collectedChanges.length > 0) {
+                $scope.bypassTemplateRefresh = true;
+                $rootScope.$broadcast($scope.data.layoutName+'.events', {
+                    event: 'reload',
+                    message: []
+                });
+            } else {
+                collectedChanges = [];
+            }
+        }
+
+        function profileAttributeCategoryUpdatedEventHandler(event) {
+            collectedChanges.push(event);
+        }
+
+        function profileAttributeValueUpdatedEventHandler(event) {
+            $scope.bypassTemplateRefresh = true;
+            $rootScope.$broadcast($scope.data.layoutName+'.events', {
+                event: 'reload',
+                message: []
+            });
+        }
+
         function registerLightningEventHandler() {
+            if (window.sforce && sforce.console && sforce.console.isInConsole()) {
+                try {
+                    sforce.console.removeEventListener('refreshActivityLog',  profileAttributeValueUpdatedEventHandler);
+                    sforce.console.addEventListener('refreshActivityLog',  profileAttributeValueUpdatedEventHandler);
+                } catch (e) {}
+            }
             if (typeof $A === 'undefined') {
-                $timeout(registerLightningEventHandler, 1000);
+                setTimeout(registerLightningEventHandler, 1000);
                 return;
             }
-            var lightningNsPrefix = $scope.nsPrefix.replace('__', ':'),
-                collectedChanges = [];
+            // only register one set
+            removeHandlers(true);
             $A.eventService.addHandler({
                 "event": lightningNsPrefix + "profileAttributeValueUpdatedEvent",
-                "handler": function(event) {
-                    $scope.$parent.$parent.$parent.sObjects = null;
-                    $scope.reloadCard();
-                }
+                "handler": profileAttributeValueUpdatedEventHandler,
+                "globalId": $scope.layoutName + "-profileAttributeValueUpdatedEvent"
             });
 
             $A.eventService.addHandler({
                 "event": lightningNsPrefix + "profileAttributeCategoryUpdatedEvent",
-                "handler": function(event) {
-                    collectedChanges.push(event);
-                }
+                "handler": profileAttributeCategoryUpdatedEventHandler,
+                "globalId": $scope.layoutName + "-profileAttributeCategoryUpdatedEvent"
             });
             
             $A.eventService.addHandler({
                 "event": lightningNsPrefix + "profileNavigationEvent",
-                "handler": function(event) {
-                    var navigateFrom = event.getParam('navigateFrom'),
-                        navigateTo = event.getParam('navigateTo');
-                    if (navigateFrom === 'slide-to-profiler-edit' && collectedChanges.length > 0) {
-                        $scope.$parent.$parent.$parent.sObjects = null;
-                        $scope.reloadCard();
-                    } else {
-                        collectedChanges = [];
-                    }
-                }
+                "handler": profileNavigationEventHandler,
+                "globalId": $scope.layoutName + "-profileNavigationEvent"
             });
         }
 

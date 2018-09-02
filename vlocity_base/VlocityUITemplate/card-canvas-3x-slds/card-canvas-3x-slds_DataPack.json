@@ -1,7 +1,7 @@
 {
     "%vlocity_namespace%__Author__c": "Vlocity",
     "%vlocity_namespace%__CSS__c": "",
-    "%vlocity_namespace%__CustomJavascript__c": "",
+    "%vlocity_namespace%__CustomJavascript__c": "card-canvas-3x-slds.js",
     "%vlocity_namespace%__Definition__c": "",
     "%vlocity_namespace%__Description__c": "card-canvas-3x-slds\n\nLightning grid layout with a responsive layout:\n\nlarge: 3 columns\nmedium: 2 columns\nsmall: 1 column",
     "%vlocity_namespace%__DisplayOn__c": "All",

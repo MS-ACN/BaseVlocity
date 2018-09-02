@@ -51,7 +51,6 @@
                         </span>
                     </span>
                 </div>
-
              </div>
         </div>
         <div ng-if="importedScope.attributesObj && importedScope.attributesObj.length === 0">
@@ -69,19 +68,19 @@
                  </h3>
                 <div class="slds-section__content">
                     <div class="slds-form--stacked">
-                        <!-- Lookup Item List -->
+                    	<!-- Lookup Item List -->
                         <div class="slds-form-element" ng-repeat="lookupItem in importedScope.lookupItemList">
                             <span class="slds-form-element__label slds-text-body--regular">{{::lookupItem.label}}:</span>
                             <span class="slds-form-element__static">{{lookupItem.displayValue}}</span>
                         </div>
                         <!-- End -->
 
-                        <!-- Editable Item List -->
-                        <div class="slds-form-element" ng-repeat="editableItem in importedScope.editableItemList">
-                            <label class="slds-form-element__label">{{::editableItem.label}}:</label>
-                            <span>{{editableItem.value}}</span>
-                            <span ng-if="editableItem.dataType === 'PERCENT'"> %</span>
-                            <span class="error-msg">{{editableItem.qtyValidationMessage}}</span>
+						<!-- Info  Item List -->
+                        <div class="slds-form-element" ng-repeat="infoItem in importedScope.infoItemList">
+                            <label class="slds-form-element__label">{{::infoItem.label}}:</label>
+                            <span>{{infoItem.value}}</span>  
+                            <span ng-if="infoItem.dataType === 'PERCENT'"> %</span>
+                            <span class="error-msg">{{infoItem.qtyValidationMessage}}</span>    
                         </div>
                         <!-- End -->
                      </div>

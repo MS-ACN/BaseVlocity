@@ -16,14 +16,22 @@ vlocity.cardframework.registerModule.controller('initApiSettingsController', ['$
 
 		// the following settings for API used in Product List
 		'addToCartAPIInProductListRequiresPricing': true,
-		'addToCartAPIInProductListRequiresValidation': true
+		'addToCartAPIInProductListRequiresValidation': true,
+
+		// the following settings for API used in Applied Promotions tab in Cart
+		'deleteAppliedPromotionAPIRequiresPricing': true,
+		'deleteAppliedPromotionAPIRequiresValidation': true
 
 	};
 
 	$rootScope.vlocityCPQ.features = {
 
-        enablePromotions : false,
-        enablePricing: false
+        enablePromotions : true,
+        enablePricing: true,
+        // this determines if context rule engine is used to return list of products / promotions eligible for the cart
+        // setting this to be true will return both "Qualified" and "Unqualified" types of products / promotions
+        // this switch is independent of pricing / promotions switches
+        enableRuleBasedQualifications: true
 
 	};
 

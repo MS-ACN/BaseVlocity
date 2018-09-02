@@ -1,14 +1,15 @@
 {
     "dataSource": {
-        "type": null,
+        "type": "Custom",
         "value": {
+            "body": "{\"doNotRemove\": \"\"}"
         }
     },
     "filter": {
     },
     "states": [
         {
-            "collapse": false,
+            "collapse": true,
             "conditions": [
                 {
                     "field": "$scope.data.status",

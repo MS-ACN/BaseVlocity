@@ -1,4 +1,7 @@
 {
+    "dataSource": {
+        "type": null
+    },
     "filter": {
         "['%vlocity_namespace%__PolicyType__c']": "Variable Annuity"
     },

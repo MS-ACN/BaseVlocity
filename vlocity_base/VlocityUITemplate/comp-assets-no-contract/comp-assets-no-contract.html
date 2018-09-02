@@ -2,7 +2,11 @@
     <div ng-controller="AssetsMainController">
 		<div ng-init="getStateData(cards)"></div>
 	    <vloc-card ng-repeat="card in cards" ctrl="AssetsProductItemController" ng-model="card" data="card" 
-	    	records="records" asset-include-type="{{attrs.assetIncludeType}}" account-id="{{attrs.accountId}}" show-config-panel="{{attrs.showConfigPanel}}" 
+	    	records="records" 
+	    	asset-include-type="{{attrs.assetIncludeType}}" 
+	    	account-id="{{attrs.accountId}}" 
+	    	effective-date="{{attrs.effectiveDate}}"
+	    	show-config-panel="{{attrs.showConfigPanel}}" 
 	    	index="{{$index}}" session-id="{{sessionId}}">
 	    </vloc-card>
 	</div>

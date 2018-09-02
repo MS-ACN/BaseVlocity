@@ -6,17 +6,22 @@
         "contextVariables": [
             {
                 "name": "params.id",
-                "val": "801360000000mgJ"
+                "val": "80136000003IUtX"
+            },
+            {
+                "name": "attrs.includeIneligible",
+                "val": "true"
             }
         ],
         "type": "Dual",
         "value": {
             "apexRemoteResultVar": "records",
             "apexRestResultVar": "records",
-            "endpoint": "/%vlocity_namespace%/v2/cpq/carts/{{params.id}}/products?hierarchy=2&pagesize=10&fields=IsActive,Id,Name,UnitPrice,ProductCode,%vlocity_namespace%__RecurringPrice__c",
+            "endpoint": "/%vlocity_namespace%/v2/cpq/carts/{{params.id}}/products?hierarchy=2&pagesize=10&fields=IsActive,Id,Name,UnitPrice,ProductCode,%vlocity_namespace%__RecurringPrice__c&includeIneligible={{attrs.includeIneligible}}",
             "inputMap": {
                 "cartId": "{{params.id}}",
                 "fields": "IsActive,Id,Name,UnitPrice,ProductCode,%vlocity_namespace%__RecurringPrice__c",
+                "includeIneligible": "{{attrs.includeIneligible}}",
                 "pagesize": "10"
             },
             "methodType": "GET",

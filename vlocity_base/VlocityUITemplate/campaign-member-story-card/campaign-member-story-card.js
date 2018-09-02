@@ -1,6 +1,6 @@
 vlocity.cardframework.registerModule
     .controller('viaTaskController',
-                ['$scope','force', function($scope, force) {
+                ['$scope','force', '$rootScope', '$filter', function($scope, force, $rootScope, $filter) {
 
         $scope.updateTask = function(id, value, obj) {
             obj.loading = true;
@@ -14,6 +14,15 @@ vlocity.cardframework.registerModule
                     delete obj.loading;
                 }
             );
+        };
+
+        $scope.openStory = function(obj) {
+            var toBeLaunchedUrl = obj.navigateLink || ('/' + obj.Id)
+            $scope.performAction({
+                type: 'Custom',
+                isCustomAction: true,
+                url: toBeLaunchedUrl
+            });
         };
 
     }]);

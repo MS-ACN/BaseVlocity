@@ -1,53 +1,72 @@
-<table class="slds-table slds-table--cell-buffer" style="border-bottom:none">
-    <!--TO DO: API FOR "SHOW MORE"
-    <button class="slds-button slds-p-horizontal--xx-small slds-float--right slds-m-right--small" ng-click="show_more !== true ? show_more = true : show_more = false" > show
-          <span ng-if="show_more !== true">more</span><span ng-if="show_more === true">less</span>
-          <span class="slds-assistive-text">Details</span>
-    </button> -->
-  <tbody>
-    <tr ng-repeat="record in importedScope.records" class="detail-row">
-      <th scope="row" class="detail-row">
-        <div class="slds-truncate cell-header">{{record.DetailType}}</div>
-      </th>
-      <td data-label="discoount" class="slds-text-align--right detail-row">
-        <div class="slds-truncate" title="Cloudhub">
-            <span ng-if="record.AdjustmentType === 'Discount'">-</span><span ng-if="record.AdjustmentType === 'Markup'">+</span>
-          <span ng-if="record.AdjustmentMethod === 'Absolute'">
-          {{record.AdjustmentValue | currency}}
-          </span>
-          <span ng-if="record.AdjustmentMethod === 'Percent'">
-            {{record.AdjustmentValue | currency : "%"}}
-           </span>
-          <span ng-if="record.AdjustmentType === 'Override'" class="text-decoration: line-through;">
-                {{record.StartValue | currency}}</span>
-          <span ng-if="!record.AdjustmentValue">
-             <span ng-if="record.AdjustmentMethod === 'Percent'">
-               {{record.EndValue | currency : "%"}}
+<div class="cpq-product-cart-item-cell-detail">
+  <table class="slds-table slds-table--cell-buffer cpq-details-table">
+      <!--TO DO: API FOR "SHOW MORE"
+      <button class="slds-button slds-p-horizontal--xx-small slds-float--right slds-m-right--small" ng-click="show_more !== true ? show_more = true : show_more = false" > show
+            <span ng-if="show_more !== true">more</span><span ng-if="show_more === true">less</span>
+            <span class="slds-assistive-text">Details</span>
+      </button> -->
+    <tbody>
+      <tr ng-repeat="record in importedScope.records" class="cpq-detail-row">
+        <th scope="row" class="cpq-detail-row">
+          <div class="cpq-cell-header">{{record.Description}}</div>
+        </th>
+        <td data-label="discoount" class="slds-text-align--right cpq-detail-row">
+          <div class="slds-truncate" title="Cloudhub">
+            
+            <span ng-if="record.AdjustmentType === 'Discount'">-</span>
+            <span ng-if="record.AdjustmentType === 'Markup'">+</span>
+            
+            <span ng-if="record.AdjustmentMethod === 'Absolute'">
+              {{record.AdjustmentValue | positive | currency}}
             </span>
-            <span ng-if="record.AdjustmentMethod === null">
-            {{record.EndValue | currency}}</span>
-        </div>
-      </td>
-      <td data-label="Agent Name" ng-if="show_more">
-        <div class="slds-truncate" title="Agent Name">{{record.Agent}}</div>
-      </td>
-      <td data-label="Date" ng-if="show_more">
-        <div class="slds-truncate" title="Date">{{record.Date}}</div>
-      </td>
-    </tr>
-    <tr class="detail-row" ng-class="{'total-border': importedScope.records.length > 0}">
-      <th scope="row" data-label="total" class="cell-header">
-        <div class="slds-truncate" title="Cloudhub">{{attrs.cellTitle}}</div>
-      </th>
-      <td class="slds-text-align--right">
-        <div class="slds-truncate" title="Cloudhub">{{attrs.cellValue | currency}}</div>
-      </td>
-     <td data-label="Agent Name" ng-if="show_more" style="border-top: 2px solid #d8dde6">
-        <div class="slds-truncate" title="Cloudhub">{{importedScope.cellAgent}}</div>
-      </td>
-      <td data-label="Date" ng-if="show_more" style="border-top: 2px solid #d8dde6">
-        <div class="slds-truncate" title="Cloudhub">{{importedScope.cellDate}}</div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+            <span ng-if="record.AdjustmentMethod === 'Percent'">
+              {{record.AdjustmentValue | positive }} %
+            </span>
+            <span ng-if="!record.AdjustmentValue">
+              <span ng-if="record.AdjustmentMethod === 'Percent'">
+                {{record.EndValue}} %
+              </span>
+              <span ng-if="record.AdjustmentMethod === null">
+                {{record.EndValue | currency}}
+              </span>
+            </span> 
+
+            <div ng-if="!attrs.readOnly">
+              <button ng-click="importedScope.deleteAppliedAdjustment(record,$index)" ng-show="record.actions.deleteAdjustment && !record.deleting" class="slds-button slds-p-horizontal--xx-small cpq-delete-button-position">
+                  <slds-button-svg-icon sprite="'utility'" icon="'close'"></slds-button-svg-icon>
+                  <span class="slds-assistive-text">{{::importedScope.customLabels.CPQDelete}}</span>
+              </button>
+              <div ng-show="record.actions.deleteAdjustment && record.deleting" class="cpq-delete-spinner-position">
+                <div class="slds-spinner--brand slds-spinner slds-spinner--x-small button-spinner" aria-hidden="false" role="alert">
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+              </div>
+            </div>  
+              
+          </div>
+        </td>
+        <td data-label="Agent Name" ng-if="show_more">
+          <div class="slds-truncate" title="Agent Name">{{record.Agent}}</div>
+        </td>
+        <td data-label="Date" ng-if="show_more">
+          <div class="slds-truncate" title="Date">{{record.Date}}</div>
+        </td>
+      </tr>
+      <tr class="cpq-detail-row" ng-class="{'cpq-total-border': importedScope.records.length > 0}">
+        <th scope="row" data-label="total" class="cpq-cell-header">
+          <div class="slds-truncate" title="Cloudhub">{{attrs.cellTitle}}</div>
+        </th>
+        <td class="slds-text-align--right">
+          <div class="slds-truncate" title="Cloudhub">{{attrs.cellValue | currency}}</div>
+        </td>
+       <td data-label="Agent Name" ng-if="show_more" class="cpq-detail-show-more">
+          <div class="slds-truncate" title="Cloudhub">{{importedScope.cellAgent}}</div>
+        </td>
+        <td data-label="Date" ng-if="show_more" class="cpq-detail-show-more">
+          <div class="slds-truncate" title="Cloudhub">{{importedScope.cellDate}}</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

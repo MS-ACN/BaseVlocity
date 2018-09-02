@@ -1,26 +1,30 @@
-<div class="slds-grid slds-grid--vertical cpq-product-cart">
+<div class="slds-grid slds-grid--vertical cpq-product-cart" ng-init="importedScope.getStateData(cards)">
+
     <div class="slds-spinner_container" ng-show="!isLoaded">
         <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
             <div class="slds-spinner__dot-a"></div>
             <div class="slds-spinner__dot-b"></div>
         </div>
     </div>
-    <div class="slds-col slds-no-flex cpq-product-cart-global-tabs" ng-init="tabSelected = 'Cart'">
+
+    <!-- Tabs and its Contents container using class slds-tabs--default -->
+    <div class="slds-col slds-no-flex slds-tabs--default cpq-product-cart-global-tabs" ng-init="tabSelected = 'Cart'">
+
+        <!-- List of tabs: using class slds-tabs--default__nav -->
         <ul class="slds-tabs--default__nav cpq-product-cart-tabs" role="tablist">
-            <li class="slds-tabs--default__item slds-text-heading--label" title="Item One" role="presentation" ng-class="{'slds-active' : tabSelected === 'Cart'}" ng-click="tabSelected = 'Cart'; importedScope.changePricingView(0)">
-                <a class="slds-tabs--default__link" href="#voi" role="tab" tabindex="0" aria-selected="tabSelected === 'Cart'" aria-controls="tab-default-1" id="tab-default-1__item">{{::importedScope.customLabels.CPQCart}}</a>
+            <li class="slds-tabs--default__item slds-text-heading--label" title="Cart" role="presentation" ng-class="{'slds-active' : tabSelected === 'Cart'}" ng-click="previousTabSelected = tabSelected; tabSelected = 'Cart'; importedScope.changeCustomView(1, cards); importedScope.reloadCart(previousTabSelected);">
+                <a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="tabSelected === 'Cart'" aria-controls="tab-default-1" id="tab-default-1__item">{{::importedScope.customLabels.CPQCart}}</a>
             </li>
-            <li class="slds-tabs--default__item slds-text-heading--label" title="Item One" role="presentation" ng-class="{'slds-active' : tabSelected === 'Pricing'}" ng-click="tabSelected = 'Pricing';  importedScope.changePricingView(importedScope.currentPricingView)" ng-show="$root.pricingViews.cpqPricingViews.length > 1" ng-if="$root.vlocityCPQ.features.enablePricing">
-                <a class="slds-tabs--default__link" href="#voi" role="tab" tabindex="0" aria-selected="tabSelected === 'Pricing'" aria-controls="tab-default-1" id="tab-default-1__item">{{::importedScope.customLabels.CPQCartPricing}}</a>
+            <li class="slds-tabs--default__item slds-text-heading--label" title="Promotions" role="presentation" ng-class="{'slds-active' : tabSelected === 'Promotions'}" ng-click="previousTabSelected = tabSelected; tabSelected = 'Promotions'" ng-show="$root.vlocityCPQ.features.enablePromotions">
+                <a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="tabSelected === 'Promotions'" aria-controls="tab-default-2" id="tab-default-2__item">{{::importedScope.customLabels.CPQPromotions}}</a>
             </li>
-          <!--   <li class="slds-tabs--default__item slds-text-heading--label" title="Item One" role="presentation" ng-class="{'slds-active' : tabSelected === 'Promotions'}" ng-click="tabSelected = 'Promotions'">
-                <a class="slds-tabs--default__link" href="#voi" role="tab" tabindex="0" aria-selected="tabSelected === 'Promotions'" aria-controls="tab-default-1" id="tab-default-1__item">{{::importedScope.customLabels.CPQCartPricing}}</a>
-            </li> -->
         </ul>
-    </div>  
+    </div>   
+     
     <!--The scroll Class is used for mobile devices -->
     <!-- js-cpq-cart-scroll-container unique class is used to scroll the container to an item -->
-    <div class="slds-col cpq-product-cart-items js-cpq-cart-scroll-container scroll" ng-show="tabSelected === 'Cart' || tabSelected === 'Pricing'">
+    <div class="slds-col cpq-product-cart-items js-cpq-cart-scroll-container scroll" ng-show="tabSelected === 'Cart'">
+
         <!--SHOW CART ERRORS-->
         <div class="errors-container-sticky" ng-show="importedScope.cartDataStore.filteredMessages.length > 0">
             <div class="cart-errors slds-section__title border-radius"
@@ -48,51 +52,75 @@
                 </div>
             </div>
         </div>
-
         <!--END CART ERRORS-->
+
         <div ng-class="{'cart-container-padding':importedScope.cartDataStore.filteredMessages.length > 0 && records.length > 0}">
-            <div class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click slds-is-open slds-m-around--small pricing-view-dropdown" ng-show="tabSelected === 'Pricing' && $root.pricingViews.cpqPricingViews" ng-if="$root.vlocityCPQ.features.enablePricing">
-                <div class="slds-form-element">
-                    <label class="slds-form-element__label" for="cpq-pricing-view-button">{{::importedScope.customLabels.CPQCartPricingViews}}</label>
-                </div>
-                <button cpq-dropdown-handler="importedScope.viewOpen = false" id="cpq-pricing-view-button" class="slds-button pricing-view-dropdown-button slds-button--neutral slds-picklist__label slds-p-right--small" aria-haspopup="true" ng-click="importedScope.viewOpen = !importedScope.viewOpen">
-                    <slds-button-svg-icon sprite="'utility'" icon="'down'" extra-classes="'slds-m-top--x-small slds-float--right pricing-view-dropdown-button'"></slds-button-svg-icon>
-                    <span class="slds-truncate" title="Select an Option"><span ng-if="!importedScope.pricingViewLabel">{{$root.pricingViews.cpqPricingViews[1].label}}</span>
-                    <span ng-if="importedScope.pricingViewLabel">{{importedScope.pricingViewLabel}}</span>
-                </button>
-                <div class="slds-dropdown slds-dropdown--left" ng-if="importedScope.viewOpen">
-                    <ul class="slds-dropdown__list slds-dropdown--length-5" role="menu">
-                        <li class="slds-dropdown__item" role="presentation" ng-repeat="pricingView in $root.pricingViews.cpqPricingViews" ng-click="importedScope.changePricingView($index)">
-                            <a ng-if="!$first" href="javascript:void(0);" role="menuitemcheckbox" tabindex="0">
-                                <span class="slds-truncate">{{pricingView.label}}</span>
-                            </a>
-                        </li>
-                    </ul>
+            <!-- CustomViews dropdown for Tab 1 Cart content: using class slds-tabs--default__content -->
+            <div id="tab-default-1" class="slds-tabs--default__content cpq-product-cart-items-tab-content" ng-class="{'slds-show': tabSelected === 'Cart'}" role="tabpanel" aria-labelledby="tab-default-1__item" ng-if="$root.customViews.cpqCustomViews.length > 1">
+                <div class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click slds-is-open slds-m-around--small custom-view-dropdown">
+                    <button cpq-dropdown-handler="importedScope.viewOpen = false" id="cpq-custom-view-button" class="slds-button custom-view-dropdown-button slds-button--neutral slds-picklist__label slds-p-right--small" aria-haspopup="true" ng-click="importedScope.viewOpen = !importedScope.viewOpen">
+                        <slds-button-svg-icon sprite="'utility'" icon="'down'" extra-classes="'slds-m-top--x-small slds-float--right custom-view-dropdown-button'"></slds-button-svg-icon>
+                        <span class="slds-truncate" title="Select an Option">
+                            {{$root.customViews.cpqCustomViews[$root.customViews.currentCustomView].viewName}}
+                        </span>
+                    </button>
+                    <div class="slds-dropdown slds-dropdown--left" ng-if="importedScope.viewOpen">
+                        <ul class="slds-dropdown__list slds-dropdown--length-5" role="menu">
+                            <li class="slds-dropdown__item" role="presentation" ng-repeat="customView in $root.customViews.cpqCustomViews" ng-click="importedScope.changeCustomView($index)">
+                                <a ng-show="$root.customViews.currentCustomView !== $index" href="javascript:void(0);" role="menuitemcheckbox" tabindex="0">
+                                    <span class="slds-truncate">{{customView.viewName}}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="slds-tabs--default" ng-class="{'slds-m-top--small': tabSelected === 'Cart'}">
-                <div id="tab-default-1" class="slds-tabs--default__content cpq-product-cart-items-tab-content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
-                    <vloc-card ng-repeat="card in cards" ctrl="CPQCartItemController" ng-model="card" data="card" records="records" index="{{$index}}" show-product-list="{{attrs.showProductList}}" show-config-panel="{{attrs.showConfigPanel}}"  ng-if="isLoaded" is-last="{{$last}}"></vloc-card>
-                    <div class="slds-grid slds-grid--vertical-align-center slds-grid--align-center cpq-no-cart-items-msg" ng-if="!records || records.length === 0 ">
-                        {{::importedScope.customLabels.CPQCartIsEmpty}}
-                    </div>
-                     <div class="next-product slds-col slds-text-align--center slds-m-vertical--medium" ng-if="session.nextProducts">
-                        <div class="slds-spinner_container" ng-show="loadingMore">
-                            <div class="slds-spinner--brand slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
-                                <div class="slds-spinner__dot-a"></div>
-                                <div class="slds-spinner__dot-b"></div>
-                            </div>
+
+            <!-- Tab 1 Cart content: using class slds-tabs--default__content -->
+            <div id="tab-default-1" class="slds-tabs--default__content cpq-product-cart-items-tab-content slds-m-top--small" ng-class="{'slds-hide': tabSelected === 'Promotions'}" role="tabpanel" aria-labelledby="tab-default-1__item">
+                <vloc-card ng-repeat="card in cards" ctrl="CPQCartItemController" 
+                    ng-model="card" data="card" records="records" index="{{$index}}" 
+                    show-product-list="{{attrs.showProductList}}" 
+                    show-config-panel="{{attrs.showConfigPanel}}"  
+                    ng-if="isLoaded" is-last="{{$last}}">
+                </vloc-card>
+                <div class="slds-grid slds-grid--vertical-align-center slds-grid--align-center cpq-no-cart-items-msg" ng-show="(!records || records.length === 0 ) && isLoaded">
+                    {{::importedScope.customLabels.CPQCartIsEmpty}}
+                </div>
+                 <div class="next-product slds-col slds-text-align--center slds-m-vertical--medium" ng-if="session.nextProducts">
+                    <div class="slds-spinner_container" ng-show="loadingMore">
+                        <div class="slds-spinner--brand slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
                         </div>
-                        <a ng-click="importedScope.nextPage()" ng-if="!loadingMore">
-                          {{::importedScope.customLabels.CPQLoadMore}}
-                        </a>
                     </div>
+                    <a ng-click="importedScope.nextPage()" ng-hide="loadingMore">
+                      {{::importedScope.customLabels.CPQLoadMore}}
+                    </a>
                 </div>
             </div>
         </div>
-            <div id="tab-default-2" class="slds-tabs--default__content cpq-product-cart-items-tab-content slds-hide" role="tabpanel" aria-labelledby="tab-default-2__item">{{::importedScope.customLabels.CPQCartTabTwoContent}}</div>
-            <div id="tab-default-3" class="slds-tabs--default__content cpq-product-cart-items-tab-content slds-hide" role="tabpanel" aria-labelledby="tab-default-3__item">{{::importedScope.customLabels.CPQCartTabThreeContent}}</div>
+
+    </div>
+
+    <!-- Tab 2 Promotion content: using class slds-tabs--default__content -->
+    <!-- js-cpq-cart-scroll-container unique class is used to scroll the container to an item -->
+    <div class="slds-col cpq-product-cart-items js-cpq-cart-scroll-container scroll" ng-if="tabSelected === 'Promotions'">
+        <div id="tab-default-2" class="slds-tabs--default__content cpq-product-cart-items-tab-content" role="tabpanel" aria-labelledby="tab-default-2__item">
+
+            <div class="cpq-cart-promotions-tab-container">
+                <vloc-layout layout-name="cpq-cart-applied-promotions-view" is-loaded="isPromotionTabLoaded"></vloc-layout>
+
+                <div class="slds-text-align--center slds-m-vertical--medium" ng-if="!isPromotionTabLoaded">
+                    <div class="slds-spinner_container">
+                        <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-    <!--<vloc-layout layout-name="cpq-total-bar" ctrl="CPQTotalController" class="cpq-product-cart-order"></vloc-layout>-->
 </div>

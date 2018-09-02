@@ -10,7 +10,7 @@
         ],
         "type": "Query",
         "value": {
-            "query": "SELECT Id, Name, Description, Phone, PhotoUrl, Type, BillingAddress, ShippingAddress, Website, %vlocity_namespace%__CustomerValue__c FROM Account WHERE Id = '{{params.id}}'"
+            "query": "SELECT Id, Name, Description, Phone, PhotoUrl, Type, BillingAddress, ShippingAddress, Website FROM Account WHERE Id = '{{params.id}}'"
         }
     },
     "templates": {

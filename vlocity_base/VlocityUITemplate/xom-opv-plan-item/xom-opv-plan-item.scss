@@ -1,0 +1,11 @@
+.viewMore{
+    cursor:pointer;
+    float:right;
+}
+.opv_cardItem{
+    max-width: 160px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    min-height: 40px;
+}

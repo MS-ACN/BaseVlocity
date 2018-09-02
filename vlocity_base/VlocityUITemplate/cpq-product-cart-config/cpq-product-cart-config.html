@@ -21,7 +21,7 @@
                 <!-- form -->
                 <!--Note: If you modify this if condition, VDF re-render will fail when user clicks and moves to other config. Ensure re rendering is taken care-->
                 <div ng-if="importedScope.attributesObj && importedScope.attributesObj.length > 0 && !importedScope.reRenderAttributesForm">
-                    <vlocity-dynamic-form name="productconfig" form-on-change="importedScope.getModifiedAttributes(e, null, true);"
+                    <vlocity-dynamic-form name="productconfig" form-on-change="importedScope.getModifiedAttributes(e, formValidation, null, true);"
                         ng-model="importedScope.attributesObj" map-object="{{importedScope.mapObject()}}" class="slds-form--stacked" form-auto-save="true">
                     </vlocity-dynamic-form>
                 </div>

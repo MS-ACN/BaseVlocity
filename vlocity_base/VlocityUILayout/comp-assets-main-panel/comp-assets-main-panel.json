@@ -6,11 +6,11 @@
     "dataSource": {
         "contextVariables": [
         ],
-        "type": "Custom",
+        "type": null,
         "value": {
             "apexRemoteResultVar": "records",
             "apexRestResultVar": "records",
-            "body": "{\"doNotRemove\": \"\"}",
+            "body": "",
             "endpoint": "",
             "inputMap": {
                 "accountId": "{{params.id}}"

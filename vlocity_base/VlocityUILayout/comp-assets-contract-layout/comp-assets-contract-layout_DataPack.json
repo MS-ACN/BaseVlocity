@@ -4,7 +4,7 @@
     "%vlocity_namespace%__Definition__c": "comp-assets-contract-layout.json",
     "%vlocity_namespace%__Description__c": "",
     "%vlocity_namespace%__GlobalKey__c": "comp-assets-contract-layout/1/Vlocity/1535904035407",
-    "%vlocity_namespace%__ParentID__c": "",
+    "%vlocity_namespace%__ParentID__c": "comp-assets-contract-flayout/1/Vlocity/1491866991384",
     "%vlocity_namespace%__Type__c": "Flyout",
     "%vlocity_namespace%__Version__c": 1,
     "Name": "comp-assets-contract-layout",

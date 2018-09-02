@@ -5,29 +5,32 @@
 
 <!-- CARDS -->
 <div ng-if="!importedScope.$parent.$parent.filters.show">
-    <div class="slds-spinner_container" ng-if="!isLoaded">
+    <div class="slds-spinner_container" ng-hide="isLoaded">
         <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
             <div class="slds-spinner__dot-a"></div>
             <div class="slds-spinner__dot-b"></div>
         </div>
     </div>
 
-    <vloc-card ng-repeat="card in cards |filter: searchFunc(card)" ctrl="CPQProductItemController" ng-model="card" data="card" 
-        records="records" index="{{$index}}" session-id="{{sessionId}}" ng-if="isLoaded">
+    <vloc-card ng-repeat="card in cards |filter: searchFunc(card)" 
+        ctrl="CPQProductItemController" 
+        ng-model="card" data="card" records="records" 
+        index="{{$index}}" session-id="{{sessionId}}" 
+        ng-if="isLoaded">
     </vloc-card>
 
-    <div class="slds-grid slds-grid--vertical-align-center slds-grid--align-center cpq-no-products-msg" ng-show="!records && isLoaded">
+    <div class="slds-text-align--center slds-m-vertical--medium cpq-no-products-msg" ng-show="!records && isLoaded">
         {{::importedScope.customLabels.CPQProductsNotAvailable}}
     </div>
 
     <div class="next-product slds-col slds-text-align--center slds-m-vertical--medium"  ng-if="session.nextProducts">
-        <div class="slds-spinner_container" ng-if="loadingMore">
+        <div class="slds-spinner_container" ng-show="loadingMore">
             <div class="slds-spinner--brand slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
                 <div class="slds-spinner__dot-a"></div>
                 <div class="slds-spinner__dot-b"></div>
             </div>
         </div>
-        <a ng-click="importedScope.nextPageProducts()" ng-if="!loadingMore">
+        <a ng-click="importedScope.nextPageProducts()" ng-hide="loadingMore || !isLoaded">
           {{::importedScope.customLabels.CPQLoadMore}}
         </a>
     </div>

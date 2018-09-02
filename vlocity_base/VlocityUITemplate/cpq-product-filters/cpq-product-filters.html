@@ -2,21 +2,25 @@
     <!--<pre> {{records | json}}</pre>-->
     <!-- scroll class is added for ionic scroll-->
     <div class="slds-col cpq-product-cart-config-form scroll">
-        <!-- form -->
-        <div class="">
+        <div>
             <button type="button" class="slds-button" ng-click="importedScope.resetFilter(records)">
                 {{::importedScope.customLabels.CPQReset}}
             </button>
-            <button type="button" class="slds-button slds-button--neutral" ng-click="importedScope.submitFilter(records)">
+            <button type="button" class="slds-button slds-button--neutral" ng-disabled='importedScope.isFormInvalid' 
+                    ng-click="importedScope.submitFilter(records)">
                 {{::importedScope.customLabels.CPQApply}}
             </button>
+        </div>    
+        <!-- form -->
+        <div ng-if="records.length > 0">
+            <vlocity-dynamic-form class="slds-form--stacked" 
+                ng-model="records"
+                map-object="{{importedScope.filterMapObject()}}"
+                form-on-change="importedScope.checkFormValidation(e, formValidation);">
+            </vlocity-dynamic-form>
         </div>
         
-        <div ng-if="records.length >0">
-            <vlocity-dynamic-form ng-model="records" map-object="{{importedScope.filterMapObject()}}" class="slds-form--stacked"></vlocity-dynamic-form>
-        </div>
-        
-        <div ng-if="records.length === 0">
+        <div class="slds-text-align--center slds-m-vertical--medium" ng-hide="records.length > 0">
             {{::importedScope.customLabels.CPQFiltersNotAvailable}}
         </div>
     </div>

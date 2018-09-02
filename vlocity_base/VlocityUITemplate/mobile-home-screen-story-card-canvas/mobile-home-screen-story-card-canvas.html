@@ -28,8 +28,7 @@
         </div>
     </div>
     <ul class="via-slds-story-cards--container slds-m-around--small slds-col">
-        <li vloc-card ng-repeat="card in cards | orderBy:
-    '+obj.LastActivityDate'" ctrl="{{ctrl}}" ng-model="card" data="card" records="records" index="{{$index}}" session-id="{{sessionId}}"
+        <li vloc-card ng-repeat="card in cards" ctrl="{{ctrl}}" ng-model="card" data="card" records="records" index="{{$index}}" session-id="{{sessionId}}"
             use-existing-element-type></li>
         <li class="via-slds-story-cards--no-results slds-align--absolute-center slds-text-align--center slds-p-top--large" ng-if="(isLoaded && (!parent || parent.isLoaded) && (!records || records.length == 0))">
             <div>

@@ -4,7 +4,7 @@
     "%vlocity_namespace%__Definition__c": "comp-cart-review.json",
     "%vlocity_namespace%__Description__c": "",
     "%vlocity_namespace%__GlobalKey__c": "comp-cart-review/1/Vlocity/1535904035408",
-    "%vlocity_namespace%__ParentID__c": "",
+    "%vlocity_namespace%__ParentID__c": "cpq-product-cart/1/Vlocity/1491842343252",
     "%vlocity_namespace%__Type__c": "Layout",
     "%vlocity_namespace%__Version__c": 1,
     "Name": "comp-cart-review",

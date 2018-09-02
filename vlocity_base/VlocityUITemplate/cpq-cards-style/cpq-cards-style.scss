@@ -41,40 +41,6 @@
             flex-flow: row nowrap;
             justify-content: flex-end;
 
-            .#{$namespace}-item-base-product-name {
-                flex: 5;
-                padding: 0 $cpq-padding-base-horizontal/2 0 0;
-                
-                .#{$namespace}-item-has-children {
-                    font-size: 13px;
-                    color: $mid-black;
-
-                    &:focus{
-                        box-shadow: none;
-                    }
-
-                    .slds-button__icon {
-                        float: left;
-                        margin: 0.3rem 0.5rem 0 0;
-                    }
-
-                    .#{$namespace}-product-name {
-                        line-height: 1.6;
-                        text-align: left;
-                        max-width: 85%;
-                        float: left;
-                        display: inline-block;
-                        margin-top: 0.125rem;
-                        margin-left: 0;
-                    }
-                }
-
-                .#{$namespace}-item-no-children {
-                    margin-top: 6px;
-                    padding-left: 0;
-                }
-            }
-
             .#{$namespace}-item-base-product-input,
             .#{$namespace}-item-base-product-text,
             .#{$namespace}-item-base-product-string {
@@ -89,7 +55,7 @@
                 min-width: 0;
             }
 
-            .#{$namespace}-item-base-product-currency, .#{$namespace}-item-base-product-promo {
+            .#{$namespace}-item-base-product-currency, .#{$namespace}-item-base-product-promo-field {
                 .slds-popover.#{$namespace}-price-actions-popover {
                     position: absolute;
                     z-index: 999;
@@ -111,7 +77,7 @@
                 }
             }
 
-            .#{$namespace}-item-base-product-currency, .#{$namespace}-item-base-product-promo {
+            .#{$namespace}-item-base-product-currency {
                 flex: 2;
                 position: relative;
                 transition: color 250ms ease-in;
@@ -155,6 +121,70 @@
                     }
                 }
             }
+
+            .#{$namespace}-item-base-product-name-field {
+                flex: 5;
+                padding: 0 $cpq-padding-base-horizontal/2 0 0;
+                
+                .#{$namespace}-product-item-bookmark-change, .#{$namespace}-product-item-bookmark-existing, {
+                    color: $product-item-bookmark-red;
+                }
+                .#{$namespace}-product-item-bookmark-add, .#{$namespace}-product-item-bookmark-null {
+                    color: $product-item-bookmark-blue;
+                }    
+                .#{$namespace}-product-item-bookmark-disconnect {
+                    color: $product-item-bookmark-grayish-blue;
+                }
+                
+                .#{$namespace}-item-has-children {
+                    font-size: 13px;
+                    color: $mid-black;
+
+                    &:focus{
+                        box-shadow: none;
+                    }
+
+                    .slds-button__icon {
+                        float: left;
+                        margin: 0.3rem 0.5rem 0 0;
+                    }
+
+                    .#{$namespace}-product-name {
+                        line-height: 1.6;
+                        text-align: left;
+                        max-width: 85%;
+                        float: left;
+                        display: inline-block;
+                        margin-top: 0.125rem;
+                        margin-left: 0;
+                    }
+                }
+
+                .#{$namespace}-item-no-children {
+                    margin-top: 6px;
+                    padding-left: 0;
+                }
+            }
+
+            .#{$namespace}-item-base-product-promo-field {
+                flex: 4;
+                position: relative;
+                transition: color 250ms ease-in;
+                padding: $cpq-padding-base-vertical $cpq-padding-base-horizontal/2 0 0;
+
+                .#{$namespace}-promo-name-strike {
+                    text-decoration: line-through;
+                }
+            }
+
+            .#{$namespace}-item-base-product-itemname-field {
+                flex: 3;
+                input {
+                    width: 90%;
+                    text-align: left;
+                }
+            }
+
         }
 
         .#{$namespace}-item-currency-value {
@@ -207,8 +237,8 @@
         }
 
         .#{$namespace}-underline {
-             border-bottom: dashed 1px;
-             &.hovered {
+            border-bottom: dashed 1px;
+            &:hover, &.hovered {
                 color: #0070d2;
                 cursor: pointer;
             }

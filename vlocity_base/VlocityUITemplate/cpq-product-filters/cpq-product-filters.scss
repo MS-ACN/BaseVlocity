@@ -13,5 +13,9 @@
         padding: $cpq-padding-large-vertical 0px;
         margin: 0px $cpq-padding-large-horizontal;
 
+		form input::-webkit-input-placeholder {
+			color: $middle-dark-gray;
+		}
+
     }
 }

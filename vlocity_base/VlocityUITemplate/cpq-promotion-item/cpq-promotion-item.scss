@@ -35,7 +35,20 @@
                 .promo-label {
                   font-size: $cpq-cart-item-attr-label-font-size;
                 }
+
             }
+
+            .promo-info .cpq-item-promotion-messages {
+                font-size: 95%;
+
+                .cpq-error-msg {
+                    color: $error;
+                }
+                .cpq-warning-msg {
+                    color: $warning;
+                }
+            }
+
         }
         
         .cpq-promo-actions {
