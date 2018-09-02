@@ -103,7 +103,6 @@ vlocity.cardframework.registerModule
                 }
             }
         }, 500);
-        $scope.layoutName[$scope.layoutName] = intervalHolder;
 
         $scope.$on("$destroy", function() {
             $interval.cancel(intervalHolder);

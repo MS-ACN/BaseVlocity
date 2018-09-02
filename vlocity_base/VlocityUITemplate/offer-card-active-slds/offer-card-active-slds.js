@@ -35,7 +35,6 @@ vlocity.cardframework.registerModule
             $A.eventService.addHandler({
                 "event": lightningNsPrefix + "profileAttributeCategoryUpdatedEvent",
                 "handler": function(event) {
-                    debugger
                     collectedChanges.push(event);
                 }
             });
@@ -45,7 +44,6 @@ vlocity.cardframework.registerModule
                 "handler": function(event) {
                     var navigateFrom = event.getParam('navigateFrom'),
                         navigateTo = event.getParam('navigateTo');
-                        debugger
                     if (navigateFrom === 'slide-to-profiler-edit' && collectedChanges.length > 0) {
                         $scope.reloadCard();
                     } else {

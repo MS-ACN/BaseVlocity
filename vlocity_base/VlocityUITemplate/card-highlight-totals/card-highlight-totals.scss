@@ -1,3 +1,12 @@
+@media (max-width: 479px) and (min-width: 0px) {
+    .via-slds .via-slds-card--highlight-totals.slds-x-small-show-only {
+        display:block !important
+    }
+    .via-slds .via-slds-card--highlight-totals.slds-small-show {
+        display: none !important;
+    }
+}
+
 .via-slds .via-slds-card--highlight-totals {
     
     padding-top: 1em;

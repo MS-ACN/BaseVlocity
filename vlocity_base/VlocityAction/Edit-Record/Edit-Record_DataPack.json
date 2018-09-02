@@ -15,7 +15,7 @@
     "%vlocity_namespace%__OpenURLMode__c": "Current Window",
     "%vlocity_namespace%__StateId__c": "",
     "%vlocity_namespace%__StateModelId__c": "",
-    "%vlocity_namespace%__URL__c": "/{0}/e?retURL=%2Fapex%2FHybridCPQ%3Fid%3D{0}",
+    "%vlocity_namespace%__URL__c": "/{0}/e?retURL=/apex/%vlocity_namespace%__HybridCPQ%3Fid%3D{0}",
     "%vlocity_namespace%__UrlParameters__c": "Id",
     "%vlocity_namespace%__ValidationClassName__c": "",
     "%vlocity_namespace%__ValidationMethodName__c": "",

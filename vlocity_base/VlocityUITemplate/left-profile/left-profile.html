@@ -24,7 +24,7 @@
                 <a href="sms:{{records[0].Phone}}"><i class="icon-v-chat2-line"></i></a>
         </div>
         <div class="profile-links">
-            <a href="#" id="profile-edit" >EDIT PROFILE</a> <span class="separator">|</span><a href="#">VERIFY CALLER</a> <span class="separator">|</span> <a href="#">RESET PASSWORD</a>
+            <a href="#" id="profile-edit" >{{::$root.vlocity.getCustomLabel('EditProfile', 'Edit Profile')}}</a> <span class="separator">|</span><a href="#">{{::$root.vlocity.getCustomLabel('InteractionLauncher_VerifyCaller', 'Verify Caller')}}</a> <span class="separator">|</span> <a href="#">{{::$root.vlocity.getCustomLabel('ResetPassword', 'Reset Password')}}</a>
         </div>
     </div>
 </div>

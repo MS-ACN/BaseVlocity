@@ -1,5 +1,5 @@
-<div class="slds-card via-slds-card--active slds-m-bottom--small" data-card="card-{{cardIndex}}" ng-class="{selected:isSelected(cardIndex)}"  data-popover-flyout="true">
-  <div class="via-slds-card__header slds-card__header slds-grid slds-grid--vertical-align-center slds-p-around--small" ng-click="performFlyout('card-'+cardIndex)">
+<div class="slds-card via-slds-card--active slds-m-bottom--small" data-card="{{uniqueLayoutId}}-card-{{cardIndex}}" ng-class="{selected:isSelected(cardIndex)}"  data-popover-flyout="true">
+  <div class="via-slds-card__header slds-card__header slds-grid slds-grid--vertical-align-center slds-p-around--small" ng-click="performFlyout(uniqueLayoutId + '-card-'+cardIndex)">
     <div class="slds-media slds-media--center slds-has-flexi-truncate">
       <div class="slds-media__figure">
           <vloc-card-icon data="data" obj="obj" size="'medium'"></vloc-card-icon>
@@ -9,7 +9,7 @@
           <span class="slds-text-heading--small">{{data.title}}</span>
         </a>
         <br />
-        <span>{{data.fields[0].label}} {{obj | getter:data.fields[0] | picker:data.fields[0].type}}</span> <span ng-if="obj.LastModifiedDate">| Last Modified: {{obj.LastModifiedDate | picker:'date'}}</span>
+        <span>{{data.fields[0].label}} {{obj | getter:data.fields[0] | picker:data.fields[0].type}}</span> <span ng-if="obj.LastModifiedDate">| {{::$root.vlocity.getCustomLabel('LastModified', 'Last modified')}}: {{obj.LastModifiedDate | picker:'date'}}</span>
       </div>
     </div>
     <div class="slds-no-flex" ng-init="overflowActions = data.actions.slice(data.limitActionLinksTo?data.limitActionLinksTo:5)">

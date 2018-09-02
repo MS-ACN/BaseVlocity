@@ -20,7 +20,7 @@
   </div>
   <div class="slds-small-show slds-card__body via-slds-card__body slds-grid slds-grid--vertical slds-theme--default slds-p-left--small slds-p-right--small">
     <div class="slds-col slds-col--padded slds-grid slds-wrap slds-grid--align-spread">
-      <div class="slds-col--padded slds-size--1-of-5 slds-small-show slds-m-top--medium slds-p-bottom--small via-slds-border--bottom" ng-repeat="field in data.fields.slice(2, 7)" ng-show="key != 'attributes'">
+      <div class="slds-col--padded slds-size--1-of-{{data.fields.length > 7 ? 5 : (data.fields.length-2)}} slds-small-show slds-m-top--medium slds-p-bottom--small via-slds-border--bottom" ng-repeat="field in data.fields.slice(2, 7)" ng-show="key != 'attributes'">
           <div class="slds-truncate slds-text-heading--label" title="{{field.label}}">{{field.label}}</div>
           <div class="slds-truncate slds-text-heading--small" ng-if="!obj[field.relationshipName]">
               {{obj | getter: field | picker: field.type}}
@@ -29,13 +29,6 @@
           </div>
       </div>
     </div>
-    <div class="slds-col slds-col--padded slds-grid slds-wrap slds-grid--vertical-align-center slds-grid--align-spread">
-          <div class="slds-col--padded slds-small-show slds-m-top--medium slds-p-bottom--medium" ng-repeat="action in data.actions | limitTo: (data.limitActionLinksTo?data.limitActionLinksTo:5)">
-              <a href="#" ng-click="performAction(action)">
-                {{action.displayName}}
-              </a>
-          </div>
-      </div>
   </div>
   <div class="slds-x-small-show-only via-slds-x-small-card__body slds-card__body slds-grid slds-grid--vertical slds-theme--default">
     <div class="slds-size--1-of-1 slds-x-small-show-only" ng-repeat="field in data.fields.slice(2)" ng-show="key != 'attributes'">

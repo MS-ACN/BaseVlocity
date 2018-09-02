@@ -1,5 +1,5 @@
 <li class="vlc-list-card-row row">
-<section data-card="card-{{cardIndex}}" ng-class="{selected:isSelected(cardIndex)}" hotkey-layout-card>
+<section data-card="{{uniqueLayoutId}}-card-{{cardIndex}}" ng-class="{selected:isSelected(cardIndex)}" hotkey-layout-card>
   <div class="vlc-list-card">
     <div>
       <div class="col-sm-{{12/(data.fields.length + (data.actions.length  > 0 ? 1 : 0))| number:0}}"

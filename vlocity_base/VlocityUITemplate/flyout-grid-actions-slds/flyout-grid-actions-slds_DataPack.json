@@ -1,7 +1,7 @@
 {
     "%vlocity_namespace%__Author__c": "Vlocity",
     "%vlocity_namespace%__CSS__c": "",
-    "%vlocity_namespace%__CustomJavascript__c": "",
+    "%vlocity_namespace%__CustomJavascript__c": "flyout-grid-actions-slds.js",
     "%vlocity_namespace%__Definition__c": "",
     "%vlocity_namespace%__Description__c": "flyout-grid-actions-slds\n\nDisplays actions in a flyout.",
     "%vlocity_namespace%__DisplayOn__c": "All",

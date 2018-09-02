@@ -3,10 +3,10 @@ vlocity.cardframework.registerModule
                 ['$scope', '$rootScope', '$timeout', function($scope, $rootScope, $timeout) {
 
       function initProfiler() {
-          if (!$Lightning) {
+          if (!window.$Lightning) {
             $timeout(initProfiler, 2000);
           }
-          if ($Lightning) {
+          if (window.$Lightning) {
               var nsPrefix = localStorage.getItem('nsPrefixDotNotation')
               var lightningNsPrefix = nsPrefix.substring(0, nsPrefix.length - 1) + ':';
               var ltngOutVFComponentName = lightningNsPrefix + "ltngOutVF";

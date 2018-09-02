@@ -5,16 +5,16 @@
         <div class="content-details hidden-xs">
             <ul class="details" ng-show="data.fields.length == 0">
                 <li class="detail">
-                    <label class="detail-label">Email</label>
+                    <label class="detail-label">{{::$root.vlocity.getCustomLabel('Email', 'Email')}}</label>
                     <div class="value">{{obj['Email']}}</div>
                 </li>
                 <li class="detail">
-                    <label class="detail-label">Address</label>
+                    <label class="detail-label">{{::$root.vlocity.getCustomLabel('Address', 'Address')}}</label>
                     <div class="value">{{obj['Address']['street']}}</div>
                     <div class="value">{{obj['Address']['city']}}, {{obj['Address']['state']}} {{obj['Address']['postalCode']}}</div>
                 </li>
                 <li class="detail">
-                    <label class="detail-label">Phone</label>
+                    <label class="detail-label">{{::$root.vlocity.getCustomLabel('Phone', 'Phone')}}</label>
                     <div class="value">{{obj['Phone']}}</div>
                 </li>
             </ul>

@@ -1,4 +1,4 @@
-<div class="slds-card via-slds-card--horiz via-slds-card--horiz-actions slds-m-bottom--small" data-card="card-{{cardIndex}}" ng-class="{selected:isSelected(cardIndex)}" data-popover-flyout="true">
+<div class="slds-card via-slds-card--horiz via-slds-card--horiz-actions slds-m-bottom--small" data-card="{{uniqueLayoutId}}-card-{{cardIndex}}" ng-class="{selected:isSelected(cardIndex)}" data-popover-flyout="true">
   <div class="slds-card__header via-slds-card__header slds-grid slds-p-bottom--medium slds-grid--vertical-align-center">
     <div class="slds-media slds-media--center slds-has-flexi-truncate">
       <div class="slds-media__figure">
@@ -38,7 +38,7 @@
               </a>
           </div>
           <div class="slds-col--padded slds-m-top--medium slds-p-bottom--medium">
-            <button class="slds-button" ng-click="performFlyout('card-'+cardIndex)">
+            <button class="slds-button" ng-click="performFlyout(uniqueLayoutId + '-card-'+cardIndex)">
               <slds-button-svg-icon sprite="'utility'" icon="'chevrondown'" no-hint="true" ng-if="!isSelected(cardIndex)"></slds-button-svg-icon>
               <slds-button-svg-icon sprite="'utility'" icon="'chevronup'" no-hint="true" ng-if="isSelected(cardIndex)"></slds-button-svg-icon>
             </button>
@@ -62,7 +62,7 @@
     </div>
   </div>
   <div class="slds-card__footer slds-x-small-show-only">
-    <button class="slds-button" ng-click="performFlyout('card-'+cardIndex)">
+    <button class="slds-button" ng-click="performFlyout(uniqueLayoutId + '-card-'+cardIndex)">
       <span ng-if="!isSelected(cardIndex)">View More</span>
       <span ng-if="isSelected(cardIndex)">View Less</span>
     </button>

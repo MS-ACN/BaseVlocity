@@ -1,4 +1,4 @@
-<div class="via-slds-card--simple slds-theme--{{pickedState.name}} slds-box slds-box--x-small slds-grid--vertical" data-card="card-{{cardIndex}}" ng-class="{selected:isSelected(cardIndex)}" data-embed-flyout=".embed-flyout" ng-click="expandCard = !expandCard">
+<div class="via-slds-card--simple slds-theme--{{pickedState.name}} slds-box slds-box--x-small slds-grid--vertical" data-card="{{uniqueLayoutId}}-card-{{cardIndex}}" ng-class="{selected:isSelected(cardIndex)}" data-embed-flyout=".embed-flyout" ng-click="expandCard = !expandCard">
     <div class="slds-col slds-col--padded  slds-p-bottom--small via-slds-border--bottom">
       <h3 class="slds-section__title via-slds-card--simple__title">{{data.title}}&nbsp;</h3>
     </div>

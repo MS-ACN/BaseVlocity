@@ -1,15 +1,15 @@
 <div class="console-account-info" ng-init="showInfo = true">
     <div class="spacer acct-spacer" ng-click="showInfo = !showInfo">
-        Account <span ng-if="showInfo"><i class="icon-v-down-caret"></i></span>
+        {{::$root.vlocity.getCustomLabel('Account', 'Account')}} <span ng-if="showInfo"><i class="icon-v-down-caret"></i></span>
                 <span ng-if="!showInfo"><i class="icon-v-right-caret"></i></span>
     </div>
     <div class="acct-info" ng-show="showInfo">
         <table>
             <tr>
-                <td><strong>Address:</strong></td> <td>{{records[0].BillingAddress.street}}<br/>{{records[0].BillingAddress.city}} {{records[0].BillingAddress.state}} {{records[0].BillingAddress.postalCode}}</td>
+                <td><strong>{{::$root.vlocity.getCustomLabel('Address', 'Address')}}:</strong></td> <td>{{records[0].BillingAddress.street}}<br/>{{records[0].BillingAddress.city}} {{records[0].BillingAddress.state}} {{records[0].BillingAddress.postalCode}}</td>
             </tr>
             <tr>
-                <td><strong>Phone:</strong></td> <td>{{records[0].Phone}}</td>
+                <td><strong>{{::$root.vlocity.getCustomLabel('Phone', 'Phone')}}:</strong></td> <td>{{records[0].Phone}}</td>
             </tr>
         </table>
         <div class="acct-links">

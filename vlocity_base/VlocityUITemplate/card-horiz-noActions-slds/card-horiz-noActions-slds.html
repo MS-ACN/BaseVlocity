@@ -1,4 +1,4 @@
-<div class="slds-card via-slds-card--horiz slds-m-bottom--small" data-card="card-{{cardIndex}}" ng-class="{selected:isSelected(cardIndex)}" data-popover-flyout="true">
+<div class="slds-card via-slds-card--horiz slds-m-bottom--small" data-card="{{uniqueLayoutId}}-card-{{cardIndex}}" ng-class="{selected:isSelected(cardIndex)}" data-popover-flyout="true">
   <div class="slds-card__header via-slds-card__header slds-grid slds-p-bottom--medium">
     <div class="slds-media slds-media--center slds-has-flexi-truncate">
       <div class="slds-media__figure">
@@ -10,7 +10,7 @@
         </a>
         <br />
         <span class="expires slds-small-show">
-            {{data.fields[0].label}} {{obj | getter: data.fields[0] | picker: data.fields[0].type}} <span ng-if="obj.LastModifiedDate">| Last Modified: {{obj.LastModifiedDate | picker:'date'}}</span></span>
+            {{data.fields[0].label}} {{obj | getter: data.fields[0] | picker: data.fields[0].type}} <span ng-if="obj.LastModifiedDate">| {{::$root.vlocity.getCustomLabel('LastModified', 'Last Modified')}}: {{obj.LastModifiedDate | picker:'date'}}</span></span>
       </div>
     </div>
     <div class="slds-no-flex">
@@ -28,7 +28,7 @@
           </div>
       </div>
       <div class="slds-col--padded slds-small-show slds-m-top--medium slds-p-bottom--small">
-        <button class="slds-button" ng-click="performFlyout('card-'+ cardIndex);">
+        <button class="slds-button" ng-click="performFlyout(uniqueLayoutId + '-card-'+ cardIndex);">
           <slds-button-svg-icon sprite="'utility'" icon="'chevrondown'" no-hint="true" ng-if="!isSelected(cardIndex)"></slds-button-svg-icon>
           <slds-button-svg-icon sprite="'utility'" icon="'chevronup'" no-hint="true" ng-if="isSelected(cardIndex)"></slds-button-svg-icon>
         </button>
@@ -52,9 +52,9 @@
     </div>
   </div>
   <div class="slds-card__footer slds-x-small-show-only">
-    <button class="slds-button" ng-click="performFlyout('card-'+ cardIndex);">
-      <span ng-if="!isSelected(cardIndex)">View More</span>
-      <span ng-if="isSelected(cardIndex)">View Less</span>
+    <button class="slds-button" ng-click="performFlyout(uniqueLayoutId + '-card-'+ cardIndex);">
+      <span ng-if="!isSelected(cardIndex)">{{::$root.vlocity.getCustomLabel('ViewMore', 'View More')}}</span>
+      <span ng-if="isSelected(cardIndex)">{{::$root.vlocity.getCustomLabel('ViewLess', 'View Less')}}</span>
     </button>
   </div>
 </div>

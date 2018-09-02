@@ -15,7 +15,7 @@
     "%vlocity_namespace%__OpenURLMode__c": "Current Window",
     "%vlocity_namespace%__StateId__c": "",
     "%vlocity_namespace%__StateModelId__c": "",
-    "%vlocity_namespace%__URL__c": "/{0}?isdtp=vw",
+    "%vlocity_namespace%__URL__c": "/{0}",
     "%vlocity_namespace%__UrlParameters__c": "Id",
     "%vlocity_namespace%__ValidationClassName__c": "",
     "%vlocity_namespace%__ValidationMethodName__c": "",

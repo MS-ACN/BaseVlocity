@@ -9,7 +9,7 @@
           <div class="slds-dropdown-trigger slds-dropdown-trigger--click" ng-class="{'slds-is-open': storyCardController.isOpen}" aria-expanded="true">
             <button class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true" ng-click="storyCardController.isOpen = !storyCardController.isOpen">
               <slds-button-svg-icon size="'small'" sprite="'utility'" icon="'down'"></slds-button-svg-icon>
-              <span class="slds-assistive-text">Show More</span>
+              <span class="slds-assistive-text">{{::$root.vlocity.getCustomLabel('ShowMore', 'No Show More')}}</span>
             </button>
             <div class="slds-dropdown slds-dropdown--right slds-dropdown--actions">
               <ul class="dropdown__list" role="menu">
@@ -36,7 +36,7 @@
             <div>
                 <slds-svg-icon sprite="'utility'" icon="'info'"
                                 size="'large'"></slds-svg-icon>
-                <p class="slds-m-top--small slds-text-heading--medium">No Results Found</p>
+                <p class="slds-m-top--small slds-text-heading--medium">{{::$root.vlocity.getCustomLabel('NoResultsFound', 'No Results Found')}}</p>
             </div>
         </li>
     </ul>

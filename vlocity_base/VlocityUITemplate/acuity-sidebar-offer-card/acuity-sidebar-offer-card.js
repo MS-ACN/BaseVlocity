@@ -1,6 +1,7 @@
 vlocity.cardframework.registerModule
     .controller('viaAcuitySidebarOfferCard',
-                ['$scope', '$timeout', 'dataSourceService', '$rootScope', '$log', function($scope, $timeout, dataSourceService, $rootScope, $log) {
+                ['$scope', '$timeout', 'dataSourceService', '$rootScope', '$log', 'interactionTracking',
+                    function($scope, $timeout, dataSourceService, $rootScope, $log, interactionTracking) {
 
         var lightningNsPrefix = $scope.nsPrefix.replace('__', ':'),
             collectedChanges = [];
@@ -32,6 +33,27 @@ vlocity.cardframework.registerModule
                 }
                 return array;
             }, []);
+        };
+
+        this.dismissOffer = function(obj, card, $event) {
+            var interactionData = interactionTracking.getDefaultTrackingData($scope);
+            var eventData = {
+                'TrackingService': 'Acuity',
+                'TrackingEvent' : 'Reject',
+                'ContextId' : obj.contextId,
+                'ResourceId' : obj.resourceId,
+                'ScaledRawScore' : obj.scaledRawScore,
+                'CurrentMachine' : obj.currentMachine,
+                'TargetObjectType' : obj.targetObjectType,
+                'TargetObjectKey' : obj.targetObjectKey
+            };
+            interactionData = angular.extend(interactionData, eventData);
+            interactionTracking.addInteraction(interactionData);
+            $event.stopPropagation();
+            $scope.$emit($scope.data.layoutName+'.events', {
+                event: 'removeCard',
+                message: $scope
+            });
         };
 
         $scope.$on('$destroy', removeHandlers);

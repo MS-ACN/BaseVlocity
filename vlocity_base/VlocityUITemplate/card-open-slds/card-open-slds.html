@@ -1,4 +1,4 @@
-<div class="slds-card via-slds-card via-slds-card__open slds-m-bottom--small" data-card="card-{{cardIndex}}" ng-class="{selected:isSelected(obj.Id)}" hotkey-layout-card>
+<div class="slds-card via-slds-card via-slds-card__open slds-m-bottom--small" data-card="{{uniqueLayoutId}}-card-{{cardIndex}}" ng-class="{selected:isSelected(obj.Id)}" hotkey-layout-card>
   <div class="slds-card__body  via-slds-card__body slds-grid slds-wrap slds-theme--default slds-is-relative slds-p-bottom--medium slds-p-top--medium slds-grid--vertical-align-end slds-grid--align-center">
     <div class="slds-grid slds-grid--vertical slds-grid--vertical-align-center slds-grid--align-center via-slds-main-action-wrapper">
         <a href="#" ng-click="performAction(data.actions[0])" class="via-slds-main-action slds-text-align--center" hotkey-card-action>
