@@ -1,0 +1,172 @@
+{
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "params.id",
+                "val": "00636000004ZByX"
+            }
+        ],
+        "type": "Dual",
+        "value": {
+            "apexRemoteResultVar": "records[0].details.records",
+            "apexRestResultVar": "records[0].details.records",
+            "endpoint": "/services/apexrest/%vlocity_namespace%/v2/cpq/carts/{{params.id}}?validate=false&price=false",
+            "inputMap": {
+                "cartId": "{{params.id}}",
+                "price": "false",
+                "validate": "false"
+            },
+            "methodType": "GET",
+            "remoteClass": "CpqAppHandler",
+            "remoteMethod": "getCarts",
+            "remoteNSPrefix": "%vlocity_namespace%",
+            "resultVar": "records[0]"
+        }
+    },
+    "filter": {
+    },
+    "states": [
+        {
+            "actionCtxId": "['Id']",
+            "collapse": true,
+            "conditions": [
+                {
+                    "field": "$scope.data.status",
+                    "operator": "===",
+                    "type": "system",
+                    "value": "'active'"
+                },
+                {
+                    "field": "['ObjectType']",
+                    "operator": "==",
+                    "type": "custom",
+                    "value": "'Opportunity'"
+                }
+            ],
+            "definedActions": {
+                "actions": [
+                    {
+                        "id": "View Record",
+                        "type": "Vlocity Action"
+                    },
+                    {
+                        "id": "Edit Record",
+                        "type": "Vlocity Action"
+                    }
+                ]
+            },
+            "fields": [
+                {
+                    "collapse": true,
+                    "fieldType": "standard",
+                    "label": "StageName",
+                    "name": "['StageName']",
+                    "type": "string"
+                }
+            ],
+            "filter": "$scope.data.status === 'active' && $scope.obj['ObjectType'] == 'Opportunity'",
+            "name": "Active Opportunity",
+            "sObjectType": "Opportunity",
+            "templateUrl": "cpq-base-header-card"
+        },
+        {
+            "actionCtxId": "['Id']",
+            "collapse": true,
+            "conditions": [
+                {
+                    "field": "$scope.data.status",
+                    "operator": "===",
+                    "type": "system",
+                    "value": "'active'"
+                },
+                {
+                    "field": "['ObjectType']",
+                    "operator": "==",
+                    "type": "custom",
+                    "value": "'Quote'"
+                }
+            ],
+            "definedActions": {
+                "actions": [
+                    {
+                        "id": "View Record",
+                        "type": "Vlocity Action"
+                    },
+                    {
+                        "id": "Edit Record",
+                        "type": "Vlocity Action"
+                    }
+                ]
+            },
+            "fields": [
+                {
+                    "collapse": true,
+                    "fieldType": "standard",
+                    "label": "QuoteNumber",
+                    "name": "['QuoteNumber']",
+                    "type": "string"
+                }
+            ],
+            "filter": "$scope.data.status === 'active' && $scope.obj['ObjectType'] == 'Quote'",
+            "name": "Active Quote",
+            "sObjectType": "Quote",
+            "templateUrl": "cpq-base-header-card"
+        },
+        {
+            "actionCtxId": "['Id']",
+            "collapse": true,
+            "conditions": [
+                {
+                    "field": "$scope.data.status",
+                    "operator": "===",
+                    "type": "system",
+                    "value": "'active'"
+                },
+                {
+                    "field": "['ObjectType']",
+                    "operator": "==",
+                    "type": "custom",
+                    "value": "'Order'"
+                }
+            ],
+            "definedActions": {
+                "actions": [
+                    {
+                        "id": "View Record",
+                        "type": "Vlocity Action"
+                    },
+                    {
+                        "id": "Generate Document PDF",
+                        "type": "Vlocity Action"
+                    },
+                    {
+                        "id": "Send for eSignature",
+                        "type": "Vlocity Action"
+                    },
+                    {
+                        "id": "New Order",
+                        "type": "Vlocity Action"
+                    },
+                    {
+                        "id": "Edit Record",
+                        "type": "Vlocity Action"
+                    }
+                ]
+            },
+            "fields": [
+                {
+                    "collapse": true,
+                    "fieldType": "standard",
+                    "label": "Status",
+                    "name": "['Status']",
+                    "type": "string"
+                }
+            ],
+            "filter": "$scope.data.status === 'active' && $scope.obj['ObjectType'] == 'Order'",
+            "name": "Active Order",
+            "sObjectType": "Order",
+            "templateUrl": "cpq-base-header-card"
+        }
+    ],
+    "title": "cpq-header"
+}
