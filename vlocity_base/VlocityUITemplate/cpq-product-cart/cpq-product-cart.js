@@ -23,22 +23,22 @@ window.CPQ_PRICING_VIEWS = [{
             minimum: 1,
             required: true
         }, {
-            name: 'RecurringTotal__c',
+            name: '%namespace%RecurringTotal__c',
             type: 'price',
             label: 'Recurring Total'
         }, {
-            name: 'OneTimeTotal__c',
+            name: '%namespace%OneTimeTotal__c',
             type: 'price',
             label: 'One Time Total'
         }, {
-            name: 'RecurringManualDiscount__c',
+            name: '%namespace%RecurringManualDiscount__c',
             type: 'input',
             label: 'Recurring Manual Discount',
             validation: 'lineItemIdsWithInvalidOneTimeDiscount',
             minimum: 0,
             required: false
         }, {
-            name: 'OneTimeManualDiscount__c',
+            name: '%namespace%OneTimeManualDiscount__c',
             type: 'input',
             label: 'One Time Manual Discount',
             validation: 'lineItemIdsWithInvalidOneTimeDiscount',
@@ -53,7 +53,7 @@ window.CPQ_PRICING_VIEWS = [{
             label: '',
             classSuffix: 'name'
         }, {
-            name: 'LineNumber__c',
+            name: '%namespace%LineNumber__c',
             type: 'text',
             label: 'Line Number'
         }, {
@@ -64,19 +64,19 @@ window.CPQ_PRICING_VIEWS = [{
             minimum: 1,
             required: true
         }, {
-            name: 'RecurringCalculatedPrice__c',
+            name: '%namespace%RecurringCalculatedPrice__c',
             type: 'price',
             label: 'Recurring Calculated Price'
         }, {
-            name: 'OneTimeCalculatedPrice__c',
+            name: '%namespace%OneTimeCalculatedPrice__c',
             type: 'price',
             label: 'One Time Calculated Price'
         }, {
-            name: 'OneTimeCharge__c',
+            name: '%namespace%OneTimeCharge__c',
             type: 'price',
             label: 'One Time Charge'
         }, {
-            name: 'RecurringCharge__c',
+            name: '%namespace%RecurringCharge__c',
             type: 'price',
             label: 'Recurring Charge'
         }, {
@@ -84,14 +84,14 @@ window.CPQ_PRICING_VIEWS = [{
             type: 'price',
             label: 'List Price'
         }, {
-            name: 'RecurringManualDiscount__c',
+            name: '%namespace%RecurringManualDiscount__c',
             type: 'input',
             label: 'Recurring Manual Discount',
             validation: 'lineItemIdsWithInvalidOneTimeDiscount',
             minimum: 0,
             required: false
         }, {
-            name: 'OneTimeManualDiscount__c',
+            name: '%namespace%OneTimeManualDiscount__c',
             type: 'input',
             label: 'One Time Manual Discount',
             validation: 'lineItemIdsWithInvalidOneTimeDiscount',

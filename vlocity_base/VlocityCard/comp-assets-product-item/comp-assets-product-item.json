@@ -1,0 +1,212 @@
+{
+    "dataSource": {
+        "type": null,
+        "value": {
+        }
+    },
+    "filter": {
+    },
+    "states": [
+        {
+            "blankCardState": false,
+            "collapse": true,
+            "conditions": [
+                {
+                    "field": "$scope.data.status",
+                    "operator": "===",
+                    "type": "system",
+                    "value": "'active'"
+                }
+            ],
+            "definedActions": {
+                "actions": [
+                ]
+            },
+            "fields": [
+            ],
+            "filter": "$scope.data.status === 'active'",
+            "name": "Asset Product Item",
+            "templateUrl": "comp-assets-product-item"
+        },
+        {
+            "blankCardState": false,
+            "collapse": false,
+            "conditions": [
+                {
+                    "field": "$scope.data.status",
+                    "operator": "===",
+                    "type": "system",
+                    "value": "'active'"
+                }
+            ],
+            "definedActions": {
+                "actions": [
+                ]
+            },
+            "fields": [
+                {
+                    "classSuffix": "name",
+                    "collapse": true,
+                    "displayLabel": "<<Custom Field>>",
+                    "editing": true,
+                    "fieldType": "custom",
+                    "label": "",
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "Quantity",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['Quantity']['label']",
+                    "name": "['Quantity']['value']",
+                    "type": "string"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "Recurring Total",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['%vlocity_namespace%__RecurringTotal__c']['label']",
+                    "name": "['%vlocity_namespace%__RecurringTotal__c']['value']",
+                    "type": "currency"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "One Time Total",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['%vlocity_namespace%__OneTimeTotal__c']['label']",
+                    "name": "['%vlocity_namespace%__OneTimeTotal__c']['value']",
+                    "type": "currency"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "Recurring Manual Discount",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['%vlocity_namespace%__RecurringManualDiscount__c']['label']",
+                    "name": "['%vlocity_namespace%__RecurringManualDiscount__c']['value']",
+                    "type": "string"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "One Time Manual Discount",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['%vlocity_namespace%__OneTimeManualDiscount__c']['label']",
+                    "name": "['%vlocity_namespace%__OneTimeManualDiscount__c']['value']",
+                    "type": "currency"
+                }
+            ],
+            "filter": "$scope.data.status === 'active'",
+            "name": "PricingView_Default",
+            "templateUrl": "cpq-dummy"
+        },
+        {
+            "blankCardState": false,
+            "collapse": true,
+            "conditions": [
+                {
+                    "field": "$scope.data.status",
+                    "operator": "===",
+                    "type": "system",
+                    "value": "'active'"
+                }
+            ],
+            "definedActions": {
+                "actions": [
+                ]
+            },
+            "fields": [
+                {
+                    "classSuffix": "name",
+                    "collapse": true,
+                    "displayLabel": "<<Custom Field>>",
+                    "editing": false,
+                    "fieldType": "custom",
+                    "label": "",
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "Quantity",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['Quantity']['label']",
+                    "name": "['Quantity']['value']",
+                    "type": "string"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "One Time Charge",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['%vlocity_namespace%__OneTimeCharge__c']['label']",
+                    "name": "['%vlocity_namespace%__OneTimeCharge__c']['value']",
+                    "type": "currency"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "One Time Manual Discount",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['%vlocity_namespace%__OneTimeManualDiscount__c']['label']",
+                    "name": "['%vlocity_namespace%__OneTimeManualDiscount__c']['value']",
+                    "type": "string"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "One Time Total",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['%vlocity_namespace%__OneTimeTotal__c']['label']",
+                    "name": "['%vlocity_namespace%__OneTimeTotal__c']['value']",
+                    "type": "currency"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "Recurring Charge",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['%vlocity_namespace%__RecurringCharge__c']['label']",
+                    "name": "['%vlocity_namespace%__RecurringCharge__c']['value']",
+                    "type": "currency"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "Recurring Manual Discount",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['%vlocity_namespace%__RecurringManualDiscount__c']['label']",
+                    "name": "['%vlocity_namespace%__RecurringManualDiscount__c']['value']",
+                    "type": "string"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "Recurring Total",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['%vlocity_namespace%__RecurringTotal__c']['label']",
+                    "name": "['%vlocity_namespace%__RecurringTotal__c']['value']",
+                    "type": "currency"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "<<Custom Field>>",
+                    "editing": false,
+                    "fieldType": "custom",
+                    "label": "Promotions",
+                    "name": "promotions",
+                    "type": "promo"
+                }
+            ],
+            "filter": "$scope.data.status === 'active'",
+            "name": "PricingView_CustomView",
+            "templateUrl": "cpq-dummy"
+        }
+    ],
+    "title": "Asset Product Item"
+}
