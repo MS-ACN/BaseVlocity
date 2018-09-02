@@ -60,7 +60,9 @@
                                     <input ng-if="::editableItem.dataType === 'STRING'" type='text' class="slds-input" ng-model='editableItem.value' ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 800, 'blur': 0 } }"
                                     ng-change="importedScope.refreshEditableField(editableItem , true);"/>
                                     <input ng-if="::(editableItem.fieldName === 'Quantity' || editableItem.dataType === 'CURRENCY' || editableItem.dataType === 'PERCENT')" type='number' step='any' class="slds-input" ng-model='editableItem.value'  ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 800, 'blur': 0 } }"
-                                        ng-change="importedScope.refreshEditableField(editableItem, true);"/>
+                                    ng-disabled="importedScope.isAsset(importedScope.configItemObject,editableItem.fieldName)"
+                                    ng-change="importedScope.refreshEditableField(editableItem, true);" 
+                                    ng-keydown="importedScope.checkQuantityField(editableItem.fieldName, $event.key)"/>
                                     <span class="error-msg">{{editableItem.qtyValidationMessage}}</span>
                                 </div>
                             </div>

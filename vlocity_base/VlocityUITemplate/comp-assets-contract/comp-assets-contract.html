@@ -1,4 +1,4 @@
-<div class="slds-tabs--default slds-p-horizontal--small">
+<div class="slds-tabs--default slds-p-horizontal--small comp-assets-contract">
   <div id="tab-default-1" class="slds-tabs--default__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
 
       <article class="slds-card">
@@ -6,7 +6,8 @@
               <header class="slds-media slds-media--center slds-has-flexi-truncate">
                 <div class="slds-media__body">
                   <!-- Checkbox -->
-                  <div class="slds-form-element">
+                  <!-- HYB-1784, commenting out the checkbox, this section will be used in the future feature for terminating contracts -->
+                  <!--<div class="slds-form-element">
                       <div class="slds-form-element__control slds-float--left">
                           <span class="slds-checkbox">
                               <input type="checkbox" name="options" id="checkbox-{{parent.Id.value}}" checked="" />
@@ -14,8 +15,9 @@
                                   <span class="slds-checkbox--faux"></span>
                               </label>
                           </span>
-                       </div>
-                  </div>
+                          <span>
+                       </div> 
+                  </div>-->
 
                     <span class="slds-text-heading--small">Contract: {{parent.Id.value}}</span>
                 </div>
@@ -39,6 +41,19 @@
                 <div class="slds-grid slds-grid--vertical-align-center slds-grid--align-center" ng-if="!records || records.length === 0 ">
                   {{::importedScope.customLabels.CPQCartIsEmpty}}
                 </div>
+
+                <div class="next-asset slds-col slds-text-align--center slds-m-vertical--medium"  ng-if="session.nextAssets">
+                    <div class="slds-spinner_container" ng-show="loadingMore">
+                        <div class="slds-spinner--brand slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                        </div>
+                    </div>
+                    <a ng-click="importedScope.nextPageAssets()" ng-hide="loadingMore || !isLoaded">
+                      {{::importedScope.customLabels.CPQLoadMore}}
+                    </a>
+                </div>
+
             </div>
       </article>
   </div>

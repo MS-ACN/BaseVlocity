@@ -26,7 +26,7 @@
     "%vlocity_namespace%__OrchestrationPlanDefinitionId__r.Name": "OffPlatform_PlanDefinition",
     "%vlocity_namespace%__OrderItemsNodeName__c": "orderItems",
     "%vlocity_namespace%__ProcessAfter__c": "",
-    "%vlocity_namespace%__QueueType__c": "Priority Queue",
+    "%vlocity_namespace%__QueueType__c": "",
     "%vlocity_namespace%__RequestItemsEncodingStyle__c": "Structure",
     "%vlocity_namespace%__RequestItemsVlocityDataRaptorBundleId__c": "",
     "%vlocity_namespace%__ResponseAttrsVlocityDataRaptorBundleId__c": "",

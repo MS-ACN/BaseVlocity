@@ -1,4 +1,4 @@
-/*** CPQ Theme VARIABLES ***/
+/*** CPQ THEME VARIABLES ***/
 @import "cpq-theme-variables";
 
 /*** MIXINS ***/
@@ -6,59 +6,61 @@
 
 /*** STYLES ***/
 .vlocity {
-    .cpq-promo-item {
-        border-bottom: $cpq-product-item-padding solid $cpq-page-bg-color;
-        
-        .cpq-promo-item-container {
-            padding: $cpq-padding-large-vertical 0px;
-            margin: 0px $cpq-padding-large-horizontal;
-        
-            .cpq-product-item-select-checkbox {
-                // Ensure atleast 40px width for inputs for device touch area
-                padding: $cpq-padding-small-horizontal;
-                margin-top: -$cpq-padding-small-horizontal/2;
-            }
+    &.via-slds {
+        .cpq-promotion-item {
+            border-bottom: $cpq-product-item-padding solid $cpq-page-bg-color;
             
-            .promo-name {
-                font-weight: $cpq-headings-font-weight;
-                line-height: 30px;
-            }
+            .cpq-promotion-item-container {
+                padding: $cpq-padding-large-vertical 0px;
+                margin: 0px $cpq-padding-large-horizontal;
             
-            .promo-info div {
-                padding-right: $cpq-padding-large-horizontal;
-                padding-top:$cpq-padding-large-vertical;
-                color: $dark-gray;
-                &:last-child {
-                    padding-bottom:$cpq-padding-large-vertical;
+                .cpq-product-item-select-checkbox {
+                    // Ensure atleast 40px width for inputs for device touch area
+                    padding: $cpq-padding-small-horizontal;
+                    margin-top: -$cpq-padding-small-horizontal/2;
                 }
                 
-                .promo-label {
-                  font-size: $cpq-cart-item-attr-label-font-size;
+                .cpq-promotion-name {
+                    font-weight: $cpq-headings-font-weight;
+                    line-height: 30px;
+                }
+                
+                .cpq-promotion-info div {
+                    padding-right: $cpq-padding-large-horizontal;
+                    padding-top:$cpq-padding-large-vertical;
+                    color: $dark-gray;
+                    &:last-child {
+                        padding-bottom:$cpq-padding-large-vertical;
+                    }
+                    
+                    .cpq-promotion-label {
+                      font-size: $cpq-cart-item-attr-label-font-size;
+                    }
+
+                }
+
+                .cpq-promotion-info .cpq-item-promotion-messages {
+                    font-size: 95%;
+
+                    .cpq-error-msg {
+                        color: $error;
+                    }
+                    .cpq-warning-msg {
+                        color: $warning;
+                    }
                 }
 
             }
-
-            .promo-info .cpq-item-promotion-messages {
-                font-size: 95%;
-
-                .cpq-error-msg {
-                    color: $error;
-                }
-                .cpq-warning-msg {
-                    color: $warning;
-                }
-            }
-
-        }
-        
-        .cpq-promo-actions {
-            padding-top:$cpq-padding-large-vertical;
-            padding-bottom:$cpq-padding-large-vertical; 
             
-            .add-button {
-                padding-left:$cpq-padding-small-horizontal;
-                padding-right:$cpq-padding-small-horizontal;
-           }
+            .cpq-promotion-actions {
+                padding-top:$cpq-padding-large-vertical;
+                padding-bottom:$cpq-padding-large-vertical; 
+                
+                .add-button {
+                    padding-left:$cpq-padding-small-horizontal;
+                    padding-right:$cpq-padding-small-horizontal;
+               }
+            }
         }
     }
 }

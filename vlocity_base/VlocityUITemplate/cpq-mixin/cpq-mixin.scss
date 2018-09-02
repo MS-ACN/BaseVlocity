@@ -12,27 +12,6 @@
 //generate padding styles for product-name wrapper in tree
 $padding-offset: 20;
 $final-level: 10;
-@mixin cpqProductChildLevelStyling($namespace: 'cpq', $direction: 'left', $padding: $padding-offset, $level: 1) {
-    .#{$namespace}-item-product-child-level-#{$level} {
-        .#{$namespace}-item-child-product-name-wrapper {
-
-             @if $direction == 'left' {
-                padding-left : $padding + px;
-                padding-right: 0;
-            } 
-            @if $direction == 'right' {
-                padding-right: $padding + px; 
-                padding-left: 0;
-            }
-        }
-        @if ($level < $final-level) {
-            @include cpqProductChildLevelStyling($namespace, $direction, $padding + $padding-offset, $level + 1);
-        }
-    }
-}
-
-
-// v100
 
 @mixin productChildLevelStyling($namespace: 'cpq', $direction: 'left', $padding: $padding-offset, $level: 1) {
     .#{$namespace}-item-product-child-level-#{$level} {

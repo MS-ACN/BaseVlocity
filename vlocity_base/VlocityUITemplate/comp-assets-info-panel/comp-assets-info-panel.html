@@ -1,5 +1,5 @@
-<div class="slds-grid slds-grid--vertical assets-info">
-    <div class="slds-col slds-no-flex assets-info-header">
+<div class="slds-grid slds-grid--vertical comp-assets-info-panel">
+    <div class="slds-col slds-no-flex comp-assets-info-header">
         <div class="slds-grid slds-grid--align-end">
             <button class="slds-button slds-button--icon" ng-click="importedScope.close()">
                 <slds-button-svg-icon sprite="'utility'" size="'large'" icon="'close'"></slds-button-svg-icon>
@@ -8,7 +8,7 @@
         </div>
     </div>
     <!-- scroll class is added for ionic scroll-->
-    <div class="slds-col assets-info-container slds-form-element scroll">
+    <div class="slds-col comp-assets-info-container slds-form-element scroll">
         <!-- Attributes -->    
         <div ng-if="importedScope.attributesObj && importedScope.attributesObj.length > 0 ">
              <div ng-repeat="attributeObj in importedScope.attributesObj">

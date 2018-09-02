@@ -1,4 +1,4 @@
-/*** CPQ Theme VARIABLES ***/
+/*** CPQ THEME VARIABLES ***/
 @import "cpq-theme-variables";
 
 /*** MIXINS ***/
@@ -6,10 +6,12 @@
 
 /*** STYLES ***/
 .vlocity {
-    .cpq-product-config-custom-action {
-        .custom-action-iframe {
-            border: none;
-            width: 100%;
+    &.via-slds {
+        .cpq-product-config-custom-action {
+            .custom-action-iframe {
+                border: none;
+                width: 100%;
+            }
         }
     }
 }

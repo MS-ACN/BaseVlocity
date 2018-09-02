@@ -9,6 +9,8 @@
         "MACD_FDO_English_Element_CanCreate.json",
         "MACD_FDO_English_Element_FDO-Failed.json",
         "MACD_FDO_English_Element_CreateFDOFailed.json",
+        "MACD_FDO_English_Element_FDO-Failed-Disconnected-Assets.json",
+        "MACD_FDO_English_Element_CreateFDOFailedDisconnectedAssets.json",
         "MACD_FDO_English_Element_CreateFDO.json",
         "MACD_FDO_English_Element_Done-Action-1.json",
         "MACD_FDO_English_Element_Done-Action-2.json"

@@ -1,4 +1,4 @@
-<div class="assets-root-product">
+<div class="comp-assets-product-item">
     <div data-cart-item-id="{{::obj.Id.value}}">
         <div class="assets-item-product" ng-class="{'assets-item-selected':importedScope.isSelected}">
             <div class="assets-item-product-header assets-item-base-product">
@@ -27,7 +27,7 @@
                         </div>
 
                         <button ng-click="childProdState.show = !childProdState.show" class="slds-button assets-item-has-children" aria-controls="tree0-node1" ng-hide="!(obj.childAssets.records || obj.lineItems.records || obj.productGroups.records)">
-                            <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'switch'" extra-classes="'slds-button__icon--left'" ng-class="{'fix-slds-close-switch' : !childProdState.show}"></slds-button-svg-icon>
+                            <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'switch'" extra-classes="'slds-button__icon--left'" ng-class="{'assets-fix-slds-close-switch' : !childProdState.show}"></slds-button-svg-icon>
                             <span class="slds-assistive-text">Toggle</span>
                             <span class="assets-product-name">{{obj[customField.fieldName]}}</span>
                         </button>

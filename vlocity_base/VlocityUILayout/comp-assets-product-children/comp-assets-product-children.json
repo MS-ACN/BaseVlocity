@@ -1,6 +1,6 @@
 {
     "Cards": [
-        "comp-assets-product-children-item"
+        "comp-assets-product-item-child"
     ],
     "dataSource": {
         "type": "Inherit"

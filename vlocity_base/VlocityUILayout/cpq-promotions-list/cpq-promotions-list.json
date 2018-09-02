@@ -6,7 +6,7 @@
         "contextVariables": [
             {
                 "name": "params.id",
-                "val": "80136000003IUtX"
+                "val": "8016A000000Gt8o"
             },
             {
                 "name": "attrs.includeIneligible",
@@ -17,10 +17,11 @@
         "value": {
             "apexRemoteResultVar": "records",
             "apexRestResultVar": "records",
-            "endpoint": "/services/apexrest/%vlocity_namespace%/v3/cpq/carts/{{params.id}}/promotions?includeIneligible={{attrs.includeIneligible}}",
+            "endpoint": "/services/apexrest/%vlocity_namespace%/v3/cpq/carts/{{params.id}}/promotions?includeIneligible={{attrs.includeIneligible}}&pagesize=10",
             "inputMap": {
                 "cartId": "{{params.id}}",
-                "includeIneligible": "{{attrs.includeIneligible}}"
+                "includeIneligible": "{{attrs.includeIneligible}}",
+                "pagesize": "10"
             },
             "methodType": "GET",
             "remoteClass": "CpqAppHandler",
@@ -35,7 +36,7 @@
         },
         {
             "name": "nextPromotions",
-            "val": "payload.actions.nextpromotions"
+            "val": "payload.actions.nextitems"
         }
     ],
     "templates": {

@@ -47,13 +47,14 @@
                 class="highlighted"/>
           </g>
         </svg>
-<div ng-repeat="swimlane in importedScope.orchestrationPlan.swimlanes track by swimlane.idx | orderBy : 'showOrder'"
+        
+<div ng-repeat="swimlane in importedScope.orchestrationPlan.swimlanes | orderBy : 'showOrder' track by swimlane.idx"
     ng-style="{top: '{{::importedScope.getSwimlaneY(swimlane)+30}}px', left:'{{::importedScope.getSwimlaneX(swimlane)+40}}px', width: '100%'}"
-        class="order-label-container">
+        class="order-label-container" bs-tooltip="swimlane.orderName+' - '+swimlane.planDefName">
         <a target="_blank" ng-bind="swimlane.orderName" ng-click="importedScope.resolveNavigate(swimlane.orderId)" class="order-label"></a> - <a target="_blank" ng-bind="swimlane.planDefName" ng-click="importedScope.resolveNavigate(swimlane.planDefId)" class="order-label"></a>
 </div>
 <div ng-repeat="item in importedScope.orchestrationPlan.items track by item.id" ng-mouseenter="importedScope.highlightItemAndDependencies(item)" ng-mouseleave="importedScope.unhighlightItemAndDependencies(item)">
-          <div ng-style="{top: '{{::importedScope.getItemLabelY(item)+22}}px', left:'{{::importedScope.getItemLabelX(item)}}px', width:'{{::importedScope.getLabelItemWidth(item)}}px', height:'30px'}"  class="item-label-container" ng-class="['item-header', importedScope.label2class(item.state)]" id="itemLabel-{{::item.id}}">
+          <div ng-style="{top: '{{::importedScope.getItemLabelY(item)+22}}px', left:'{{::importedScope.getItemLabelX(item)}}px', width:'{{::importedScope.getLabelItemWidth(item)}}px', height:'30px'}"  class="item-label-container" ng-class="['item-header', importedScope.label2class(item.state)]" id="itemLabel-{{::item.id}}" bs-tooltip="item.name+' ('+item.type+') is '+item.state">
                 <a ng-style="{'max-width': '142px'}" target="_blank" ng-bind="item.name" ng-click="importedScope.resolveNavigate(item.id)" class="item-label" ng-class="['item-header', importedScope.label2class(item.state)]"></a>
           </div>
           <div ng-style="{left: '{{::importedScope.getItemTextX(item)+20}}px', top: '{{::importedScope.getItemTextY(item)+20}}px', width: '{{::importedScope.getItemTextWidth(item)}}px'}" class="item-body-text">

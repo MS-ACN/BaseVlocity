@@ -1,6 +1,6 @@
 {
     "Cards": [
-        "cpq-cart-item-child-products"
+        "cpq-product-cart-item-child"
     ],
     "dataSource": {
         "type": "Inherit"

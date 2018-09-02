@@ -1,0 +1,37 @@
+{
+    "dataSource": {
+        "contextVariables": [
+        ],
+        "type": null,
+        "value": {
+            "query": "",
+            "resultVar": ""
+        }
+    },
+    "filter": {
+        "['Id']": "123"
+    },
+    "states": [
+        {
+            "blankCardState": true,
+            "conditions": [
+                {
+                    "field": "$scope.data.status",
+                    "operator": "===",
+                    "type": "system",
+                    "value": "'non-existent'"
+                }
+            ],
+            "definedActions": {
+                "actions": [
+                ]
+            },
+            "fields": [
+            ],
+            "filter": "$scope.data.status === 'non-existent'",
+            "name": "Pie Chart",
+            "templateUrl": "mobile-ret-pie-chart"
+        }
+    ],
+    "title": "Type Pie Chart"
+}

@@ -1,9 +1,26 @@
-<div class="slds-grid slds-grid--vertical review-product-cart" ng-controller="AssetsMainController">
+<div class="slds-grid slds-grid--vertical comp-cart-review" ng-controller="AssetsMainController">
 	<div ng-init="getStateData(cards)"></div>
 	<!--The scroll Class is used for mobile devices -->
-	<div class="slds-col review-product-cart-items scroll" >
-	    <vloc-card ng-repeat="card in cards" ctrl="AssetsProductItemController" ng-model="card" data="card" 
+	<div class="slds-col comp-cart-review-items scroll" >
+	    <vloc-card ng-repeat="card in cards" ctrl="AssetsProductItemController" ng-model="card" data="card"
 	    	records="records" cart-id="{{attrs.cartId}}" pricing-mode="{{attrs.pricingMode}}" promotion-mode="{{attrs.promotionMode}}" show-config-panel="{{attrs.showConfigPanel}}" index="{{$index}}" session-id="{{sessionId}}">
 	    </vloc-card>
-	</div>    
+	</div>
+
+    <div class="slds-grid slds-grid--vertical-align-center slds-grid--align-center" ng-if="!records || records.length === 0 ">
+      {{::importedScope.customLabels.CPQCartIsEmpty}}
+    </div>
+
+    <div class="next-product slds-col slds-text-align--center slds-m-vertical--medium"  ng-if="session.nextProducts">
+        <div class="slds-spinner_container" ng-show="loadingMore">
+            <div class="slds-spinner--brand slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+        <a ng-click="importedScope.nextPageProducts()" ng-hide="loadingMore || !isLoaded">
+          {{::importedScope.customLabels.CPQLoadMore}}
+        </a>
+    </div>
+
 </div>

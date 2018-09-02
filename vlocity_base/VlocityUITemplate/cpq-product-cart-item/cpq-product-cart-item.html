@@ -1,4 +1,4 @@
-<div class="cpq-root-product">
+<div class="cpq-product-cart-item">
     <div ng-class="{'cpq-transitional-hide': importedScope.isDeleting}" data-cart-item-id="{{::obj.Id.value}}">
         <div class="cpq-item-product" ng-class="{'cpq-item-selected':importedScope.isSelected && !attrs.lineItemModal}">
             <div class="cpq-item-product-header cpq-item-base-product">
@@ -41,7 +41,8 @@
                         <button class="slds-button cpq-item-has-children" aria-controls="tree0-node1"
                             ng-click="childProdState.show = !childProdState.show"
                             ng-hide="!(obj.lineItems.records || obj.childProducts.records || obj.productGroups.records || (attrs.lineItemModal && obj.attributeCategories.records.length > 0))">
-                            <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'switch'" extra-classes="'slds-button__icon--left'" ng-class="{'fix-slds-close-switch' : !childProdState.show}"></slds-button-svg-icon>
+                            <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'switch'" extra-classes="'slds-button__icon--left'" 
+                                ng-class="{'cpq-fix-slds-close-switch' : !childProdState.show}"></slds-button-svg-icon>
                             <span class="slds-assistive-text">Toggle</span>
                             <span class="cpq-product-name">{{obj.PricebookEntry.Product2.Name}}</span>
 
@@ -68,8 +69,8 @@
                                 ng-model="obj[customField.fieldName].value" 
                                 ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 800, 'blur': 0 } }" 
                                 ng-change="importedScope.updateLineField(null, obj)"
-                                ng-disabled="importedScope.isProvisioningStatusDeleted(obj)"
-                                ng-required="{{customField.data.required}}" />
+                                ng-disabled="importedScope.isAsset(obj,customField.fieldName)"
+                                ng-required="{{customField.data.required}}" ng-keydown="importedScope.checkQuantityField(customField.fieldName, $event.key)"/>
                         </div>
                     </div>
                     <!-- Price -->
@@ -217,7 +218,7 @@
                             <a href="javascript:void(0);" ng-click="productLineItemToggle = !productLineItemToggle" class="slds-section__title-action 
                             -section-heading" ng-init="productLineItemToggle = importedScope.expandMode">
                                 <button class="slds-button slds-button--icon-container slds-button--icon-x-small">
-                                    <slds-button-svg-icon sprite="'utility'" icon="'switch'" ng-class="{'fix-slds-close-switch' : !productLineItemToggle}"></slds-button-svg-icon>
+                                    <slds-button-svg-icon sprite="'utility'" icon="'switch'" ng-class="{'cpq-fix-slds-close-switch' : !productLineItemToggle}"></slds-button-svg-icon>
                                 </button>
                                 {{::importedScope.customLabels.CPQProductConfig}}
                             </a>

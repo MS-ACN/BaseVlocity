@@ -1,4 +1,4 @@
-/*** CPQ Theme VARIABLES ***/
+/*** CPQ THEME VARIABLES ***/
 @import "cpq-theme-variables";
 
 /*** MIXINS ***/
@@ -6,7 +6,9 @@
 
 /*** STYLES ***/
 .vlocity {
-    .cpq-product-item-more {
-        
+    &.via-slds {
+        .cpq-product-item-more {
+            
+        }
     }
 }

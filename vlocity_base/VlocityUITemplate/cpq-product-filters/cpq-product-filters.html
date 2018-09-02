@@ -1,7 +1,7 @@
 <div class="cpq-product-filters slds-grid slds-grid--vertical">
     <!--<pre> {{records | json}}</pre>-->
     <!-- scroll class is added for ionic scroll-->
-    <div class="slds-col cpq-product-cart-config-form scroll">
+    <div class="slds-col scroll">
         <div>
             <button type="button" class="slds-button" ng-click="importedScope.resetFilter(records)">
                 {{::importedScope.customLabels.CPQReset}}
@@ -10,7 +10,7 @@
                     ng-click="importedScope.submitFilter(records)">
                 {{::importedScope.customLabels.CPQApply}}
             </button>
-        </div>    
+        </div>
         <!-- form -->
         <div ng-if="records.length > 0">
             <vlocity-dynamic-form class="slds-form--stacked" 

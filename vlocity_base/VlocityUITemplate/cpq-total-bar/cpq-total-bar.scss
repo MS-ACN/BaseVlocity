@@ -1,4 +1,4 @@
-/*** CPQ Theme VARIABLES ***/
+/*** CPQ THEME VARIABLES ***/
 @import "cpq-theme-variables";
 
 /*** MIXINS ***/
@@ -6,21 +6,22 @@
 
 /*** STYLES ***/
 .vlocity {
-    .cpq-product-cart-order {
-        background-color: $cpq-cart-total-bar-bg-color;
-        color: $cpq-cart-container-bg-color;
-        height: 80px;
-        position: absolute;
-        bottom: 0;
-        right: 8px;
-        left: 8px;
-    }
-
-    // 64rem
-    @media screen and (max-width: $bp-large) {
-        .cpq-product-cart-order {
-            left: 0;
-            right: 0;
+    &.via-slds {
+        .cpq-total-bar {
+            background-color: $cpq-cart-total-bar-bg-color;
+            color: $cpq-cart-container-bg-color;
+            height: 80px;
+            position: absolute;
+            bottom: 0;
+            right: 8px;
+            left: 8px;
+        }
+        // 64rem
+        @media screen and (max-width: $bp-large) {
+            .cpq-total-bar {
+                left: 0;
+                right: 0;
+            }
         }
     }
 }

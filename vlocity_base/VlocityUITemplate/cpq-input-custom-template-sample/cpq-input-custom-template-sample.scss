@@ -1,11 +1,14 @@
-/*** CPQ Theme VARIABLES ***/
+/*** CPQ THEME VARIABLES ***/
 @import "cpq-theme-variables";
+
 /*** MIXINS ***/
 @import "cpq-mixin";
-/*** STYLES ***/
 
+/*** STYLES ***/
 .vlocity {
-    .cpq-input-custom-template-sample {
-        //SASS/CSS goes here
-    }   
+    &.via-slds {
+        .cpq-input-custom-template-sample {
+            //SASS/CSS goes here
+        }
+    }
 }

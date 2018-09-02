@@ -66,6 +66,8 @@
     "saveForLaterRedirectTemplateUrl": "vlcSaveForLaterAcknowledge.html",
     "saveNameTemplate": null,
     "saveObjectId": "%ContextId%",
+    "saveURLPatterns": {
+    },
     "seedDataJSON": {
     },
     "ssm": false,

@@ -1,4 +1,4 @@
-/*** CPQ Theme VARIABLES ***/
+/*** CPQ THEME VARIABLES ***/
 @import "cpq-theme-variables";
 
 /*** MIXINS ***/
@@ -6,16 +6,14 @@
 
 /*** STYLES ***/
 .vlocity {
-    .cpq-product-filters {
-        
-        // padding: 10px 0px;
-        // margin: 0px 16px;
-        padding: $cpq-padding-large-vertical 0px;
-        margin: 0px $cpq-padding-large-horizontal;
+    &.via-slds {
+        .cpq-product-filters {
+            padding: $cpq-padding-large-vertical 0px;
+            margin: 0px $cpq-padding-large-horizontal;
 
-		form input::-webkit-input-placeholder {
-			color: $middle-dark-gray;
-		}
-
+            form input::-webkit-input-placeholder {
+                color: $middle-dark-gray;
+            }
+        }
     }
 }

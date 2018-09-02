@@ -1,22 +1,22 @@
 <div class="cpq-product-item-details slds-scrollable--y">
     <!--form is used for input validations-->
     <form>
-        <div class="Table">
-          <div class="Table-row Table-header">
-            <div class="Table-row-item u-Flex-product"></div>
-            <div class="Table-row-item u-Flex-qty cpq-product-item-attr-label">
+        <div class="cpq-product-item-table">
+          <div class="cpq-product-item-table-row cpq-product-item-table-header">
+            <div class="cpq-product-item-table-row-item cpq-product-item-table-flex-product"></div>
+            <div class="cpq-product-item-table-row-item cpq-product-item-table-flex-qty cpq-product-item-attr-label">
                 {{::obj['quantity']['label'] | uppercase}}
             </div>
-            <div class="Table-row-item u-Flex-recur cpq-product-item-attr-label">
+            <div class="cpq-product-item-table-row-item cpq-product-item-table-flex-recur cpq-product-item-attr-label">
                 {{::obj[$root.nsPrefix + 'RecurringPrice__c']['label'] | uppercase}}
             </div>
-            <div class="Table-row-item u-Flex-onetime cpq-product-item-attr-label">
+            <div class="cpq-product-item-table-row-item cpq-product-item-table-flex-onetime cpq-product-item-attr-label">
                 {{::obj['UnitPrice']['label'] | uppercase}}
             </div>
           </div>
           
-          <div class="Table-row">
-            <div class="Table-row-item u-Flex-product slds-tile__title slds-truncate cpq-cart-item-title">
+          <div class="cpq-product-item-table-row">
+            <div class="cpq-product-item-table-row-item cpq-product-item-table-flex-product slds-tile__title slds-truncate cpq-cart-item-title">
                 <div class="slds-media slds-tile">
                     <div class="slds-media__figure" ng-repeat="defaultImage in obj.Attachments" ng-if="::defaultImage.defaultAttachment">
                         <span class="slds-avatar slds-avatar--large">
@@ -30,17 +30,17 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="Table-row-item u-Flex-qty">
+            <!-- <div class="cpq-product-item-table-row-item cpq-product-item-table-flex-qty">
               <div class="slds-form-element">
                    <div class="slds-form-element__control cpq-product-details-qty">
                        <input type='number' min="0" class="slds-input cpq-product-details-qty-input" ng-model='obj.quantity.value'/>
                    </div>
                </div>
             </div> -->
-            <div class="Table-row-item u-Flex-recur cpq-cart-item-attr-value">
+            <div class="cpq-product-item-table-row-item cpq-product-item-table-flex-recur cpq-cart-item-attr-value">
                 {{::obj[$root.nsPrefix+'RecurringPrice__c']['value'] | currency}}
             </div>
-            <div class="Table-row-item u-Flex-onetime cpq-cart-item-attr-value">
+            <div class="cpq-product-item-table-row-item cpq-product-item-table-flex-onetime cpq-cart-item-attr-value">
                 {{::obj['UnitPrice']['value'] | currency}}
             </div>
           </div>
@@ -78,7 +78,7 @@
                 </li>
             </ul>
         </div>
-     
+
         <div class="cpq-product-item-details-features">
             <div class="slds-text-heading--small">Details</div>
             <table class="slds-table slds-m-top--medium slds-table--bordered">

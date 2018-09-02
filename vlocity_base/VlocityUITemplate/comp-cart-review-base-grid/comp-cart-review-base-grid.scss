@@ -1,12 +1,12 @@
-/*** CPQ THEME VARIABLES ***/
-@import "cpq-theme-variables";
+/*** ASSETS THEME VARIABLES ***/
+@import "comp-assets-theme-variables";
 
 /*** MIXINS ***/
 @import "cpq-mixin";
 
 /*** STYLES ***/
 .vlocity {
-    .cart-review-module {
+    .comp-cart-review-base-grid {
         background-color: $cpq-page-bg-color;
     }
     .cart-review-container {
@@ -21,7 +21,7 @@
 
         // 64rem
         @media screen and (max-width: $bp-large) {
-            .cart-review-module {
+            .comp-cart-review-base-grid {
                 input {
                     -webkit-appearance: none;
                 }

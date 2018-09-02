@@ -31,6 +31,10 @@
     },
     "sessionVars": [
         {
+            "name": "totalSize",
+            "val": "payload.totalSize"
+        },
+        {
             "name": "nextProducts",
             "val": "payload.actions.nextproducts"
         },

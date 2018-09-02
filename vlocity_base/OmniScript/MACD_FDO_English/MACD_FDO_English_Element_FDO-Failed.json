@@ -46,6 +46,11 @@
                         "condition": "=",
                         "data": "true",
                         "field": "Formula 1"
+                    },
+                    {
+                        "condition": "=",
+                        "data": "false",
+                        "field": "disconnectedAssets"
                     }
                 ]
             }

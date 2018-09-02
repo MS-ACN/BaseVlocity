@@ -10,8 +10,8 @@
         <th scope="row" class="cpq-detail-row">
           <div class="cpq-cell-header">{{record.Description}}</div>
         </th>
-        <td data-label="discoount" class="slds-text-align--right cpq-detail-row">
-          <div class="slds-truncate" title="Cloudhub">
+        <td data-label="discount" class="slds-text-align--right cpq-detail-row">
+          <div class="slds-truncate">
             
             <span ng-if="record.AdjustmentType === 'Discount'">-</span>
             <span ng-if="record.AdjustmentType === 'Markup'">+</span>
@@ -55,16 +55,16 @@
       </tr>
       <tr class="cpq-detail-row" ng-class="{'cpq-total-border': importedScope.records.length > 0}">
         <th scope="row" data-label="total" class="cpq-cell-header">
-          <div class="slds-truncate" title="Cloudhub">{{attrs.cellTitle}}</div>
+          <div class="slds-truncate">{{attrs.cellTitle}}</div>
         </th>
         <td class="slds-text-align--right">
-          <div class="slds-truncate" title="Cloudhub">{{attrs.cellValue | currency}}</div>
+          <div class="slds-truncate">{{attrs.cellValue | currency}}</div>
         </td>
        <td data-label="Agent Name" ng-if="show_more" class="cpq-detail-show-more">
-          <div class="slds-truncate" title="Cloudhub">{{importedScope.cellAgent}}</div>
+          <div class="slds-truncate">{{importedScope.cellAgent}}</div>
         </td>
         <td data-label="Date" ng-if="show_more" class="cpq-detail-show-more">
-          <div class="slds-truncate" title="Cloudhub">{{importedScope.cellDate}}</div>
+          <div class="slds-truncate">{{importedScope.cellDate}}</div>
         </td>
       </tr>
     </tbody>

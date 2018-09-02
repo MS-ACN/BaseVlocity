@@ -32,7 +32,7 @@
             ng-show="importedScope.cartDataStore.filteredMessages.length > 1">
                 <a href="javascript:void(0);" ng-click="showMessages = !showMessages" class="slds-section__title-action cpq-product-cart-item-section-heading">
                     <button type="button" class="slds-button slds-button--icon-container slds-button--icon-x-small">
-                        <slds-button-svg-icon sprite="'utility'" icon="'switch'" ng-class="{'fix-slds-close-switch' : !showMessages}"></slds-button-svg-icon>
+                        <slds-button-svg-icon sprite="'utility'" icon="'switch'" ng-class="{'cpq-fix-slds-close-switch' : !showMessages}"></slds-button-svg-icon>
                     </button>
                     {{::importedScope.customLabels.CPQCartMessages}} ({{importedScope.cartDataStore.filteredMessages.length}})
                 </a>
@@ -109,7 +109,7 @@
         <div id="tab-default-2" class="slds-tabs--default__content cpq-product-cart-items-tab-content" role="tabpanel" aria-labelledby="tab-default-2__item">
 
             <div class="cpq-cart-promotions-tab-container">
-                <vloc-layout layout-name="cpq-cart-applied-promotions-view" is-loaded="isPromotionTabLoaded"></vloc-layout>
+                <vloc-layout layout-name="cpq-cart-promotions" is-loaded="isPromotionTabLoaded"></vloc-layout>
 
                 <div class="slds-text-align--center slds-m-vertical--medium" ng-if="!isPromotionTabLoaded">
                     <div class="slds-spinner_container">

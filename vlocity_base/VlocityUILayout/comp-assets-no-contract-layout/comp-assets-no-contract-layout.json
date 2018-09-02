@@ -21,11 +21,12 @@
         "value": {
             "apexRemoteResultVar": "records",
             "apexRestResultVar": "records",
-            "endpoint": "/services/apexrest/%vlocity_namespace%/v2/accounts/{{attrs.accountId}}/assets?includes={{attrs.assetIncludeType}}&effectiveAssetsDateFilter={{attrs.effectiveDate}}&priceDetailsFields=%vlocity_namespace%__OneTimeCharge__c,%vlocity_namespace%__OneTimeCalculatedPrice__c,%vlocity_namespace%__OneTimeTotal__c,%vlocity_namespace%__RecurringCharge__c,%vlocity_namespace%__RecurringCalculatedPrice__c,%vlocity_namespace%__RecurringTotal__c",
+            "endpoint": "/services/apexrest/%vlocity_namespace%/v2/accounts/{{attrs.accountId}}/assets?includes={{attrs.assetIncludeType}}&effectiveAssetsDateFilter={{attrs.effectiveDate}}&priceDetailsFields=%vlocity_namespace%__OneTimeCharge__c,%vlocity_namespace%__OneTimeCalculatedPrice__c,%vlocity_namespace%__OneTimeTotal__c,%vlocity_namespace%__RecurringCharge__c,%vlocity_namespace%__RecurringCalculatedPrice__c,%vlocity_namespace%__RecurringTotal__c&pagesize=10",
             "inputMap": {
                 "accountId": "{{attrs.accountId}}",
                 "effectiveAssetsDateFilter": "{{attrs.effectiveDate}}",
                 "includes": "{{attrs.assetIncludeType}}",
+                "pagesize": "10",
                 "priceDetailsFields": "%vlocity_namespace%__OneTimeCharge__c,%vlocity_namespace%__OneTimeManualDiscount__c,%vlocity_namespace%__OneTimeCalculatedPrice__c,%vlocity_namespace%__OneTimeTotal__c,%vlocity_namespace%__RecurringCharge__c,%vlocity_namespace%__RecurringCalculatedPrice__c,%vlocity_namespace%__RecurringTotal__c"
             },
             "methodType": "GET",
@@ -38,6 +39,16 @@
             "resultVar": "records"
         }
     },
+    "sessionVars": [
+        {
+            "name": "totalSize",
+            "val": "payload.totalSize"
+        },
+        {
+            "name": "nextAssets",
+            "val": "payload.actions.nextproducts"
+        }
+    ],
     "templates": {
         "0": {
             "templateUrl": "comp-assets-no-contract"
