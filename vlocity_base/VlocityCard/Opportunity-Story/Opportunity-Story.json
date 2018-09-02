@@ -15,10 +15,6 @@
             ],
             "definedActions": {
                 "actions": [
-                    {
-                        "id": "Opportunity-PersonalMarketing",
-                        "type": "Vlocity Action"
-                    }
                 ]
             },
             "fields": [

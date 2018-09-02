@@ -1,4 +1,4 @@
-vlocity.cardframework.registerModule.controller('consoleRightSideBarController', ['$scope', '$rootScope', 'timeStampInSeconds','actionService', 'pageService', '$localizable', 'performAction', '$log', function($scope, $rootScope, timeStampInSeconds, actionService, pageService, $localizable, performAction, $log) {
+vlocity.cardframework.registerModule.controller('consoleSideBarController', ['$scope', '$rootScope', 'timeStampInSeconds','actionService', 'pageService', '$localizable', 'performAction', '$log', function($scope, $rootScope, timeStampInSeconds, actionService, pageService, $localizable, performAction, $log) {
         // Your code goes here
         $scope.recordId = pageService.params.id;
         
@@ -14,12 +14,6 @@ vlocity.cardframework.registerModule.controller('consoleRightSideBarController',
                     return;
                 } else {
                     result.Id = result.id;
-                }
-
-                //special case for interaction ID when we need to fetch the account ID
-                //check for interactionId result
-                if($scope.$parent.records && $scope.$parent.records.length > 0) {
-                    result.id = $scope.$parent.records[0].Id; //acct ID
                 }
 
                 // As part of CARD-185, we are using params.id in cards which contains account id.

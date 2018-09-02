@@ -1,6 +1,6 @@
 {
     "%vlocity_namespace%__Author__c": "Vlocity",
-    "%vlocity_namespace%__CustomJavascript__c": "",
+    "%vlocity_namespace%__CustomJavascript__c": "console-sidebar-slds.js",
     "%vlocity_namespace%__Definition__c": "",
     "%vlocity_namespace%__Description__c": "console-sidebar-slds\n\nLightning based design to hold the following templates:\n\nleft-account-info-slds\nleft-profile-slds",
     "%vlocity_namespace%__DisplayOn__c": "",

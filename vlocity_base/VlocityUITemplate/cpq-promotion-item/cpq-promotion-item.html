@@ -27,8 +27,9 @@
                             </ul>
                         </div>
                     </div>
+
                     <div class="slds-col slds-small-size--4-of-12 slds-medium-size--5-of-12 slds-large-size--4-of-12 slds-text-align--right cpq-promotion-actions">
-                        <button class="slds-button slds-button--neutral add-button" ng-click="importedScope.addToCart(obj, true)" ng-disabled="!obj.actions || obj.category.toLowerCase() !== 'qualified'">
+                        <button class="slds-button slds-button--neutral add-button" ng-click="importedScope.addToCart(obj, true)" ng-disabled="!obj.actions || !obj.actions.addtocart || obj.category.toLowerCase() !== 'qualified'">
                             {{::importedScope.customLabels.CPQAddToCart}}
                         </button>
                     </div>

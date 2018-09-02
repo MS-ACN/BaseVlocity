@@ -60,8 +60,11 @@ vlocity.cardframework.registerModule
 
         $scope.$watch(function() {
             return $scope.records ? $scope.records.length : 0;
-        }, function() {
-            if ($scope.records) {
+        }, function(newValue, oldValue) {
+            if ($scope.records) { 
+                if (oldValue === 0) {
+                    currentRequestLastObj = null;
+                }
                 self.searchComplete = false;
                 loadingSpinner.show();
                 $scope.cards.forEach(function(card) {

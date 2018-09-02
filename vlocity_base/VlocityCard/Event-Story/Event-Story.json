@@ -63,7 +63,7 @@
                     "type": "string"
                 }
             ],
-            "filter": "$scope.obj['detailValueMap']['IsAllDayEvent'] != 'true'",
+            "filter": "$scope.obj && (!$scope.obj.detailValueMap || !(('' + $scope.obj.detailValueMap.IsAllDayEvent).toLowerCase() == 'true' || ('' +$scope.obj.detailValueMap.isAllDayEvent).toLowerCase() == 'true'))",
             "name": "Event",
             "sObjectType": null,
             "templateUrl": "story-card"
@@ -128,7 +128,7 @@
                     "type": "string"
                 }
             ],
-            "filter": "$scope.obj['detailValueMap']['IsAllDayEvent'] == 'true'",
+            "filter": "$scope.obj && $scope.obj.detailValueMap && (('' + $scope.obj.detailValueMap.IsAllDayEvent).toLowerCase() == 'true' || ('' +$scope.obj.detailValueMap.isAllDayEvent).toLowerCase() == 'true')",
             "name": "All Day Event",
             "sObjectType": null,
             "templateUrl": "story-card"
