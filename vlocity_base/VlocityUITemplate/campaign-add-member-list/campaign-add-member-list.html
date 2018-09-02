@@ -9,7 +9,7 @@
     <div class="slds-notify_container" ng-show="importedScope.showBanner">
         <div class="slds-notify slds-notify--alert slds-theme--success slds-theme--alert-texture slds-p-vertical--medium" role="alert">
             <button class="slds-button slds-float--right close-btn"  ng-click="importedScope.showBanner = false">
-                <svg aria-hidden="true" class="slds-button__icon"><use xlink:href="{{'/assets/icons/utility-sprite/svg/symbols.svg#close' | sldsStaticResourceURL}}"></use></svg>
+                <slds-button-svg-icon sprite="'utility'" icon="'close'"></slds-button-svg-icon>
                 <span class="slds-assistive-text">Close</span>
             </button>
             <span class="slds-assistive-text">Success</span>
@@ -19,7 +19,7 @@
     <div class="slds-notify_container" ng-show="importedScope.showErrorBanner">
         <div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture slds-p-vertical--medium" role="alert">
             <button class="slds-button slds-float--right close-btn"  ng-click="importedScope.showErrorBanner = false">
-                <svg aria-hidden="true" class="slds-button__icon"><use xlink:href="{{'/assets/icons/utility-sprite/svg/symbols.svg#close' | sldsStaticResourceURL}}"></use></svg>
+                <slds-button-svg-icon sprite="'utility'" icon="'close'"></slds-button-svg-icon>
                 <span class="slds-assistive-text">Close</span>
             </button>
             <h2>{{importedScope.bannerText}}</h2>
@@ -27,7 +27,7 @@
     </div>
     <div class="slds-m-left--x-small  slds-m-right--x-small"  onmouseover="this.style.cursor='pointer'">
         <span class="slds-icon_container" ng-click="importedScope.showFilter();">
-            <svg aria-hidden="true" class="slds-icon filter" ><use xlink:href="{{'/assets/icons/utility-sprite/svg/symbols.svg#filterList' | sldsStaticResourceURL}}"></use></svg> 
+            <slds-svg-icon sprite="'utility'" icon="'filterList'" extra-classes="'filter'"></slds-svg-icon>
         </span>
     </div>
     <div class="slds-form-element slds-size--1-of-2">
@@ -41,7 +41,7 @@
     </div>
     <div class="slds-form-element slds-size--1-of-2 slds-m-horizontal--medium">
         <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--left">
-            <svg aria-hidden="true" class="slds-input__icon slds-icon-text-default"><use xlink:href="{{'/assets/icons/utility-sprite/svg/symbols.svg#search' | sldsStaticResourceURL}}"></use></svg>
+            <slds-input-svg-icon sprite="'utility'" icon="'search'" extra-classes="'slds-icon-text-default'"></slds-input-svg-icon>
             <input id="text-input-01" class="slds-input" type="text" placeholder="Search Results" ng-model="importedScope.searchText" ng-change="importedScope.query(selected_filter)"/>
         </div>
     </div>
@@ -83,8 +83,7 @@
 <!--EMPTY LIST WARNING-->
 <div ng-if="importedScope.importMembers.length == 0 || importedScope.importMembers === undefined" class="slds-notify slds-notify--alert slds-theme--alert-texture" role="alert">
     <button class="slds-button slds-button--icon-inverse slds-notify__close">
-        <svg aria-hidden="true" class="slds-button__icon"><use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
-        </svg>
+        <slds-button-svg-icon sprite="'utility'" icon="'close'" ></slds-button-svg-icon>
     </button>
     <h2>There Are No Members to Add To Campaign</h2>
     <div class="slds-text-body--small">Please Select A List form the Drop Down Above or Clear Filters</div>
@@ -95,7 +94,8 @@
     <ul class="slds-list--horizontal slds-float--right" ng-show="importedScope.calcPageNo() !== 'No Records'">
         <div class="slds-align-middle">
             <button class="slds-button nav-button" ng-click="importedScope.previousPage()" ng-disabled="!importedScope.prevPageAction">
-                <span class="slds-icon_container"><svg aria-hidden="true" class="slds-icon nav slds-icon--small"><use xlink:href="{{'/assets/icons/utility-sprite/svg/symbols.svg#chevronleft' | sldsStaticResourceURL}}"></use></svg>
+                <span class="slds-icon_container">
+                    <slds-svg-icon sprite="'utility'" icon="'chevronleft'" size="'small'" extra-classes="'nav'" ></slds-svg-icon>
                 </span>
             </button>
         </div>
@@ -104,7 +104,8 @@
         </button>
         <div class="slds-align-middle">
             <button class="slds-button nav-btn" ng-click="importedScope.nextPage()" ng-disabled="!importedScope.nextPageAction"> 
-                <span class="slds-icon_container"><svg aria-hidden="true" class="slds-icon nav slds-icon--small"><use xlink:href="{{'/assets/icons/utility-sprite/svg/symbols.svg#chevronright' | sldsStaticResourceURL}}"></use></svg>
+                <span class="slds-icon_container">
+                    <slds-svg-icon sprite="'utility'" icon="'chevronright'" size="'small'" extra-classes="'nav'" ></slds-svg-icon>
                 </span>
             </button>
         </div>

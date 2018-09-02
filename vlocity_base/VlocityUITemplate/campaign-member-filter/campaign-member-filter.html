@@ -1,6 +1,6 @@
 <div class="slds-col slds-size--1-of-1 slds-p-right--x-small filter-container" ng-show="importedScope.show_filter">
     <div class="slds-section__title slds-p-top--x-small slds-p-left--medium">Filters </div>
-    <div ng-show="records[0].length === 0" class="slds-text-body--regular slds-m-top--medium  slds-p-left--medium">
+    <div ng-show="!records[0]" class="slds-text-body--regular slds-m-top--medium  slds-p-left--medium">
         Please configure Vlocity Attributes to enable filters for campaign member list.
     </div>
     <ul class="slds-has-block-links--space slds-has-list-interactions" onmouseover="this.style.cursor='pointer'">

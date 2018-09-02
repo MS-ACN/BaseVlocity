@@ -10,7 +10,7 @@
   <div class="slds-notify_container" ng-show="importedScope.showBanner">
         <div class="slds-notify slds-notify--alert slds-theme--success slds-theme--alert-texture slds-p-vertical--medium" role="alert">
             <button class="slds-button slds-float--right"  ng-click="importedScope.showBanner = false">
-                <svg aria-hidden="true" class="slds-button__icon close-btn"><use xlink:href="{{'/assets/icons/utility-sprite/svg/symbols.svg#close' | sldsStaticResourceURL}}"></use></svg>
+                <slds-button-svg-icon sprite="'utility'" icon="'close'" extra-classes="'close-btn'"></slds-button-svg-icon>
                 <span class="slds-assistive-text">Close</span>
             </button>
             <span class="slds-assistive-text">Success</span>
@@ -20,7 +20,7 @@
     <div class="slds-notify_container" ng-show="importedScope.showErrorBanner">
         <div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture slds-p-vertical--medium" role="alert">
             <button class="slds-button slds-float--right"  ng-click="importedScope.showErrorBanner = false">
-                <svg aria-hidden="true" class="slds-button__icon close-btn"><use xlink:href="{{'/assets/icons/utility-sprite/svg/symbols.svg#close' | sldsStaticResourceURL}}"></use></svg>
+                <slds-button-svg-icon sprite="'utility'" icon="'close'" extra-classes="'close-btn'"></slds-button-svg-icon>
                 <span class="slds-assistive-text">Close</span>
             </button>
             <h2>{{importedScope.bannerText}}</h2>
@@ -73,9 +73,7 @@
         <td data-label="delete">
           <button class="slds-button items-center" ng-click="importedScope.removeElement($index)">
             <span class="slds-icon_container" ng-click="importedScope.refreshList()">
-                    <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default">
-                        <use xlink:href="{{'/assets/icons/utility-sprite/svg/symbols.svg#delete' | sldsStaticResourceURL}}"></use>
-                    </svg>
+                  <slds-svg-icon sprite="'utility'" icon="'delete'" size="'x-small'" extra-classes="'slds-icon-text-default'"></slds-svg-icon>
               </span>
             </button>
         </td>

@@ -71,4 +71,32 @@
     .fix-slds-close-switch {
         transform: rotate(-90deg);
     }
+
+    // 64rem
+    @media screen and (max-width: $bp-large) {
+        .cpq-product-cart {
+            left: 0;
+            right: 0;
+
+            .cpq-product-cart-global-tabs {
+                ul.cpq-product-cart-tabs {
+                    padding-left: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+[dir=rtl] .vlocity {
+    // 64rem
+    @media screen and (max-width: $bp-large) {
+        .cpq-product-cart {
+            .cpq-product-cart-global-tabs {
+                ul.cpq-product-cart-tabs {
+                    padding-left: 0;
+                    padding-right: 1.5rem;
+                }
+            }
+        }
+    }
 }

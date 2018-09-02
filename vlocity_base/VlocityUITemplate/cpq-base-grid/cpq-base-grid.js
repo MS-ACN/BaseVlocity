@@ -20,4 +20,11 @@ vlocity.cardframework.registerModule.controller('initApiSettingsController', ['$
 
 	};
 
+	$rootScope.vlocityCPQ.features = {
+
+        enablePromotions : false,
+        enablePricing: false
+
+	};
+
 }]);

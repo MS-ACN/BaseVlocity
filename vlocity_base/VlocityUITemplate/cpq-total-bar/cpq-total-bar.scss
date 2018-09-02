@@ -15,4 +15,12 @@
         right: 8px;
         left: 8px;
     }
+
+    // 64rem
+    @media screen and (max-width: $bp-large) {
+        .cpq-product-cart-order {
+            left: 0;
+            right: 0;
+        }
+    }
 }

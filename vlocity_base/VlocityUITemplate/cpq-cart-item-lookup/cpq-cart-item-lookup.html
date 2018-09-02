@@ -2,7 +2,7 @@
     <div class="slds-col--padded slds-size--1-of-1">
         <div class="slds-section">
             <div class="slds-section__title">
-                <span>Please select a value from dropdown below:</span>
+                <span>{{::importedScope.customLabels.CPQCartItemLookupText}}</span>
             </div>
             <div class="slds-form--stacked">
                 <div class="slds-form-element">
@@ -15,7 +15,7 @@
                         <span class="slds-form-element__addon">
                             <button class="slds-button slds-p-horizontal--xx-small" ng-click="importedScope.createNewInstanceFlag = true; importedScope.processCreateNewLookupAction(records.actions.newsite)">
                                 <slds-button-svg-icon sprite="'utility'" icon="'add'"></slds-button-svg-icon>
-                                <span class="slds-assistive-text">Create New Instance of Lookup Field</span>
+                                <span class="slds-assistive-text">{{::importedScope.customLabels.CPQCartItemLookupCreateNewInstance}}</span>
                             </button>                  
                         </span>
                     </div>
@@ -26,20 +26,21 @@
     <div class="slds-col--padded slds-size--1-of-1" ng-if="importedScope.createNewInstanceFlag">
         <div class="slds-section">
             <div class="slds-section__title">
-                <span>Please provide info below to create new instance</span>
+                <span>{{::importedScope.customLabels.CPQCartItemLookupProvideInfo}}</span>
             </div>
             <div class="slds-form--stacked">
                 <div class="slds-form-element" ng-repeat="inputField in importedScope.createNewLookupInputFields" ng-if="inputField.editable">
                     <label class="slds-form-element__label">{{inputField.label}}</label>
                     <div class="slds-form-element__control">
-                        <input type='text' ng-model='$root.createNewLookupInputFieldValue' ng-change="importedScope.refreshCreateNewLookupInputField(inputField)"/>
+                        <input type='text' ng-model='importedScope.createNewLookupInputFieldValue' ng-change="importedScope.refreshCreateNewLookupInputField(inputField)"/>
                     </div>
                 </div>
                 <div class="slds-form-element">
-                    <button type="button" class="slds-button slds-button--neutral" ng-click="importedScope.createNewInstanceOfLookupField()">{{ ::'CreateNew' | localize: 'Create New' }}</button>
+                    <button type="button" class="slds-button slds-button--neutral" ng-click="importedScope.createNewInstanceOfLookupField()"
+                            ng-disabled="!importedScope.createNewLookupInputFieldValue">{{::importedScope.customLabels.CPQCartItemLookupCreateNew}}</button>
                 </div>
-                <div class="slds-form-element" ng-if="$root.createNewResultMsg">
-                    <span>{{$root.createNewResultMsg}}</span>
+                <div class="slds-form-element" ng-if="importedScope.createNewResultMsg">
+                   <small>{{importedScope.createNewResultMsg}}</small>
                 </div>
             </div>
         </div>

@@ -1,8 +1,9 @@
 [
     {
-        "%vlocity_namespace%__DomainObjectAPIName__c": "CustomerInteraction__c",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__CustomerInteraction__c",
         "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
-        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "AccountId__c",
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__AccountId__c",
+        "%vlocity_namespace%__FormulaOrder__c": 0,
         "%vlocity_namespace%__InterfaceFieldAPIName__c": "resultValueMap:PolicyHolderId__c",
         "%vlocity_namespace%__InterfaceObjectName__c": "json",
         "%vlocity_namespace%__IsDisabled__c": false,
@@ -15,9 +16,10 @@
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
     },
     {
-        "%vlocity_namespace%__DomainObjectAPIName__c": "CustomerInteraction__c",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__CustomerInteraction__c",
         "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
-        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "ContactId__c",
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__ContactId__c",
+        "%vlocity_namespace%__FormulaOrder__c": 0,
         "%vlocity_namespace%__InterfaceFieldAPIName__c": "parentId",
         "%vlocity_namespace%__InterfaceObjectName__c": "json",
         "%vlocity_namespace%__IsDisabled__c": false,
@@ -31,25 +33,10 @@
     },
     {
         "%vlocity_namespace%__DefaultValue__c": "$Vlocity.NOW",
-        "%vlocity_namespace%__DomainObjectAPIName__c": "CustomerInteraction__c",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__CustomerInteraction__c",
         "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
-        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "StartDateTime__c",
-        "%vlocity_namespace%__InterfaceFieldAPIName__c": "verificationResult:timestamp",
-        "%vlocity_namespace%__InterfaceObjectName__c": "json",
-        "%vlocity_namespace%__IsDisabled__c": false,
-        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
-        "%vlocity_namespace%__LinkCreatedIndex__c": 0,
-        "%vlocity_namespace%__MapId__c": "CreateInteractionForPolicyHolderCustoma0J41000000ehSAEAYItem5",
-        "%vlocity_namespace%__UpsertKey__c": false,
-        "Name": "CreateInteractionForPolicyHolder",
-        "VlocityDataPackType": "SObject",
-        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
-    },
-    {
-        "%vlocity_namespace%__DefaultValue__c": "$Vlocity.NOW",
-        "%vlocity_namespace%__DomainObjectAPIName__c": "CustomerInteraction__c",
-        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
-        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "VerificationTimestamp__c",
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__VerificationTimestamp__c",
+        "%vlocity_namespace%__FormulaOrder__c": 0,
         "%vlocity_namespace%__InterfaceFieldAPIName__c": "verificationResult:timestamp",
         "%vlocity_namespace%__InterfaceObjectName__c": "json",
         "%vlocity_namespace%__IsDisabled__c": false,
@@ -62,9 +49,10 @@
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
     },
     {
-        "%vlocity_namespace%__DomainObjectAPIName__c": "CustomerInteraction__c",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__CustomerInteraction__c",
         "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
-        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "VerifiedAgentName__c",
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__VerifiedAgentName__c",
+        "%vlocity_namespace%__FormulaOrder__c": 0,
         "%vlocity_namespace%__InterfaceFieldAPIName__c": "verificationResult:username",
         "%vlocity_namespace%__InterfaceObjectName__c": "json",
         "%vlocity_namespace%__IsDisabled__c": false,
@@ -77,9 +65,10 @@
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
     },
     {
-        "%vlocity_namespace%__DomainObjectAPIName__c": "CustomerInteraction__c",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__CustomerInteraction__c",
         "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
-        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Verified__c",
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__Verified__c",
+        "%vlocity_namespace%__FormulaOrder__c": 0,
         "%vlocity_namespace%__InterfaceFieldAPIName__c": "verificationResult:status",
         "%vlocity_namespace%__InterfaceObjectName__c": "json",
         "%vlocity_namespace%__IsDisabled__c": false,
@@ -92,9 +81,10 @@
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
     },
     {
-        "%vlocity_namespace%__DomainObjectAPIName__c": "CustomerInteractionTopic__c",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__CustomerInteractionTopic__c",
         "%vlocity_namespace%__DomainObjectCreationOrder__c": 2,
-        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "CustomerInteractionId__c",
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__CustomerInteractionId__c",
+        "%vlocity_namespace%__FormulaOrder__c": 0,
         "%vlocity_namespace%__InterfaceObjectName__c": "json",
         "%vlocity_namespace%__IsDisabled__c": false,
         "%vlocity_namespace%__IsRequiredForUpsert__c": false,
@@ -107,9 +97,10 @@
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
     },
     {
-        "%vlocity_namespace%__DomainObjectAPIName__c": "CustomerInteractionTopic__c",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__CustomerInteractionTopic__c",
         "%vlocity_namespace%__DomainObjectCreationOrder__c": 2,
-        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "PolicyId__c",
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__PolicyId__c",
+        "%vlocity_namespace%__FormulaOrder__c": 0,
         "%vlocity_namespace%__InterfaceFieldAPIName__c": "resultValueMap:PolicyId__c",
         "%vlocity_namespace%__InterfaceObjectName__c": "json",
         "%vlocity_namespace%__IsDisabled__c": false,
@@ -122,9 +113,10 @@
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
     },
     {
-        "%vlocity_namespace%__DomainObjectAPIName__c": "CustomerInteractionTopic__c",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__CustomerInteractionTopic__c",
         "%vlocity_namespace%__DomainObjectCreationOrder__c": 2,
-        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "PolicyPartyRelationshipId__c",
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__PolicyPartyRelationshipId__c",
+        "%vlocity_namespace%__FormulaOrder__c": 0,
         "%vlocity_namespace%__InterfaceFieldAPIName__c": "recordId",
         "%vlocity_namespace%__InterfaceObjectName__c": "json",
         "%vlocity_namespace%__IsDisabled__c": false,

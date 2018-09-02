@@ -9,9 +9,7 @@
     <div class="slds-notify_container" hide-notification="true" ng-class="{'show-notification': $root.notification.active}">
         <div class="slds-notify slds-notify--alert slds-theme--alert-texture" role="alert" ng-class="{'slds-theme--success': $root.notification.type === 'success', 'slds-theme--error': $root.notification.type === 'error'}">
             <button class="slds-button slds-button--icon-inverse slds-notify__close" ng-click="$root.notification.active = false">
-                <svg aria-hidden="true" class="slds-button__icon">
-                    <use xlink:href="{{'/assets/icons/utility-sprite/svg/symbols.svg#close' | sldsStaticResourceURL}}"></use>
-                </svg>
+                <slds-button-svg-icon sprite="'utility'" icon="'close'" ></slds-button-svg-icon>
                 <span class="slds-assistive-text">Close</span>
             </button>
             <span class="slds-assistive-text">Info</span>

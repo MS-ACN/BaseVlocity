@@ -8,3 +8,24 @@
         clear: both;
     }
 }
+
+//generate padding styles for product-name wrapper in tree
+$padding-offset: 20;
+$final-level: 10;
+@mixin cpqProductChildLevelStyling($direction: 'left', $padding: $padding-offset, $level: 1) {
+    .cpq-cart-item-product-child-level-#{$level} {
+        .cpq-cart-item-child-product-name-wrapper {
+             @if $direction == 'left' {
+                padding-left : $padding + px;
+                padding-right: 0;
+            } 
+            @if $direction == 'right' {
+                padding-right: $padding + px; 
+                padding-left: 0;
+            }
+        }
+        @if ($level < $final-level) {
+            @include cpqProductChildLevelStyling($direction, $padding + $padding-offset, $level + 1);
+        }
+    }
+}

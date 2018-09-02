@@ -159,7 +159,7 @@
         <h2 class="no-results">No Results</h2>
     </div>
     <div class="member-list-pagination member-list-pagination-bottom slds-clearfix slds-has-divider--bottom" ng-hide="importedScope.emptyResults || (importedScope.disableNextBtn && importedScope.currentPage === 0)">
-        <button class="slds-button slds-button--link slds-m-right--medium" ng-class="{'disabled' : importedScope.currentPage === 0}" ng-click="importedScope.previousPage()" ng-show="importedScope.currentPage === 0">
+        <button class="slds-button slds-button--link slds-m-right--medium" ng-class="{'disabled' : importedScope.currentPage === 0}" ng-click="importedScope.previousPage()" ng-disabled="importedScope.currentPage === 0">
             <slds-svg-icon sprite="'utility'" icon="'chevronleft'" size="'x-small'"></slds-svg-icon>
         </button>
         <span class="slds-align-middle slds-text-body--small" disabled='true'>{{importedScope.pageNoStr}}</span>

@@ -5,7 +5,7 @@
                 {{msg.message}}
                 <i ng-init="data.hasError = true"></i>
             </span>
-            <span ng-if="msg.severity !== 'ERROR'">
+            <span class="warning-msg" ng-if="msg.severity !== 'ERROR'">
                 {{msg.message}}
             </span>
         </li>

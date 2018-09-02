@@ -11,7 +11,7 @@
           ng-click="performAction(action, importedScope.checkoutActionConfig)"
           ng-disabled="!records.actions || !records.actions.checkout || importedScope.hasError">
           <span ng-show="records.actions && records.actions.checkout">{{action.displayName}}</span>
-          <span ng-show="!records.actions || !records.actions.checkout">Incomplete</span>
+          <span ng-show="!records.actions || !records.actions.checkout">{{::importedScope.customLabels.CPQTotalIncomplete}}</span>
         </button>
   </div>
 </div>

@@ -35,7 +35,7 @@
             
           <div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-button--last" ng-class="{'slds-is-open': isOpen}" type="'button-group'" aria-expanded="true" ng-if="data.actions.length > 2">
               
-          <button class="slds-button slds-button--icon-border-filled" aria-haspopup="true" ng-click="isOpen = !isOpen"
+          <button cpq-dropdown-handler="isOpen = false" class="slds-button slds-button--icon-border-filled" aria-haspopup="true" ng-click="isOpen = !isOpen"
             id="{{idPrefix}}-toggle" title="Show More">
             <slds-button-svg-icon size="type === 'button-group' ? null : 'small'" sprite="'utility'" icon="'down'" ></slds-button-svg-icon>
             <span class="slds-assistive-text">Show More</span>

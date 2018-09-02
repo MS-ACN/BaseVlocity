@@ -36,4 +36,16 @@
             }
         }
     }
+    // 64rem
+    @media screen and (max-width: $bp-large) {
+        .cpq-product-cart-config {
+            position: static;
+
+            .cpq-product-cart-config-form {
+                .cpq-product-cart-config-form-savebar {
+                    position: static;
+                }
+            }
+        }
+    }
 }

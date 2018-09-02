@@ -8,7 +8,9 @@
                     </p>
                 </div>
                 <div class="slds-colslds-small-size--2-of-12 slds-medium-size--2-of-12 slds-large-size--2-of-12">
-                    <a href="#" ng-click="importedScope.viewMore()" class="product-link slds-text-body--small slds-float--right">More</a>
+                    <a href="#" ng-click="importedScope.viewMore()" class="product-link slds-text-body--small slds-float--right">
+                        {{::importedScope.customLabels.CPQMore}}
+                    </a>
                 </div>
             </div>
             <div class="slds-tile__detail">
@@ -28,8 +30,8 @@
                         </div>
                     </div>
                     <div class="slds-col slds-small-size--4-of-12 slds-medium-size--5-of-12 slds-large-size--4-of-12 slds-text-align--right cpq-product-actions">
-                        <button class="slds-button slds-button--neutral add-button" ng-click="importedScope.addToCart(obj)">
-                            Add to cart
+                        <button class="slds-button slds-button--neutral add-button" ng-click="importedScope.addToCart(obj)" ng-disabled="!obj.actions">
+                            {{::importedScope.customLabels.CPQAddToCart}}
                         </button>
                     </div>
                 </div>

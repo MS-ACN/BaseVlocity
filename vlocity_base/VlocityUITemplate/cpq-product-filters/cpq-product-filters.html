@@ -4,9 +4,12 @@
     <div class="slds-col cpq-product-cart-config-form scroll">
         <!-- form -->
         <div class="">
-            <button type="button" class="slds-button" ng-click="importedScope.resetFilter(records)">{{ ::'ResetFilters' | localize: 'Reset' }}
+            <button type="button" class="slds-button" ng-click="importedScope.resetFilter(records)">
+                {{::importedScope.customLabels.CPQReset}}
             </button>
-            <button type="button" class="slds-button slds-button--neutral" ng-click="importedScope.submitFilter(records)">{{::'ResetFilters' | localize: 'Apply' }}</button>
+            <button type="button" class="slds-button slds-button--neutral" ng-click="importedScope.submitFilter(records)">
+                {{::importedScope.customLabels.CPQApply}}
+            </button>
         </div>
         
         <div ng-if="records.length >0">
@@ -14,7 +17,7 @@
         </div>
         
         <div ng-if="records.length === 0">
-            No filters are available for this list.
+            {{::importedScope.customLabels.CPQFiltersNotAvailable}}
         </div>
     </div>
 </div>

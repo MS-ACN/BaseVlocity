@@ -14,6 +14,7 @@
             }
         ],
         "order": [
+            "+order",
             "+obj.%vlocity_namespace%__aggregate_AnnualPremium__c",
             "+obj.%vlocity_namespace%__PolicyStatus__c"
         ],

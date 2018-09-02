@@ -44,7 +44,7 @@
             </ul>
         </div>
         <div class="slds-form-element slds-m-horizontal--xx-small slds-size--1-of-3" ng-class="{'slds-size--1-of-6' : importedScope.options.dateRange === 'Custom'}">
-            <label>Filter:</label><span class="slds-text-align--right slds-text-color--weak tool-tip" ng-hide="importedScope.options.dateRange === 'Custom'"> Click on legend to hide/show keys</span>
+            <label>Filter:</label><span class="slds-text-align--right slds-text-color--weak tool-tip" ng-hide="importedScope.options.dateRange === 'Custom'"> (Toggle keys in legend)</span>
             <select id="select-02" class="slds-select slds-p-around--xx-small" ng-change="importedScope.filterData()" ng-model="importedScope.options.filter">
                 <option value="{{status}}" ng-repeat="status in importedScope.status">{{status}}</option>
             </select>

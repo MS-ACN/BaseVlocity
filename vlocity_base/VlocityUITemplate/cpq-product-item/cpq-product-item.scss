@@ -59,3 +59,16 @@
         }
     }
 }
+
+[dir=rtl] .vlocity {
+    .cpq-product-item {
+        .cpq-product-item-container {
+            .product-price {
+                div {
+                    padding-right: 0;
+                    padding-left: $cpq-padding-large-horizontal;
+                }
+            }
+        }
+    }
+}

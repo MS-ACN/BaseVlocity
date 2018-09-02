@@ -1,9 +1,7 @@
 <div class="campaign-detail {{$root.rightColumn.toggleRightClass}}" ng-init="importedScope.setObj(obj, params.id)">
     <div class="campaign-detail-header">
         <div class="slds-icon_container slds-icon-standard-campaign column-header-icon" title="Campaign Details" ng-click="importedScope.responsiveHelper.toggleCollapseRightCol()">
-            <svg aria-hidden="true" class="slds-icon">
-                <use xlink:href="{{'/assets/icons/standard-sprite/svg/symbols.svg#campaign' | sldsStaticResourceURL}}"></use>
-            </svg>
+            <slds-svg-icon sprite="'standard'" icon="'campaign'" ></slds-svg-icon>
             <span class="slds-assistive-text">Campaign Details</span>
         </div>
         <span class="slds-text-heading--small">Campaign Details</span>
@@ -33,9 +31,7 @@
         <div class="slds-form-element slds-m-bottom--small slds-box slds-theme--shade slds-box--x-small content-box" ng-repeat="attachment in importedScope.attachments" ng-click="importedScope.navigateTo(attachment.Id)">
            <div class="slds-tile slds-media">
               <div class="slds-media__figure">
-                <svg aria-hidden="true" class="slds-icon slds-icon--small">
-                    <use xlink:href="{{'/assets/icons/doctype-sprite/svg/symbols.svg#' + attachment.icon | sldsStaticResourceURL}}"></use>
-                 </svg>  
+                <slds-svg-icon sprite="'doctype'" icon="attachment.icon" size="'small'" ></slds-svg-icon>
               </div>
               <div class="slds-media__body slds-m-top--xx-small">
                 <h3 class="slds-truncate" title="attachment">{{attachment.Name}}</h3>
@@ -58,9 +54,7 @@
     </div>
     <div class="toggle-panel" ng-click="importedScope.responsiveHelper.toggleCollapseRightCol()">
         <div class="slds-icon_container" title="Toggle Right Column">
-            <svg aria-hidden="true" class="slds-icon slds-icon--small">
-                <use xlink:href="{{'/assets/icons/utility-sprite/svg/symbols.svg#' + $root.rightColumn.toggleIcon | sldsStaticResourceURL}}"></use>
-            </svg>
+          <slds-svg-icon sprite="'utility'" icon="$root.rightColumn.toggleIcon" size="'small'" ></slds-svg-icon>
           <span class="slds-assistive-text">Toggle Right Column</span>
         </div>
     </div>
