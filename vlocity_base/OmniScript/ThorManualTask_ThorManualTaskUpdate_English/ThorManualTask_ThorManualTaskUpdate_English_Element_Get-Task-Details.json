@@ -43,7 +43,7 @@
             "timeout": null,
             "withCredentials": true
         },
-        "restPath": "%uiServicesUrl%/orderManagement/orchestrationItem/view/%taskId%",
+        "restPath": "%uiServicesUrl%/ordermanagement/v1/orchestrationitems/%taskId%/view",
         "sendJSONNode": "",
         "sendJSONPath": "",
         "show": null,

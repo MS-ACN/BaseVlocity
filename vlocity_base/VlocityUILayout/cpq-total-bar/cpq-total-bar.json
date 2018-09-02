@@ -6,7 +6,7 @@
         "contextVariables": [
             {
                 "name": "params.id",
-                "val": "801360000000mgJ"
+                "val": "8011I000000Ck0KQAS"
             }
         ],
         "type": "Dual",
@@ -30,5 +30,8 @@
         "0": {
             "templateUrl": "cpq-total-bar"
         }
-    }
+    },
+    "workspace": [
+        "cpq-total-bar-card/Vlocity/1500408956686"
+    ]
 }

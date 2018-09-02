@@ -4,10 +4,13 @@
 /*** MIXINS ***/
 @import "cpq-mixin";
 
+/* $cpq-namespace is defined in cpq-base-variables */
+$namespace: $cpq-namespace;
+
 /*** STYLES ***/
 .vlocity {
     &.via-slds {
-        .cpq-product-cart {
+        .#{$namespace}-product-cart {
             position: absolute;
             top: 0;
             right: $cpq-padding-large-horizontal/2;
@@ -15,7 +18,7 @@
             left: $cpq-padding-large-horizontal/2;
             height: calc(100% - 80px);
 
-            .errors-container-sticky {
+            .#{$namespace}-errors-container-sticky {
                 position: absolute;
                 z-index: 1;
                 width: 100%;
@@ -23,17 +26,17 @@
                     /* targeting Firefox only */
                     top: 31px;
                 }
-                .border-radius{
+                .#{$namespace}-border-radius {
                     border-radius: 4px 4px 0 0;
                 }
-                .cpq-fix-slds-close-switch {
+                .#{$namespace}-close-switch {
                     transform: rotate(-90deg);
                 }
             }
-            .cart-container-padding{
+            .#{$namespace}-cart-container-padding {
                 padding-top: 40px;
             }
-            .cart-errors {
+            .#{$namespace}-cart-errors {
                 padding: $cpq-padding-large-vertical $cpq-padding-large-horizontal;
                 color: white;
                 h2 {
@@ -46,49 +49,49 @@
                     line-height: 1.25;
                     background-color: inherit;
                 }
-                .slds-button{
+                .#{$namespace}-errors-button {
                     line-height: 1.25;
                     color: white;
                 }
-
             }
-
-            .cpq-product-cart-tabs {
-                margin-top: $cpq-cart-container-tabs-top-margin;
+            .#{$namespace}-product-cart-global-tabs {
+                background-color: transparent;
+                .#{$namespace}-product-cart-tabs {
+                    margin-top: $cpq-cart-container-tabs-top-margin;
+                }
             }
-
-            .cpq-product-cart-items {
+            .#{$namespace}-product-cart-items {
                 background-color: $cpq-product-cart-items-bg-color;
                 overflow-y: auto;
-                .cpq-product-cart-items-tab-content {
+                .#{$namespace}-product-cart-items-tab-content {
                     padding-top: 0px; //slds override
-                    .cpq-no-cart-items-msg {
+                    .#{$namespace}-no-cart-items-msg {
                         padding: $cpq-padding-large-vertical*4 $cpq-padding-large-vertical;
                     }
                 }
-                .next-product {
+                .#{$namespace}-next-product {
                     padding: $cpq-padding-large-vertical;
 
-                    .slds-spinner_container {
+                    .#{$namespace}-spinner-container {
                         position: relative;
                         padding-top: 10px;
                     }
                 }
             }
 
-            .cpq-cart-promotions-tab-container {
+            .#{$namespace}-cart-promotions-tab-container {
                 min-height: 300px;
             }
         }
 
         // 64rem
         @media screen and (max-width: $bp-large) {
-            .cpq-product-cart {
+            .#{$namespace}-product-cart {
                 left: 0;
                 right: 0;
 
-                .cpq-product-cart-global-tabs {
-                    ul.cpq-product-cart-tabs {
+                .#{$namespace}-product-cart-global-tabs {
+                    ul.#{$namespace}-product-cart-tabs {
                         padding-left: 1.5rem;
                     }
                 }
@@ -101,9 +104,9 @@
     &.via-slds {
         // 64rem
         @media screen and (max-width: $bp-large) {
-            .cpq-product-cart {
-                .cpq-product-cart-global-tabs {
-                    ul.cpq-product-cart-tabs {
+            .#{$namespace}-product-cart {
+                .#{$namespace}-product-cart-global-tabs {
+                    ul.#{$namespace}-product-cart-tabs {
                         padding-left: 0;
                         padding-right: 1.5rem;
                     }
@@ -112,4 +115,3 @@
         }
     }
 }
-.a{}

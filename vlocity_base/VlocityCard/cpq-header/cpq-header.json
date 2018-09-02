@@ -3,7 +3,7 @@
         "contextVariables": [
             {
                 "name": "params.id",
-                "val": "00636000004ZByX"
+                "val": "801360000055hNw"
             }
         ],
         "type": "Dual",
@@ -28,29 +28,38 @@
     "states": [
         {
             "actionCtxId": "['Id']",
+            "blankStateCheck": false,
             "collapse": true,
-            "conditions": [
-                {
-                    "field": "$scope.data.status",
-                    "operator": "===",
-                    "type": "system",
-                    "value": "'active'"
-                },
-                {
-                    "field": "['ObjectType']",
-                    "operator": "==",
-                    "type": "custom",
-                    "value": "'Opportunity'"
-                }
-            ],
+            "conditions": {
+                "group": [
+                    {
+                        "field": "$scope.data.status",
+                        "operator": "===",
+                        "type": "system",
+                        "value": "'active'"
+                    },
+                    {
+                        "field": "['ObjectType']",
+                        "operator": "==",
+                        "type": "custom",
+                        "value": "'Opportunity'"
+                    }
+                ]
+            },
             "definedActions": {
                 "actions": [
                     {
+                        "collapse": true,
+                        "hasExtraParams": false,
                         "id": "View Record",
+                        "isCustomAction": false,
                         "type": "Vlocity Action"
                     },
                     {
+                        "collapse": true,
+                        "hasExtraParams": false,
                         "id": "Edit Record",
+                        "isCustomAction": false,
                         "type": "Vlocity Action"
                     }
                 ]
@@ -59,8 +68,8 @@
                 {
                     "collapse": true,
                     "fieldType": "standard",
-                    "label": "StageName",
-                    "name": "['StageName']",
+                    "label": "['StageName']['label']",
+                    "name": "['StageName']['value']",
                     "type": "string"
                 }
             ],
@@ -71,29 +80,38 @@
         },
         {
             "actionCtxId": "['Id']",
+            "blankStateCheck": false,
             "collapse": true,
-            "conditions": [
-                {
-                    "field": "$scope.data.status",
-                    "operator": "===",
-                    "type": "system",
-                    "value": "'active'"
-                },
-                {
-                    "field": "['ObjectType']",
-                    "operator": "==",
-                    "type": "custom",
-                    "value": "'Quote'"
-                }
-            ],
+            "conditions": {
+                "group": [
+                    {
+                        "field": "$scope.data.status",
+                        "operator": "===",
+                        "type": "system",
+                        "value": "'active'"
+                    },
+                    {
+                        "field": "['ObjectType']",
+                        "operator": "==",
+                        "type": "custom",
+                        "value": "'Quote'"
+                    }
+                ]
+            },
             "definedActions": {
                 "actions": [
                     {
+                        "collapse": true,
+                        "hasExtraParams": false,
                         "id": "View Record",
+                        "isCustomAction": false,
                         "type": "Vlocity Action"
                     },
                     {
+                        "collapse": true,
+                        "hasExtraParams": false,
                         "id": "Edit Record",
+                        "isCustomAction": false,
                         "type": "Vlocity Action"
                     }
                 ]
@@ -102,8 +120,8 @@
                 {
                     "collapse": true,
                     "fieldType": "standard",
-                    "label": "QuoteNumber",
-                    "name": "['QuoteNumber']",
+                    "label": "['QuoteNumber']['label']",
+                    "name": "['QuoteNumber']['value']",
                     "type": "string"
                 }
             ],
@@ -114,41 +132,59 @@
         },
         {
             "actionCtxId": "['Id']",
-            "collapse": true,
-            "conditions": [
-                {
-                    "field": "$scope.data.status",
-                    "operator": "===",
-                    "type": "system",
-                    "value": "'active'"
-                },
-                {
-                    "field": "['ObjectType']",
-                    "operator": "==",
-                    "type": "custom",
-                    "value": "'Order'"
-                }
-            ],
+            "blankStateCheck": false,
+            "collapse": false,
+            "conditions": {
+                "group": [
+                    {
+                        "field": "$scope.data.status",
+                        "operator": "===",
+                        "type": "system",
+                        "value": "'active'"
+                    },
+                    {
+                        "field": "['ObjectType']",
+                        "operator": "==",
+                        "type": "custom",
+                        "value": "'Order'"
+                    }
+                ]
+            },
             "definedActions": {
                 "actions": [
                     {
+                        "collapse": true,
+                        "hasExtraParams": false,
                         "id": "View Record",
+                        "isCustomAction": false,
                         "type": "Vlocity Action"
                     },
                     {
+                        "collapse": true,
+                        "hasExtraParams": false,
                         "id": "Generate Document PDF",
+                        "isCustomAction": false,
                         "type": "Vlocity Action"
                     },
                     {
+                        "collapse": true,
+                        "hasExtraParams": false,
                         "id": "Send for eSignature",
+                        "isCustomAction": false,
                         "type": "Vlocity Action"
                     },
                     {
+                        "collapse": true,
+                        "hasExtraParams": false,
                         "id": "New Order",
+                        "isCustomAction": false,
                         "type": "Vlocity Action"
                     },
                     {
+                        "collapse": true,
+                        "hasExtraParams": false,
                         "id": "Edit Record",
+                        "isCustomAction": false,
                         "type": "Vlocity Action"
                     }
                 ]
@@ -156,9 +192,11 @@
             "fields": [
                 {
                     "collapse": true,
-                    "fieldType": "standard",
-                    "label": "Status",
-                    "name": "['Status']",
+                    "displayLabel": "['Status']['value']",
+                    "editing": false,
+                    "group": "Custom Properties",
+                    "label": "['Status']['label']",
+                    "name": "['Status']['value']",
                     "type": "string"
                 }
             ],

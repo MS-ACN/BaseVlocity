@@ -72,7 +72,7 @@
             "timeout": null,
             "withCredentials": true
         },
-        "restPath": "%uiServicesUrl%/taskManagement/tasks/%taskId%/switchToReady",
+        "restPath": "%uiServicesUrl%/ordermanagement/v1/tasks/%taskId%/switchToReady",
         "selectMode": "Single",
         "sendJSONNode": "",
         "sendJSONPath": "",

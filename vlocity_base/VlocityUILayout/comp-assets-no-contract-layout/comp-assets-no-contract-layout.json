@@ -21,7 +21,7 @@
         "value": {
             "apexRemoteResultVar": "records",
             "apexRestResultVar": "records",
-            "endpoint": "/services/apexrest/%vlocity_namespace%/v2/accounts/{{attrs.accountId}}/assets?includes={{attrs.assetIncludeType}}&effectiveAssetsDateFilter={{attrs.effectiveDate}}&priceDetailsFields=%vlocity_namespace%__OneTimeCharge__c,%vlocity_namespace%__OneTimeCalculatedPrice__c,%vlocity_namespace%__OneTimeTotal__c,%vlocity_namespace%__RecurringCharge__c,%vlocity_namespace%__RecurringCalculatedPrice__c,%vlocity_namespace%__RecurringTotal__c&pagesize=10",
+            "endpoint": "/services/apexrest/%vlocity_namespace%/v2/accounts/{{attrs.accountId}}/assets?includes={{attrs.assetIncludeType}}&effectiveAssetsDateFilter={{attrs.effectiveDate}}&priceDetailsFields=%vlocity_namespace%__OneTimeCharge__c,%vlocity_namespace%__OneTimeCalculatedPrice__c,%vlocity_namespace%__OneTimeTotal__c,%vlocity_namespace%__RecurringCharge__c,%vlocity_namespace%__RecurringCalculatedPrice__c,%vlocity_namespace%__RecurringTotal__c,%vlocity_namespace%__OneTimeLoyaltyPrice__c,%vlocity_namespace%__OneTimeLoyaltyTotal__c&pagesize=10",
             "inputMap": {
                 "accountId": "{{attrs.accountId}}",
                 "effectiveAssetsDateFilter": "{{attrs.effectiveDate}}",
@@ -53,5 +53,8 @@
         "0": {
             "templateUrl": "comp-assets-no-contract"
         }
-    }
+    },
+    "workspace": [
+        "comp-assets-product-item/Vlocity/1500408956648"
+    ]
 }

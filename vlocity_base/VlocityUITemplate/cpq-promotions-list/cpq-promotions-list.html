@@ -5,7 +5,7 @@
 	</div>
 
 	<!-- CARDS -->
-	<div class="slds-grid cpq-promotions-list-vertical cpq-promotions-list-col-stretch"
+	<div class="slds-grid cpq-promotions-grid cpq-promotions-list-vertical cpq-promotions-list-col-stretch"
        ng-if="!importedScope.$parent.$parent.filters.show">
 		<div class="slds-spinner_container cpq-spinner_container" ng-hide="isLoaded">
 			<div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
@@ -20,7 +20,7 @@
 			ng-if="isLoaded">
 		</vloc-card>
 
-		<div class="slds-grid slds-grid--vertical-align-center slds-grid--align-center cpq-no-promotions-msg" ng-show="!records && isLoaded">
+		<div class="slds-grid slds-grid--vertical-align-center slds-grid--align-center cpq-promotions-grid cpq-no-promotions-msg" ng-show="!records && isLoaded">
 			{{::importedScope.customLabels.CPQPromotionsNotAvailable}}
 		</div>
 

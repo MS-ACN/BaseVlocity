@@ -21,7 +21,7 @@
     "%vlocity_namespace%__StoryObjectName__c": "%vlocity_namespace%__CampaignMemberActionLog__c",
     "%vlocity_namespace%__StoryObjectReferenceId__c": "",
     "%vlocity_namespace%__StoryObjectSortField__c": "LastCallDate__c",
-    "%vlocity_namespace%__SummaryFields__c": "Title_Highlight:CallTimeDisplay__c",
+    "%vlocity_namespace%__SummaryFields__c": "Title_HighLight:CallTimeDisplay__c",
     "Name": "CampaignMember_Action",
     "VlocityDataPackType": "SObject",
     "VlocityRecordSObjectType": "%vlocity_namespace%__StoryObjectConfiguration__c",

@@ -7,20 +7,6 @@ $namespace: $assets-namespace;
 /*** STYLES ***/
 .vlocity {
     &.via-slds {
-        .comp-#{$namespace}-header-card {
-            .fix--slds-dropdown-to-btn {
-                left: -110%;
-            }
-        }
-    }
-}
 
-[dir=rtl] .vlocity {
-    &.via-slds {
-        .comp-#{$namespace}-header-card {
-            .fix--slds-dropdown-to-btn {
-                right: -1rem;
-            }
-        }
     }
 }

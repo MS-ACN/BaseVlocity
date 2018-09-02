@@ -5,7 +5,7 @@
             <div class="slds-form-element slds-lookup slds-is-open" data-select="single">
                 <label class="slds-form-element__label" for="lookup-366">Search Item</label>
                 <div class="slds-form-element__control">
-                    <div class="slds-input-has-icon slds-input-has-icon--left">
+                    <div class="slds-input-has-icon slds-input-has-icon_left">
                         <slds-svg-icon sprite="'utility'" size="'x-small'" icon="'search'" extra-classes="'slds-input__icon slds-icon-text-default'"></slds-svg-icon>
                         <input class="slds-lookup__search-input slds-input" type="search" placeholder="Search" role="combobox" aria-activedescendent="" aria-expanded="true" aria-autocomplete="list" ng-model="searchItem" slds-options="item.UnitPrice.value  as item.Name.value for item in getSearchItems(records, $viewValue, tempScope)" data-template="{{typeaheadTemplate}}" data-trigger="focus" data-limit="100" slds-typeahead/>
                     </div>

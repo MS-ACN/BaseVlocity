@@ -1,6 +1,6 @@
 {
     "Cards": [
-        "Mobile Action Contact"
+        "mobile-ret-action-contact"
     ],
     "dataSource": {
         "type": "Custom",

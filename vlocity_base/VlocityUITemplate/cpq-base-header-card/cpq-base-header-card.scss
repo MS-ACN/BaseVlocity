@@ -1,21 +1,35 @@
 /*** CPQ THEME VARIABLES ***/
 @import "cpq-theme-variables";
 
+/* $cpq-namespace is defined in cpq-base-variables */
+$namespace: $cpq-namespace;
+
 /*** STYLES ***/
 .vlocity {
     &.via-slds {
-        .cpq-base-header-card {
-            .fix--slds-dropdown-to-btn {
+        .#{$namespace}-base-header-card {
+            .#{$namespace}-dropdown-to-btn {
                 left: -110%;
             }
+            .#{$namespace}-base-header-picklist-label {
+                width:9rem;
+            }
+            .#{$namespace}-base-header-dropdown {
+                width:9rem;
+            }
+            .#{$namespace}-base-header-title {
+                display: block;
+                word-wrap: break-word;
+                max-width: 10rem;
+            }    
         }
     }
 }
 
 [dir=rtl] .vlocity {
     &.via-slds {
-        .cpq-base-header-card {
-            .fix--slds-dropdown-to-btn {
+        .#{$namespace}-base-header-card {
+            .#{$namespace}-dropdown-to-btn {
                 right: -1rem;
             }
         }

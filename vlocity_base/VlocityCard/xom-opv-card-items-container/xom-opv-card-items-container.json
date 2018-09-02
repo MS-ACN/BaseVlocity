@@ -2,7 +2,7 @@
     "dataSource": {
         "type": "Custom",
         "value": {
-            "body": "{\n  \"OrcAttributes\":{\n    \"OrcAttributeItems\": [\n      {\n        \"type\": \"Callout\",\n        \"attributes\": [\n          \"System Interface\",\n          \"Orchestration Queue\",\n          \"Error Queue\",\n          \"Timeout (ms)\",\n          \"Priority\",\n          \"Actual Number Of Retries\",\n          \"Maximum Number of Retries\"\n        ]\n      },\n      {\n        \"type\": \"AutoTask\",\n        \"attributes\": []\n      },\n      {\n        \"type\": \"Milestone\",\n        \"attributes\": []\n      },\n      {\n        \"type\": \"ManualTask\",\n        \"attributes\": [\n          \"Assigned To User\",\n          \"Assigned To Manual Queue\",\n          \"Manual Queue\"\n        ]\n      },\n      {\n        \"type\": \"PullEvent\",\n        \"attributes\": []\n      },\n      {\n        \"type\": \"PushEvent\",\n        \"attributes\": []\n      }\n    ]}\n  }"
+            "body": "{\n  \"OrcAttributes\":{\n    \"OrcAttributeItems\": [\n      {\n        \"type\": \"Callout\",\n        \"attributes\": [\n          \"System Interface\",\n          \"Orchestration Queue\",\n          \"Error Queue\",\n          \"Timeout (ms)\",\n          \"Priority\",\n          \"Actual Number Of Retries\",\n          \"Maximum Number Of Retries\"\n        ]\n      },\n      {\n        \"type\": \"AutoTask\",\n        \"attributes\": []\n      },\n      {\n        \"type\": \"Milestone\",\n        \"attributes\": []\n      },\n      {\n        \"type\": \"ManualTask\",\n        \"attributes\": [\n          \"Assigned To User\",\n          \"Assigned To Manual Queue\",\n          \"Manual Queue\"\n        ]\n      },\n      {\n        \"type\": \"PullEvent\",\n        \"attributes\": []\n      },\n      {\n        \"type\": \"PushEvent\",\n        \"attributes\": []\n      }\n    ]}\n  }"
         }
     },
     "filter": {
@@ -19,6 +19,13 @@
             ],
             "definedActions": {
                 "actions": [
+                    {
+                        "collapse": true,
+                        "hasExtraParams": false,
+                        "id": "ViewTaskDetails",
+                        "isCustomAction": false,
+                        "type": "Vlocity Action"
+                    }
                 ]
             },
             "fields": [
@@ -28,6 +35,7 @@
                 "layout": "xom-opv-item-modal"
             },
             "name": "ActiveItemList",
+            "sObjectType": "%vlocity_namespace%__VlocityAction__c",
             "templateUrl": "xom-opv-plan-item"
         }
     ],

@@ -4,7 +4,7 @@
         Please configure Vlocity Attributes to enable filters for campaign member list.
     </div>
     <ul class="slds-has-block-links--space slds-has-list-interactions" onmouseover="this.style.cursor='pointer'">
-    <li ng-repeat="category in records[0] track by $index | orderBy:'displaySequence':true">
+    <li ng-repeat="category in records[0] track by $index">
               <label class="slds-form-element__label" ng-click="show[$index] ? show[$index] = false : show[$index] = true"><icon ng-class="show[$index] ? 'slds-icon icon-v-down-caret' : 'slds-icon icon-v-right-caret'"></icon>
               {{category.name}}</label>
                   <ul class="slds-is-nested slds-list--vertical" ng-show="show[$index]">

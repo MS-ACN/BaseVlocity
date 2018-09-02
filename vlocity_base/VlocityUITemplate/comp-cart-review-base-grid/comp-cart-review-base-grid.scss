@@ -41,7 +41,6 @@
                 ng-include {
                     display: block;
                 }
-
                 &.review-product-container-visible {
                     margin-right: 0;
                     right: 0;
@@ -60,4 +59,20 @@
 
         }
     }    
+}
+
+[dir=rtl] .vlocity {
+    &.via-slds {
+        .comp-cart-review-base-grid{
+            .cart-review-container {
+                .review-info-container-wrapper {
+                    margin-right: 0;
+                    &.review-product-container-visible{
+                        left: 0;
+                        right: auto;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -59,7 +59,7 @@
                                 </a>
                             </li>
                             <li class="slds-dropdown__item" ng-class="{'slds-has-divider--top-space': $index === 0}" ng-repeat="callBack in importedScope.callBacks">
-                                <a role="menuitem" title="{{callBack.label}}" ng-click="importedScope.changeCallDate(callBack.action)">
+                                <a role="menuitem" title="{{callBack.label}}" ng-click="importedScope.changeCallDate(callBack.action, null, callBack.label)">
                                     <p class="slds-truncate">{{callBack.label}}</p>
                                 </a>
                             </li>

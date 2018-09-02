@@ -4,28 +4,31 @@
 /*** MIXINS ***/
 @import "cpq-mixin";
 
+/* $cpq-namespace is defined in cpq-base-variables */
+$namespace: $cpq-namespace;
+
 /*** STYLES ***/
 .vlocity {
     &.via-slds {
-        .cpq-promotion-item {
+        .#{$namespace}-promotion-item {
             border-bottom: $cpq-product-item-padding solid $cpq-page-bg-color;
             
-            .cpq-promotion-item-container {
+            .#{$namespace}-promotion-item-container {
                 padding: $cpq-padding-large-vertical 0px;
                 margin: 0px $cpq-padding-large-horizontal;
             
-                .cpq-product-item-select-checkbox {
+                .#{$namespace}-product-item-select-checkbox {
                     // Ensure atleast 40px width for inputs for device touch area
                     padding: $cpq-padding-small-horizontal;
                     margin-top: -$cpq-padding-small-horizontal/2;
                 }
                 
-                .cpq-promotion-name {
+                .#{$namespace}-promotion-name {
                     font-weight: $cpq-headings-font-weight;
                     line-height: 30px;
                 }
                 
-                .cpq-promotion-info div {
+                .#{$namespace}-promotion-info div {
                     padding-right: $cpq-padding-large-horizontal;
                     padding-top:$cpq-padding-large-vertical;
                     color: $dark-gray;
@@ -33,30 +36,28 @@
                         padding-bottom:$cpq-padding-large-vertical;
                     }
                     
-                    .cpq-promotion-label {
+                    .#{$namespace}-promotion-label {
                       font-size: $cpq-cart-item-attr-label-font-size;
                     }
-
                 }
 
-                .cpq-promotion-info .cpq-item-promotion-messages {
+                .#{$namespace}-promotion-info .#{$namespace}-item-promotion-messages {
                     font-size: 95%;
 
-                    .cpq-error-msg {
+                    .#{$namespace}-error-msg {
                         color: $error;
                     }
-                    .cpq-warning-msg {
+                    .#{$namespace}-warning-msg {
                         color: $warning;
                     }
                 }
-
             }
             
-            .cpq-promotion-actions {
+            .#{$namespace}-promotion-actions {
                 padding-top:$cpq-padding-large-vertical;
                 padding-bottom:$cpq-padding-large-vertical; 
                 
-                .add-button {
+                .#{$namespace}-add-button {
                     padding-left:$cpq-padding-small-horizontal;
                     padding-right:$cpq-padding-small-horizontal;
                }

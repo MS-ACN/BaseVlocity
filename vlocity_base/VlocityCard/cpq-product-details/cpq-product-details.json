@@ -1,16 +1,22 @@
 {
+    "dataSource": {
+        "type": null
+    },
     "filter": {
     },
     "states": [
         {
-            "conditions": [
-                {
-                    "field": "$scope.data.status",
-                    "operator": "===",
-                    "type": "system",
-                    "value": "'active'"
-                }
-            ],
+            "blankStateCheck": false,
+            "conditions": {
+                "group": [
+                    {
+                        "field": "$scope.data.status",
+                        "operator": "===",
+                        "type": "system",
+                        "value": "'active'"
+                    }
+                ]
+            },
             "definedActions": {
                 "actions": [
                 ]
@@ -19,28 +25,21 @@
                 {
                     "collapse": true,
                     "editing": false,
-                    "label": "Product Id",
+                    "label": "Product2Id",
                     "name": "['Product2Id']['value']",
                     "type": "string"
                 },
                 {
                     "collapse": true,
                     "editing": false,
-                    "label": "Product Code",
+                    "label": "ProductCode",
                     "name": "['ProductCode']['value']",
                     "type": "string"
                 },
                 {
                     "collapse": true,
                     "editing": false,
-                    "label": "Unit Price",
-                    "name": "['UnitPrice']['value']",
-                    "type": "string"
-                },
-                {
-                    "collapse": true,
-                    "editing": false,
-                    "label": "Active",
+                    "label": "IsActive",
                     "name": "['IsActive']['value']",
                     "type": "string"
                 }

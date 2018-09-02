@@ -45,7 +45,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="status in importedScope.status track by $index| orderBy : 'sortOrder'">
+      <tr ng-repeat="status in importedScope.status track by $index">
         <th scope="row" data-label="Member Status">
           <div class="slds-truncate" title="{{status.statusLabel}}">
           <input id="text-input-01" class="slds-input" type="text" ng-model="status.statusLabel"/>

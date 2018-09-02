@@ -4,7 +4,7 @@
     "%vlocity_namespace%__ApplicablePermissionName__c": "",
     "%vlocity_namespace%__ApplicableTypes__c": "All;Contact",
     "%vlocity_namespace%__ApplicableUserProfiles__c": "All",
-    "%vlocity_namespace%__DisplayLabel__c": "View Record",
+    "%vlocity_namespace%__DisplayLabel__c": "CPQViewRecord",
     "%vlocity_namespace%__DisplayOn__c": "All",
     "%vlocity_namespace%__DisplaySequence__c": 1,
     "%vlocity_namespace%__Filter__c": "",

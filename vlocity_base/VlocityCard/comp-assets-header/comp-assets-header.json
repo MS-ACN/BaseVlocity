@@ -8,14 +8,17 @@
     },
     "states": [
         {
-            "conditions": [
-                {
-                    "field": "$scope.data.status",
-                    "operator": "===",
-                    "type": "system",
-                    "value": "'active'"
-                }
-            ],
+            "blankStateCheck": false,
+            "conditions": {
+                "group": [
+                    {
+                        "field": "$scope.data.status",
+                        "operator": "===",
+                        "type": "system",
+                        "value": "'active'"
+                    }
+                ]
+            },
             "definedActions": {
                 "actions": [
                 ]

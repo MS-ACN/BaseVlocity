@@ -4,26 +4,31 @@
 /*** MIXINS ***/
 @import "cpq-mixin";
 
+/* $assets-namespace is defined in cpq-base-variables */
+$namespace: $assets-namespace;
+
 /*** STYLES ***/
 .vlocity {
     &.via-slds {
-        .comp-assets-info-panel {
+        .comp-#{$namespace}-info-panel {
             background-color: $cpq-product-container-bg-color;
             position: absolute;
             top: $cpq-cart-container-tabs-height + $cpq-cart-container-tabs-top-margin;
             right: $cpq-padding-large-horizontal/2;
             bottom: 0;
             left: $cpq-padding-large-horizontal/2;
-            .comp-assets-info-header {
+
+            .#{$namespace}-info-header {
                 padding: $cpq-padding-large-vertical $cpq-padding-large-horizontal;
             }
-            .comp-assets-info-container {
+
+            .#{$namespace}-info-container {
                 margin-bottom: 60px;
                 overflow-y: scroll;
                 margin-top: -$cpq-padding-large-vertical;
                 padding: 0px $cpq-padding-large-horizontal $cpq-padding-large-vertical*2;
                 
-                .error-msg {
+                .#{$namespace}-error-msg {
                     color: $error;
                     font-size: $cpq-product-cart-config-error-font-size;
                     margin-top: $cpq-product-cart-config-error-margin-top;

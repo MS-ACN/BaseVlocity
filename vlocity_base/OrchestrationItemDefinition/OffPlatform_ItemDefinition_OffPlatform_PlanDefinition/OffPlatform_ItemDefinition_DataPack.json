@@ -11,7 +11,7 @@
     "%vlocity_namespace%__IsPointOfNoReturn__c": false,
     "%vlocity_namespace%__IsSkipBranch__c": false,
     "%vlocity_namespace%__ItemLength__c": "",
-    "%vlocity_namespace%__JeopardySafetyIntervalUnit__c": "Seconds",
+    "%vlocity_namespace%__JeopardySafetyIntervalUnit__c": "",
     "%vlocity_namespace%__JeopardySafetyInterval__c": "",
     "%vlocity_namespace%__Key__c": "OffPlatform_PlanDefinition:OffPlatform_ItemDefinition",
     "%vlocity_namespace%__LengthUnit__c": "Seconds",

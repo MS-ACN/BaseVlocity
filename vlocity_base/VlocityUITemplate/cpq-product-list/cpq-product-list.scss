@@ -4,14 +4,17 @@
 /*** MIXINS ***/
 @import "cpq-mixin";
 
+/* $cpq-namespace is defined in cpq-base-variables */
+$namespace: $cpq-namespace;
+
 /*** STYLES ***/
 .vlocity {
     &.via-slds {
-        .cpq-product-list {
+        .#{$namespace}-product-list {
             display:flex;
             flex: 1;
             
-            .cpq-next-product {
+            .#{$namespace}-next-product {
                  padding: $cpq-padding-large-vertical;
                  
                  .slds-spinner_container {
@@ -19,18 +22,16 @@
                     padding-top: 10px;
                  }
             }
-
             //stretch the flex box irrespective of its contents
-            .cpq-products-list-vertical {
-                &.slds-grid{
+            .#{$namespace}-products-list-vertical {
+                &.#{$namespace}-products-grid {
                     flex-direction:column;
              
-                    &.cpq-products-list-col-stretch{
+                    &.#{$namespace}-products-list-col-stretch{
                         flex:1 1 100%;
                     }
                 }
-
-                .cpq-no-products-msg {
+                .#{$namespace}-no-products-msg {
                     margin:auto;
                 }
             }

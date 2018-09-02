@@ -13,13 +13,6 @@ $namespace: $cpq-namespace;
     &.via-slds {
         .#{$namespace}-product-cart-item-child {
             .#{$namespace}-item-base-product {
-                padding: 0.1rem 0;
-
-                &.#{$namespace}-item-selected {
-                    &::after {
-                        right: -$cpq-padding-large-horizontal !important;
-                    }
-                }
 
                 .#{$namespace}-item-base-product-name {
                     .#{$namespace}-item-child-product-name-wrapper {
@@ -28,29 +21,24 @@ $namespace: $cpq-namespace;
                         }
                     }
                 }
-
                 .#{$namespace}-item-base-product-actions .button-spinner {
                     position: relative;
                     top: 15px
                 }
-
                 .#{$namespace}-item-base-product-name .slds-button__icon {
                     transform: rotate(0deg);
                     transform-origin: 45%;
                 }
             }
-
             .#{$namespace}-item-product-group {
                 color: $cpq-cart-item-product-group-label-color;
                 font-weight: $cpq-cart-item-product-group-font-weight;
                 text-transform: uppercase;
                 padding: 4px 0;
             }
-
             .#{$namespace}-item-product-messages {
                 padding-left: 21px;
             }
-
             .#{$namespace}-item-base-product-cfg-attr .slds-section {
                 margin: 0;
                 &.slds-is-open .#{$namespace}-component-content {
@@ -121,5 +109,19 @@ $namespace: $cpq-namespace;
         }
 
         @include productChildLevelStyling('right');
+    }
+}
+[dir=rtl] .vlocity {
+    &.via-slds {
+        .#{$namespace}-product-cart-item-child {
+            .#{$namespace}-item-base-product {
+                &.#{$namespace}-item-selected {
+                    &:after {
+                        left: -$cpq-padding-large-horizontal;
+                        right: auto;
+                    }
+                }
+            }
+        }
     }
 }

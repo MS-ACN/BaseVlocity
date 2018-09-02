@@ -6,7 +6,7 @@
         "contextVariables": [
             {
                 "name": "params.id",
-                "val": "80136000001Egps"
+                "val": "801360000055hNw"
             }
         ],
         "type": "Dual",
@@ -43,5 +43,8 @@
         "0": {
             "templateUrl": "cpq-product-cart"
         }
-    }
+    },
+    "workspace": [
+        "cpq-product-cart-item/Vlocity/1500408956677"
+    ]
 }

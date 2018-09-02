@@ -8,13 +8,24 @@
 
     /*** STYLES ***/
 
-    .#{$namespace}-product-item-child, .#{$namespace}-product-cart-item, 
-        .comp-#{$namespace}-product-item-child, .comp-#{$namespace}-product-item {
+    .#{$namespace}-product-cart-item-child, .#{$namespace}-product-cart-item, 
+    .comp-#{$namespace}-product-item-child, .comp-#{$namespace}-product-item {
 
         position:relative; /* needed for selected border */
 
         input.ng-invalid {
             color: $error;
+        }
+
+        .extend-slds-close-switch {
+            .slds-button__icon {
+                float: left;
+                margin: 0.3rem 0.5rem 0 0;
+
+                &.#{$namespace}-fix-slds-close-switch {
+                    transform: rotate(-90deg) !important;
+                }
+            }
         }
 
         .#{$namespace}-item-product, .#{$namespace}-item-base-product {
@@ -31,17 +42,36 @@
                 }
             }
         }
-
+        .#{$namespace}-product-cart-item-child, .comp-#{$namespace}-product-item-child {
+            .#{$namespace}-item-base-product {
+                padding: 0.1rem 0;
+                &.#{$namespace}-item-selected {
+                    &::after {
+                        right: -$cpq-padding-large-horizontal;
+                    }
+                }
+            }
+        }
         .#{$namespace}-item-product {
             padding: $cpq-padding-large-vertical 0px;
             margin: 0px $cpq-padding-large-horizontal;
             border-bottom: 1px solid $middle-light-gray;
         }
-        
         .#{$namespace}-item-base-product {
             display: flex;
             flex-flow: row nowrap;
             justify-content: flex-end;
+            
+            .#{$namespace}-loyalty-points {
+                color: $cpq-loyalty-points-color;
+            }
+
+            .#{$namespace}-promo-text-wrap {
+                max-width: 7vw;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
 
             .#{$namespace}-item-base-product-input,
             .#{$namespace}-item-base-product-text,
@@ -57,7 +87,9 @@
                 min-width: 0;
             }
 
-            .#{$namespace}-item-base-product-currency, .#{$namespace}-item-base-product-promo-field {
+            .#{$namespace}-item-base-product-loyalty, 
+            .#{$namespace}-item-base-product-currency, 
+            .#{$namespace}-item-base-product-promo-field {
                 .slds-popover.#{$namespace}-price-actions-popover {
                     position: absolute;
                     z-index: 999;
@@ -78,7 +110,7 @@
                     }
                 }
             }
-
+            .#{$namespace}-item-base-product-loyalty,
             .#{$namespace}-item-base-product-currency {
                 flex: 2;
                 position: relative;
@@ -89,7 +121,6 @@
                     color: $cpq-product-cart-discount-price;
                 }
             }
-
             .#{$namespace}-item-base-product-actions {
                 flex: 3;
                 padding-right: $cpq-padding-base-horizontal/2;
@@ -97,7 +128,6 @@
                 &.compacted {
                     flex: 1;
                 }
-
                 .#{$namespace}-actions-dropdown-menu-dropdown {
                     position: relative;
 
@@ -114,7 +144,6 @@
                         font-size: 11px;
                         color: $primary-medium;
                     }
-
                     .slds-icon {
                         fill: $primary-medium;
                         position: relative;
@@ -137,7 +166,6 @@
                 .#{$namespace}-product-item-bookmark-disconnect {
                     color: $product-item-bookmark-grayish-blue;
                 }
-                
                 .#{$namespace}-item-has-children {
                     font-size: 13px;
                     color: $mid-black;
@@ -145,15 +173,8 @@
                     &:focus{
                         box-shadow: none;
                     }
-
-                    .slds-button__icon {
-                        float: left;
-                        margin: 0.3rem 0.5rem 0 0;
-
-                        &.#{$namespace}-fix-slds-close-switch {
-                            transform: rotate(-90deg) !important;
-                        }
-                    }
+                    
+                    @extend .extend-slds-close-switch;
 
                     .#{$namespace}-product-name {
                         line-height: 1.6;
@@ -165,7 +186,6 @@
                         margin-left: 0;
                     }
                 }
-
                 .#{$namespace}-item-no-children {
                     margin-top: 6px;
                     padding-left: 0;
@@ -191,13 +211,15 @@
                 }
             }
 
+            .#{$namespace}-item-product-group {
+                @extend .extend-slds-close-switch;
+            }
         }
 
         .#{$namespace}-item-currency-value {
             color: $cpq-product-cart-items-attr-value-color;
             padding-top: $cpq-padding-large-vertical/2;
         }
-
         .#{$namespace}-item-input {
             padding: 0px 3px;
             margin-top: $cpq-padding-large-vertical/5;
@@ -206,15 +228,12 @@
             height: 25px;
             min-height: calc(25px + 2px); /* override slds input styles */
         }
-
         .#{$namespace}-item-product-messages {
             font-size: 95%;
         }
-
         .#{$namespace}-item-base-product-details {
-            /* padding-left: $cpq-cart-item-product-details-padding; */
-        }
 
+        }
         .#{$namespace}-item-base-product-cfg-attr {
             .slds-section__title {
                 a {
@@ -225,7 +244,6 @@
                     padding-bottom: 4px;
                 }
             }
-
             .#{$namespace}-item-attributes-form {
                 .slds-section:first-child {
                     .slds-section__title {
@@ -241,7 +259,6 @@
         .#{$namespace}-warning-msg {
             color: $warning;
         }
-
         .#{$namespace}-underline {
             border-bottom: dashed 1px;
             &:hover, &.hovered {

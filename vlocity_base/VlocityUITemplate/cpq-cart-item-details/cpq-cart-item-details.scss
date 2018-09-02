@@ -4,11 +4,14 @@
 /*** MIXINS ***/
 @import "cpq-mixin";
 
+/* $cpq-namespace is defined in cpq-base-variables */
+$namespace: $cpq-namespace;
+
 /*** STYLES ***/
 .vlocity {
     &.via-slds {
-        .cpq-cart-item-details {
-            .cart-errors {
+        .#{$namespace}-cart-item-details {
+            .#{$namespace}-cart-errors {
                 padding: $cpq-padding-large-vertical $cpq-padding-large-horizontal;
                 color: white;
                 h2 {
@@ -20,23 +23,23 @@
                     font-size: 1rem;
                     line-height: 1.25;
                 }
-                .slds-button{
+                .#{$namespace}-modal-button {
                     line-height: 1.25;
                     color: white;
                 }
 
             }
 
-            .cpq-product-cart-item-container {
+            .#{$namespace}-product-cart-item-container {
                 border-bottom: none;
             }
         }
-        .lineitem-details-form {
+        .#{$namespace}-lineitem-details-form {
             display: inline; 
-            .modal-content-position {
+            .#{$namespace}-modal-content-position {
                 position: relative;
             }
-            .modal-spinner-position {
+            .#{$namespace}-modal-spinner-position {
                 right: 85px;
                 float: right;
             }

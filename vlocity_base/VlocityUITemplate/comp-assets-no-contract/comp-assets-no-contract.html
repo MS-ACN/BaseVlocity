@@ -1,8 +1,8 @@
-<div class="slds-p-top--large slds-p-horizontal--small comp-assets-no-contract">
+<div class="slds-p-top_large slds-p-horizontal_small comp-assets-no-contract">
     <div ng-controller="AssetsMainController">
-		<div ng-init="getStateData(cards)"></div>
-	    <vloc-card ng-repeat="card in cards" ctrl="AssetsProductItemController" ng-model="card" data="card" 
-	    	records="records" 
+        <vloc-card ng-repeat="card in cards" ctrl="AssetsProductItemController" 
+            ng-model="card" data="card" records="records" 
+            on-loaded="$first ? getCardsCallback(1) : null"
 	    	asset-include-type="{{attrs.assetIncludeType}}" 
 	    	account-id="{{attrs.accountId}}" 
 	    	effective-date="{{attrs.effectiveDate}}"
@@ -10,13 +10,13 @@
 	    	index="{{$index}}" session-id="{{sessionId}}">
 	    </vloc-card>
 
-        <div class="slds-grid slds-grid--vertical-align-center slds-grid--align-center" ng-if="!records || records.length === 0 ">
+        <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-center" ng-if="!records || records.length === 0 ">
           {{::customLabels.ASSETNoAssets}}
         </div>
 
-        <div class="next-asset slds-text-align--center slds-m-vertical--medium" ng-if="session.nextAssets">
-            <div class="slds-spinner_container" ng-show="loadingMore">
-                <div class="slds-spinner--brand slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+        <div class="assets-next-asset slds-text-align_center slds-m-vertical_medium" ng-if="session.nextAssets">
+            <div class="slds-spinner_container assets-spinner-container" ng-show="loadingMore">
+                <div class="slds-spinner_brand slds-spinner slds-spinner_small" aria-hidden="false" role="alert">
                     <div class="slds-spinner__dot-a"></div>
                     <div class="slds-spinner__dot-b"></div>
                 </div>

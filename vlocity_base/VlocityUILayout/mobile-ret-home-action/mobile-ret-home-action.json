@@ -1,6 +1,6 @@
 {
     "Cards": [
-        "Home Actions"
+        "mobile-ret-home-action"
     ],
     "dataSource": {
         "type": "Custom",

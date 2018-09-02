@@ -4,31 +4,34 @@
 /*** MIXINS ***/
 @import "cpq-mixin";
 
+/* $assets-namespace is defined in cpq-base-variables */
+$namespace: $assets-namespace;
+
 /*** STYLES ***/
 .vlocity {
     &.via-slds {
-        .comp-assets-base-grid {
+        .comp-#{$namespace}-base-grid {
             background-color: $cpq-page-bg-color;
 
-            .assets-container {
-                .asset-info-container-wrapper {
+            .#{$namespace}-container {
+                .#{$namespace}-info-container-wrapper {
                     transition: margin-right 250ms ease-in;
                     margin-right: -59%;
 
-                    &.assets-product-container-visible {
+                    &.#{$namespace}-product-container-visible {
                         margin-right: 0;
                     }
                 }
 
                 // 64rem
                 @media screen and (max-width: $bp-large) {
-                    .comp-assets-base-grid {
+                    .comp-#{$namespace}-base-grid {
                         input {
                             -webkit-appearance: none;
                         }
                     }
 
-                    .asset-info-container-wrapper {
+                    .#{$namespace}-info-container-wrapper {
                         transition-property: right;
                         position: fixed;
                         z-index: 999;
@@ -44,7 +47,7 @@
                             display: block;
                         }
 
-                        &.assets-product-container-visible {
+                        &.#{$namespace}-product-container-visible {
                             margin-right: 0;
                             right: 0;
                             box-shadow: 0 1px 5px rgba(0,0,0,0.3);
@@ -60,6 +63,20 @@
                 // 30rem
                 @media screen and (max-width: $bp-small) {
 
+                }
+            }
+        }
+    }
+}
+
+[dir=rtl] .vlocity {
+    &.via-slds {
+        .#{$namespace}-container {
+            .#{$namespace}-info-container-wrapper {
+                margin-right: 0;
+                &.#{$namespace}-product-container-visible {
+                    left: 0;
+                    right: auto;
                 }
             }
         }

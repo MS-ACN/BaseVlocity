@@ -166,8 +166,8 @@
                             "%vlocity_namespace%__AttributeId__c": "",
                             "%vlocity_namespace%__EffectiveFromDate__c": "",
                             "%vlocity_namespace%__EffectiveUntilDate__c": "",
-                            "%vlocity_namespace%__FieldApiName__c": "%vlocity_namespace%__SubType__c",
-                            "%vlocity_namespace%__GlobalKey__c": "4f5192d9-60f3-1b79-82ac-341a1d9e60b0",
+                            "%vlocity_namespace%__FieldApiName__c": "%vlocity_namespace%__CurrencyType__c",
+                            "%vlocity_namespace%__GlobalKey__c": "c40a002e-8d4e-edc1-4fe2-554657791efc",
                             "%vlocity_namespace%__IsActive__c": true,
                             "%vlocity_namespace%__IsRequired__c": true,
                             "%vlocity_namespace%__ObjectSectionId__c": {
@@ -177,10 +177,10 @@
                             },
                             "%vlocity_namespace%__Sequence__c": 20,
                             "%vlocity_namespace%__Type__c": "Field",
-                            "Name": "Sub-Type",
+                            "Name": "Currency Type",
                             "VlocityDataPackType": "SObject",
                             "VlocityRecordSObjectType": "%vlocity_namespace%__ObjectElement__c",
-                            "VlocityRecordSourceKey": "%vlocity_namespace%__ObjectElement__c/4f5192d9-60f3-1b79-82ac-341a1d9e60b0"
+                            "VlocityRecordSourceKey": "%vlocity_namespace%__ObjectElement__c/c40a002e-8d4e-edc1-4fe2-554657791efc"
                         },
                         {
                             "%vlocity_namespace%__AttributeId__c": "",
@@ -201,6 +201,26 @@
                             "VlocityDataPackType": "SObject",
                             "VlocityRecordSObjectType": "%vlocity_namespace%__ObjectElement__c",
                             "VlocityRecordSourceKey": "%vlocity_namespace%__ObjectElement__c/b7649521-e833-2ad1-d7ac-158da63d5ddd"
+                        },
+                        {
+                            "%vlocity_namespace%__AttributeId__c": "",
+                            "%vlocity_namespace%__EffectiveFromDate__c": "",
+                            "%vlocity_namespace%__EffectiveUntilDate__c": "",
+                            "%vlocity_namespace%__FieldApiName__c": "%vlocity_namespace%__SubType__c",
+                            "%vlocity_namespace%__GlobalKey__c": "4f5192d9-60f3-1b79-82ac-341a1d9e60b0",
+                            "%vlocity_namespace%__IsActive__c": true,
+                            "%vlocity_namespace%__IsRequired__c": true,
+                            "%vlocity_namespace%__ObjectSectionId__c": {
+                                "VlocityDataPackType": "VlocityMatchingKeyObject",
+                                "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__ObjectSection__c/58184ff2-5274-6c3f-28c0-066df4084f1c",
+                                "VlocityRecordSObjectType": "%vlocity_namespace%__ObjectSection__c"
+                            },
+                            "%vlocity_namespace%__Sequence__c": 30,
+                            "%vlocity_namespace%__Type__c": "Field",
+                            "Name": "Sub-Type",
+                            "VlocityDataPackType": "SObject",
+                            "VlocityRecordSObjectType": "%vlocity_namespace%__ObjectElement__c",
+                            "VlocityRecordSourceKey": "%vlocity_namespace%__ObjectElement__c/4f5192d9-60f3-1b79-82ac-341a1d9e60b0"
                         },
                         {
                             "%vlocity_namespace%__AttributeId__c": "",

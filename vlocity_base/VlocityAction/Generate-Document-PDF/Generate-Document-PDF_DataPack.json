@@ -4,7 +4,7 @@
     "%vlocity_namespace%__ApplicablePermissionName__c": "",
     "%vlocity_namespace%__ApplicableTypes__c": "All;Order",
     "%vlocity_namespace%__ApplicableUserProfiles__c": "All",
-    "%vlocity_namespace%__DisplayLabel__c": "Generate Document PDF",
+    "%vlocity_namespace%__DisplayLabel__c": "CPQGenerateDocumentPDF",
     "%vlocity_namespace%__DisplayOn__c": "All",
     "%vlocity_namespace%__DisplaySequence__c": 1,
     "%vlocity_namespace%__Filter__c": "",

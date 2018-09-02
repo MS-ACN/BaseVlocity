@@ -1,9 +1,9 @@
 {
     "Cards": [
-        "bar-chart",
-        "Hbar Chart",
-        "Type Pie Chart",
-        "Mobile Data Chart"
+        "mobile-ret-bar-chart",
+        "mobile-ret-hbar-chart",
+        "mobile-ret-type-pie-chart",
+        "mobile-ret-data-chart"
     ],
     "dataSource": {
         "contextVariables": [

@@ -6,18 +6,27 @@
     },
     "filter": {
     },
+    "sessionVars": [
+        {
+            "name": "enableLoyaltyPoints",
+            "val": "$root.enableLoyaltyPoints"
+        }
+    ],
     "states": [
         {
             "blankCardState": false,
+            "blankStateCheck": false,
             "collapse": true,
-            "conditions": [
-                {
-                    "field": "$scope.data.status",
-                    "operator": "===",
-                    "type": "system",
-                    "value": "'active'"
-                }
-            ],
+            "conditions": {
+                "group": [
+                    {
+                        "field": "$scope.data.status",
+                        "operator": "===",
+                        "type": "system",
+                        "value": "'active'"
+                    }
+                ]
+            },
             "definedActions": {
                 "actions": [
                 ]
@@ -30,15 +39,18 @@
         },
         {
             "blankCardState": false,
+            "blankStateCheck": false,
             "collapse": true,
-            "conditions": [
-                {
-                    "field": "$scope.data.status",
-                    "operator": "===",
-                    "type": "system",
-                    "value": "'active'"
-                }
-            ],
+            "conditions": {
+                "group": [
+                    {
+                        "field": "$scope.data.status",
+                        "operator": "===",
+                        "type": "system",
+                        "value": "'active'"
+                    }
+                ]
+            },
             "definedActions": {
                 "actions": [
                 ]
@@ -90,15 +102,25 @@
         },
         {
             "blankCardState": false,
+            "blankStateCheck": false,
             "collapse": true,
-            "conditions": [
-                {
-                    "field": "$scope.data.status",
-                    "operator": "===",
-                    "type": "system",
-                    "value": "'active'"
-                }
-            ],
+            "conditions": {
+                "group": [
+                    {
+                        "field": "$scope.data.status",
+                        "operator": "===",
+                        "type": "system",
+                        "value": "'active'"
+                    },
+                    {
+                        "field": "$scope.session.enableLoyaltyPoints",
+                        "logicalOperator": "&&",
+                        "operator": "==",
+                        "type": "custom",
+                        "value": "false"
+                    }
+                ]
+            },
             "definedActions": {
                 "actions": [
                 ]
@@ -174,8 +196,126 @@
                     "type": "promo"
                 }
             ],
-            "filter": "$scope.data.status === 'active'",
-            "name": "CustomView_Pricing",
+            "filter": "$scope.data.status === 'active' && $scope.session.enableLoyaltyPoints == 'false'",
+            "name": "CustomView_Advanced Pricing",
+            "templateUrl": "cpq-card-blank"
+        },
+        {
+            "blankCardState": false,
+            "blankStateCheck": false,
+            "collapse": false,
+            "conditions": {
+                "group": [
+                    {
+                        "field": "$scope.data.status",
+                        "operator": "===",
+                        "type": "system",
+                        "value": "'active'"
+                    },
+                    {
+                        "field": "$scope.session.enableLoyaltyPoints",
+                        "logicalOperator": "&&",
+                        "operator": "==",
+                        "type": "custom",
+                        "value": "true"
+                    }
+                ]
+            },
+            "definedActions": {
+                "actions": [
+                ]
+            },
+            "fields": [
+                {
+                    "collapse": true,
+                    "data": {
+                        "classSuffix": "name-field"
+                    },
+                    "displayLabel": "<<Custom Field>>",
+                    "editing": false,
+                    "fieldType": "custom",
+                    "label": "",
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "Quantity",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['Quantity']['label']",
+                    "name": "['Quantity']['value']",
+                    "type": "string"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "Recurring Charge",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['%vlocity_namespace%__RecurringCharge__c']['label']",
+                    "name": "['%vlocity_namespace%__RecurringCharge__c']['value']",
+                    "type": "currency"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "Recurring Total",
+                    "fieldType": "standard",
+                    "group": "Custom Fields",
+                    "label": "['%vlocity_namespace%__RecurringTotal__c']['label']",
+                    "name": "['%vlocity_namespace%__RecurringTotal__c']['value']",
+                    "type": "currency"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "<<Custom Field>>",
+                    "editing": false,
+                    "fieldType": "custom",
+                    "label": "['%vlocity_namespace%__OneTimeCharge__c']['label']",
+                    "name": "['%vlocity_namespace%__OneTimeCharge__c']['value']",
+                    "type": "currency"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "<<Custom Field>>",
+                    "editing": false,
+                    "fieldType": "custom",
+                    "label": "['%vlocity_namespace%__OneTimeTotal__c']['label']",
+                    "name": "['%vlocity_namespace%__OneTimeTotal__c']['value']",
+                    "type": "currency"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "<<Custom Field>>",
+                    "editing": false,
+                    "fieldType": "custom",
+                    "label": "['%vlocity_namespace%__OneTimeLoyaltyPrice__c']['label']",
+                    "name": "['%vlocity_namespace%__OneTimeLoyaltyPrice__c']['value']",
+                    "type": "loyalty"
+                },
+                {
+                    "collapse": true,
+                    "displayLabel": "<<Custom Field>>",
+                    "editing": false,
+                    "fieldType": "custom",
+                    "label": "['%vlocity_namespace%__OneTimeLoyaltyTotal__c']['label']",
+                    "name": "['%vlocity_namespace%__OneTimeLoyaltyTotal__c']['value']",
+                    "type": "loyalty"
+                },
+                {
+                    "collapse": true,
+                    "data": {
+                        "classSuffix": "promo-field"
+                    },
+                    "displayLabel": "<<Custom Field>>",
+                    "editing": false,
+                    "fieldType": "custom",
+                    "label": "Promotions",
+                    "name": "promotions",
+                    "type": "promo"
+                }
+            ],
+            "filter": "$scope.data.status === 'active' && $scope.session.enableLoyaltyPoints == 'true'",
+            "name": "CustomView_Advanced Pricing + Loyalty",
             "templateUrl": "cpq-card-blank"
         }
     ],

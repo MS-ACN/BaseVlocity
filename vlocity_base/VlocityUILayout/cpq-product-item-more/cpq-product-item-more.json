@@ -36,5 +36,8 @@
         "0": {
             "templateUrl": "cpq-product-item-more"
         }
-    }
+    },
+    "workspace": [
+        "cpq-product-details/Vlocity/1/1493936282735"
+    ]
 }

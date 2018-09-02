@@ -14,12 +14,6 @@ $padding-wrapper: 40;
     &.via-slds {
         .comp-#{$namespace}-product-item-child {
             .#{$namespace}-item-base-product {
-                padding: 0.1rem 0;
-                &.#{$namespace}-item-selected {
-                    &::after {
-                        right: -$cpq-padding-large-horizontal !important;
-                    }
-                }
 
                 .#{$namespace}-item-base-product-name {
                     .#{$namespace}-item-child-product-name-wrapper {
@@ -86,5 +80,20 @@ $padding-wrapper: 40;
         }
 
         @include productChildLevelStyling($namespace, 'right', $padding-wrapper);
+    }
+}
+
+[dir=rtl] .vlocity {
+    &.via-slds {
+        .comp-#{$namespace}-product-item-child {
+            .#{$namespace}-item-base-product {
+                &.#{$namespace}-item-selected {
+                    &:after {
+                        left: -$cpq-padding-large-horizontal;
+                        right: auto;
+                    }
+                }
+            }
+        }
     }
 }

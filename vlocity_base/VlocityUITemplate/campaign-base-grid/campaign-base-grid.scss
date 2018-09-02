@@ -2,6 +2,10 @@
 @import "campaign-variables";
 @import "campaign-mixins";
 
+.via-slds .slds-modal__container {
+    justify-content: normal;
+}
+
 .card-header {
     display: none !important;
 }

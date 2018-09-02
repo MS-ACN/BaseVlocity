@@ -1,6 +1,6 @@
 {
     "Cards": [
-        "Mobile Action Asset"
+        "mobile-ret-action-asset"
     ],
     "dataSource": {
         "type": "Custom",

@@ -1,1 +1,0 @@
-cpq-slds-prompt.js

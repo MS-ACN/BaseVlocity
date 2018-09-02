@@ -27,5 +27,8 @@
         "0": {
             "templateUrl": "comp-assets-promotions"
         }
-    }
+    },
+    "workspace": [
+        "comp-assets-promotions-card/Vlocity/1/1493936282763"
+    ]
 }
