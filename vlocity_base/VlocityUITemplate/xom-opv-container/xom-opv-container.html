@@ -52,7 +52,7 @@
         
 <div ng-repeat="swimlane in importedScope.orchestrationPlan.swimlanes | orderBy : 'showOrder' track by swimlane.idx"
     ng-style="{top: '{{::importedScope.getSwimlaneY(swimlane)+30}}px', {{::importedScope.getSwimlaneX1(swimlane)}}:'55px', width: '100%'}"
-        class="order-label-container" bs-tooltip="swimlane.orderName+' - '+swimlane.planDefName">
+        class="order-label-container" title="{{swimlane.orderName}} - {{swimlane.planDefName}}">
         <vloc-card ctrl="{{ctrl}}" ng-model="card" data="cards[1]" records="" index="{{$index}}" ></vloc-card>
 </div>
 <div ng-repeat="item in importedScope.orchestrationPlan.items track by item.id" ng-mouseenter="importedScope.highlightItemAndDependencies(item)" ng-mouseleave="importedScope.unhighlightItemAndDependencies(item)">
