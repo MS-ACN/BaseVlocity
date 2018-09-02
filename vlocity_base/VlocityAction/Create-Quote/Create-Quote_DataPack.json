@@ -4,7 +4,7 @@
     "%vlocity_namespace%__ApplicablePermissionName__c": "",
     "%vlocity_namespace%__ApplicableTypes__c": "Opportunity",
     "%vlocity_namespace%__ApplicableUserProfiles__c": "All",
-    "%vlocity_namespace%__DisplayLabel__c": "Create Quote",
+    "%vlocity_namespace%__DisplayLabel__c": "CPQCreateQuote",
     "%vlocity_namespace%__DisplayOn__c": "All",
     "%vlocity_namespace%__DisplaySequence__c": 1,
     "%vlocity_namespace%__Filter__c": "",

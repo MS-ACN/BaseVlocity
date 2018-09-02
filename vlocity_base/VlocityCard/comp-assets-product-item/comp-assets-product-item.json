@@ -97,7 +97,7 @@
                 }
             ],
             "filter": "$scope.data.status === 'active'",
-            "name": "CustomView_Basic",
+            "name": "CustomView_CPQBasic",
             "templateUrl": "cpq-card-blank"
         },
         {
@@ -191,13 +191,13 @@
                     "displayLabel": "<<Custom Field>>",
                     "editing": false,
                     "fieldType": "custom",
-                    "label": "Promotions",
+                    "label": "CPQPromotions",
                     "name": "promotions",
                     "type": "promo"
                 }
             ],
             "filter": "$scope.data.status === 'active' && $scope.session.enableLoyaltyPoints == 'false'",
-            "name": "CustomView_Advanced Pricing",
+            "name": "CustomView_CPQAdvancedPricing",
             "templateUrl": "cpq-card-blank"
         },
         {
@@ -309,13 +309,13 @@
                     "displayLabel": "<<Custom Field>>",
                     "editing": false,
                     "fieldType": "custom",
-                    "label": "Promotions",
+                    "label": "CPQPromotions",
                     "name": "promotions",
                     "type": "promo"
                 }
             ],
             "filter": "$scope.data.status === 'active' && $scope.session.enableLoyaltyPoints == 'true'",
-            "name": "CustomView_Advanced Pricing + Loyalty",
+            "name": "CustomView_CPQAdvancedPricingLoyalty",
             "templateUrl": "cpq-card-blank"
         }
     ],

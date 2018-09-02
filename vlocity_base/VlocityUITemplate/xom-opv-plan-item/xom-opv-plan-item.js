@@ -10,10 +10,18 @@ vlocity.cardframework.registerModule
                 console.log('customTaskExecUrl', customTaskExecUrl);
                 url=url.toString().replace("{0}",itemId);
             } else {
-                url = action[nsPrefix + 'Url__c'] || action[nsPrefix + 'URL__c'] || action.url;
-                action[nsPrefix + 'UrlParameters__c'] = itemId;
-
-                url=url.toString().replace("{0}",itemId);
+                var isExternalId = !isNaN(parseFloat(itemId)) && isFinite(itemId);
+                if(!isExternalId)
+                {
+                   url='/' + itemId;
+                   url = action[nsPrefix + 'Url__c'] || action[nsPrefix + 'URL__c'] || action.url;
+                   action[nsPrefix + 'UrlParameters__c'] = itemId;
+                   url=url.toString().replace("{0}",itemId);
+                } 
+                else 
+                {
+                    url='/apex/XOMObjectParams#!/object/' + itemId;
+                }
                 action[nsPrefix + 'URL__c']=url;
             }
             console.log('Card action', action);

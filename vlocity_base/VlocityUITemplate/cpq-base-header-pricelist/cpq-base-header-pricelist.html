@@ -2,7 +2,7 @@
     <div class="slds-text-body_small">{{::importedScope.customLabels.CPQPriceList}}</div>
     <button cpq-dropdown-handler="viewOpen = false" class="slds-button custom-view-dropdown-button slds-button_neutral slds-p-right_small slds-picklist__label cpq-base-header-picklist-label" aria-haspopup="true" ng-click="viewOpen = !viewOpen">
         <slds-button-svg-icon sprite="'utility'" icon="'down'" extra-classes="'slds-m-top_x-small slds-float_right custom-view-dropdown-button'"></slds-button-svg-icon>
-        {{importedScope.currentPricelist.Name}}
+        {{importedScope.currentPricelist.Name || importedScope.customLabels.CPQSelectPriceList}}
     </button>
     <div class="cpq-base-header-dropdown slds-dropdown slds-dropdown_left" ng-if="viewOpen">
         <ul class="slds-dropdown__list slds-dropdown_length-5" role="menu">

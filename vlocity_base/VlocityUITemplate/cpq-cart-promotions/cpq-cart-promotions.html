@@ -72,12 +72,12 @@
                     </div>
                 </div>
                 <div class="cpq-promotion-name">
-                    <button class="slds-button slds-button_neutral" ng-if="record[$root.nsPrefix + 'Action__c']['value'] === 'Change' || record[$root.nsPrefix + 'Action__c']['value'] === 'Disconnect'" ng-click="cancelAppliedPromotion(record)" ng-disabled="record[$root.nsPrefix + 'Action__c']['value'] === 'Disconnect' || !(record.actions && record.actions.deleteappliedpromoitems)">
+                    <button class="slds-button slds-button_neutral" ng-if="record['AppliedPromotionAction'] === 'Change' || record[$root.nsPrefix + 'Action__c']['value'] === 'Disconnect'" ng-click="cancelAppliedPromotion(record)" ng-disabled="record['AppliedPromotionAction'] === 'Disconnect' || !(record.actions && record.actions.deleteappliedpromoitems)">
                         <span>
                             {{::customLabels.CPQCancel}}
                         </span>
                     </button>
-                    <button class="slds-button slds-button_neutral" ng-if="record[$root.nsPrefix + 'Action__c']['value'] === 'Add'" ng-click="deleteAppliedPromotion(record)" ng-disabled="!record.actions || !record.actions.deleteappliedpromoitems">
+                    <button class="slds-button slds-button_neutral" ng-if="record['AppliedPromotionAction'] === 'Add'" ng-click="deleteAppliedPromotion(record)" ng-disabled="!record.actions || !record.actions.deleteappliedpromoitems">
                         <span>
                             {{::customLabels.CPQDelete}}
                         </span>

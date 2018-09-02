@@ -3,7 +3,7 @@
         <div class="slds-grid slds-grid_align-end">
             <button class="slds-button slds-button_icon" ng-click="importedScope.close()">
                 <slds-button-svg-icon sprite="'utility'" size="'large'" icon="'close'"></slds-button-svg-icon>
-                <span class="slds-assistive-text">Close</span>
+                <span class="slds-assistive-text">{{::importedScope.customLabels.CPQClose}}</span>
             </button>
         </div>
     </div>
@@ -58,7 +58,7 @@
              </div>
         </div>
         <div ng-if="importedScope.attributesObj && importedScope.attributesObj.length === 0">
-            No attributes for this item.
+            {{::importedScope.customLabels.CPQCartConfigNoAttrsText}}
         </div>
         <!-- End --> 
             
@@ -67,7 +67,7 @@
                 <h3 href="javascript:void(0);" class="slds-section__title" ng-click="showInfo = !showInfo">
                     <button type="button" class="slds-button slds-section__title-action">
                         <slds-button-svg-icon sprite="'utility'" icon="'switch'" extra-classes="'slds-section__title-action-icon slds-button__icon_left'"></slds-button-svg-icon>
-                        Additional Setting
+                        {{::importedScope.customLabels.CPQCartConfigAdditionalSetting}}
                     </button>
                  </h3>
                 <div class="slds-section__content">

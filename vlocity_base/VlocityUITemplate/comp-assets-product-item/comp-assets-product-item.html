@@ -4,7 +4,7 @@
             <div class="assets-item-product-header assets-item-base-product">
                 <div ng-repeat="customField in $root.customViews.cpqCustomViews[$root.customViews.currentCustomView].fields" class="assets-item-base-product-{{customField.data.classSuffix}}">
                     <span ng-if="!$root.vlocity.customLabels[customField.label]">{{obj | getter: customField: 'label' }}</span>
-                    <span ng-if="$root.vlocity.customLabels[customField.label]">{{$root.vlocity.customLabels[customField.label][$root.vlocity.userSfLocale]}}</span>
+                    <span ng-if="$root.vlocity.customLabels[customField.label]">{{::$root.vlocity.getCustomLabel(customField.label)}}</span>
                 </div>
                 <div class="assets-item-base-product-actions" ng-class="{'compacted': !$root.customViews.productListHidden}"></div>
             </div>
