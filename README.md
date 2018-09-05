@@ -36,7 +36,7 @@ The Salesforce Metadata is the result of installing the Vlocity Telco Unamanged 
 
 # Running in Jenkins
 
-In order to run `sfdx` in Jenkins (or any server) you must setup [JWT Authorization]. (https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm) 
+In order to run `sfdx` in Jenkins (or any server) you must setup [JWT Authorization.](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm)
 
 Salesforce additionally provides a [Trailhead for Travis CI](https://trailhead.salesforce.com/modules/sfdx_travis_ci/units/sfdx_travis_ci_connected_app)
 
