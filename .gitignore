@@ -1,0 +1,8 @@
+.sfdx/
+.vscode/
+node_modules/
+
+build_*.properties
+
+VlocityBuild*
+vlocity-temp/

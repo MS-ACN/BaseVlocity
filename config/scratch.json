@@ -1,0 +1,13 @@
+{
+  "orgName": "Jenkins Scratch Org",
+  "country": "US",
+  "namespace": "",
+  "edition": "Developer",
+  "description": "Jenkins Scratch Org",
+  "hasSampleData": "false",
+  "features": ["AuthorApex", "DebugApex"],
+  "orgPreferences": {
+    "enabled": ["S1DesktopEnabled", "ChatterEnabled", "IsRevenueScheduleEnabled", "IsQuantityScheduleEnabled", "IsQuoteEnabled"],
+    "disabled": []
+  }
+}

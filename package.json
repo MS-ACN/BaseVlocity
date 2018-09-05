@@ -1,0 +1,22 @@
+{
+  "name": "vlocity-jenkins",
+  "version": "1.0.0",
+  "description": "## Dev, Build and Test",
+  "main": "sfdx_start.js",
+  "dependencies": {
+    "fs-extra": "^7.0.0",
+    "js-yaml": "^3.12.0",
+    "nopt": "^4.0.1",
+    "sfdx-node": "^1.0.0",
+    "vlocity": "https://github.com/vlocityinc/vlocity_build.git"
+  },
+  "devDependencies": {
+    "sfdx-cli": "^6.29.0",
+    "vlocity": "https://github.com/vlocityinc/vlocity_build.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
