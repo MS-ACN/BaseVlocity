@@ -1,4 +1,4 @@
-# Vlocity Build + Saleasforce DX
+# Vlocity Build + Salesforce DX
 This project shows how Salesforce DX Scratch Orgs can be used together with the Vlocity Build Tool to create a new Org through an Automation tool like Jenkins.
 
 The primary deployment process would be using the `deployProject.sh` script, which includes:
