@@ -1,10 +1,12 @@
 {
-  "orgName": "Belong Scratch Org",
-  "country": "US",
+  "orgName": "PMOC Scratch Org",
+  "country": "AU",
   "namespace": "",
-  "edition": "Developer",
-  "description": "PMOC_VISHNU_USERSTORY: 1234",
+  "username": "pmoc_vk_story_1234@accenture.com",
+  "edition": "Enterprise",
+  "description": "PMOC Scratch Org",
   "hasSampleData": "false",
+  "language": "en_AU",
   "features": ["AuthorApex", "DebugApex"],
   "orgPreferences": {
     "enabled": ["S1DesktopEnabled", "ChatterEnabled", "IsRevenueScheduleEnabled", "IsQuantityScheduleEnabled", "IsQuoteEnabled"],
