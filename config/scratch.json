@@ -1,9 +1,9 @@
 {
-  "orgName": "Jenkins Scratch Org",
+  "orgName": "Belong Scratch Org",
   "country": "US",
   "namespace": "",
   "edition": "Developer",
-  "description": "Jenkins Scratch Org",
+  "description": "PMOC_VISHNU_USERSTORY: 1234",
   "hasSampleData": "false",
   "features": ["AuthorApex", "DebugApex"],
   "orgPreferences": {
