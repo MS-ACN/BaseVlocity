@@ -315,6 +315,9 @@
         <enabled>true</enabled>
     </classAccesses>
     <custom>false</custom>
+    <layoutAssignments>
+        <layout>Order-vlocity_cmt__Order %28Vlocity XOM%29 Layout V4</layout>
+    </layoutAssignments>
     <pageAccesses>
         <apexPage>ContractAmendment</apexPage>
         <enabled>true</enabled>
